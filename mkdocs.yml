@@ -10,7 +10,7 @@ extra_css:
   - stylesheets/extra.css
 extra_javascript:
   - stylesheets/extra.js
-  
+
 theme:
   name: material
   logo: assets/color.svg
@@ -18,8 +18,8 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
-#    - navigation.path
-#    - toc.integrate
+    #    - navigation.path
+    #    - toc.integrate
     - navigation.top
     - search.suggest
     - search.highlight
@@ -30,7 +30,7 @@ theme:
     repo: fontawesome/brands/github
   language: en
   palette:
-      - scheme: slate 
+    - scheme: slate
 
 plugins:
   - search
@@ -61,17 +61,12 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.tabbed:
-      alternate_style: true
-      combine_header_slug: true
-      slugify: !!python/object/apply:pymdownx.slugs.slugify
-        kwds:
-          case: lower
   - pymdownx.mark
   - attr_list
   - pymdownx.emoji:
-      emoji_index: !!python/name:material.extensions.emoji.twemoji
-      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:pymdownx.emoji.twemoji
+      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+
 
 copyright: |
   &copy; 2025 <a href="https://github.com/Web3-Pi/Ethereum-On-Raspberry-Pi"  target="_blank" rel="noopener">Web3 Pi</a>
@@ -80,10 +75,10 @@ copyright: |
 
 nav:
   - Menu 1:
-    - Web3 Pi: 'index.md'
+      - Web3 Pi: 'index.md'
   - Menu 2:
-    - Introduction: 'menu2.md'
+      - Introduction: 'menu2.md'
   - Menu 3:
-    - Introduction: 'menu3.md'
+      - Introduction: 'menu3.md'
   - Menu 4:
-    - Introduction: 'menu4.md'
+      - Introduction: 'menu4.md'
