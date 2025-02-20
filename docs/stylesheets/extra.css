@@ -7,6 +7,7 @@
   font-weight: 500 !important;
   margin-left: -5px !important; /* Przesuwa nazwę bliżej logo */
   letter-spacing: 0.100em;
+  min-width: 100px;
 }
 
 .md-header__button.md-logo {
@@ -81,7 +82,7 @@
 }
 
 .md-tabs {
-    width: auto;
+    width: 50%;
 }
 
 .md-search {
