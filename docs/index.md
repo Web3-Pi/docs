@@ -1,16 +1,19 @@
 # Web3 Pi documentation
 
-!!! warning "This website is under development"
-    This website is under development and should not be used at this stage.
+Web3 Pi provides simple, step-by-step instructions to build your own Ethereum node using Raspberry Pi products. Set up your node on these low-power, small form factor devices for faster and easier access to the Ethereum blockchain.
 
+## Documentation Index
 
-## Commands
+Before you start
 
-* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-* Aliquam tincidunt mauris eu risus.
-* Vestibulum auctor dapibus neque.
-* Nunc dignissim risus id metus.
+Prerequisites
 
-## Instruction
+The Welcome Box
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Quickstart Guide
+
+Full setup guide
+
+Connecting to Ethereum
+
+Managing your node
