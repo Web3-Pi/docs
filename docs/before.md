@@ -72,8 +72,12 @@ You can also opt to add an LCD display to your Raspberry Pi. You'll find the det
 
 - For more detailed instructions, see the [full setup guide](full-setup/menu.md).
 
-- When you're ready to connect to Ethereum, read the [connection guide](ethereum-connect.md).
+- When you're ready to connect to Ethereum, read the [connection guide](connect-ethereum.md).
 
 - Refer to the 'Managing your Node' [menu](managing/menu.md) to learn how to configure, manage, monitor and upgrade your node.
+
+[Return to Main Menu](index.md)
+
+
 
 

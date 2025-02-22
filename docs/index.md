@@ -4,16 +4,16 @@ Web3 Pi provides simple, step-by-step instructions to build your own Ethereum no
 
 ## Documentation Index
 
-Before you start
+[Before you start](before.md)  
 
-Prerequisites
+[Prerequisites](prerequisites.md)
 
-The Welcome Box
+[The Welcome Box](welcome-box.md)
 
-Quickstart Guide
+[Quickstart Guide](quickstart.md)
 
-Full setup guide
+[Full setup guide](full-setup/menu.md)
 
-Connecting to Ethereum
+[Connecting to Ethereum](connect-ethereum.md)
 
-Managing your node
+[Managing your node](managing/menu.md)
