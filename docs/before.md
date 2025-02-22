@@ -52,20 +52,28 @@ Single device mode is obviously cheaper to set up, whereas dual device mode is f
 
 ### Solo Staking or Liquid Pool Staking?
 
-If you're staking Eth, you can chose between solo staking, where you put up the entire stake and reap all the rewards, or liquid pool staking, where you share the stake and the rewards with others. [This article](https://atomicwallet.io/academy/articles/should-i-stake-my-ethereum) on the Atomic Wallet website explains the difference.
+If you're staking Eth, you can choose between solo staking, where you put up the entire stake and reap all the rewards, or liquid pool staking, where you share the stake and the rewards with others. [This article](https://atomicwallet.io/academy/articles/should-i-stake-my-ethereum) on the Atomic Wallet website explains the difference.
 
 Not all liquid pools allow you to use your own hardware to run the node. Examples of those who allow this include [Rocketpool](https://rocketpool.net) and [Ether.fi](https://www.ether.fi).  
 
 ### Use your own Hardware or Request the Welcome Box?
 
-Web3 Pi offers a welcome box that contains all the hardware you need to run a node. You may, of course, already have a Raspberry Pi that you wish to run a node. This is fine, but you need to check the Prerequisites Guide to make sure you have everything you need.
+Web3 Pi offers a welcome box that contains all the hardware you need to run a node. You may, of course, already have a Raspberry Pi that you wish to use to run your node. This is fine, but you need to check the Prerequisites Guide to make sure you have everything you need.
 
 You can also opt to add an LCD display to your Raspberry Pi. You'll find the details in the Prerequisites Guide.
 
 ## Next Steps
 
+- Read the [prerequisites](prerequisites.md) guide to make sure you have everything you need.
 
+- If you have obtained a Welcome Box, refer to the [instructions](welcome-box.md) here.
 
+- If you're tech-savvy and you simply want to set up a standard single node, read the [quickstart guide](quickstart.md).
 
+- For more detailed instructions, see the [full setup guide](full-setup/menu.md).
+
+- When you're ready to connect to Ethereum, read the [connection guide](ethereum-connect.md).
+
+- Refer to the 'Managing your Node' [menu](managing/menu.md) to learn how to configure, manage, monitor and upgrade your node.
 
 

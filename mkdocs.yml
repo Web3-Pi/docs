@@ -75,11 +75,9 @@ copyright: |
 
 
 nav:
-  - Menu 1:
+  - Documentation Index:
       - Web3 Pi: 'index.md'
-  - Menu 2:
-      - Introduction: 'menu2.md'
-  - Menu 3:
-      - Introduction: 'menu3.md'
-  - Menu 4:
-      - Introduction: 'menu4.md'
+  - Full Setup Guide:
+      - Introduction: 'full-setup/menu.md'
+  - Managing Your Node:
+      - Introduction: 'managing/menu.md'
