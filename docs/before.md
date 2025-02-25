@@ -77,7 +77,3 @@ You can also opt to add an LCD display to your Raspberry Pi. You'll find the det
 - Refer to the 'Managing your Node' [menu](managing/menu.md) to learn how to configure, manage, monitor and upgrade your node.
 
 [Return to Main Menu](index.md)
-
-
-
-
