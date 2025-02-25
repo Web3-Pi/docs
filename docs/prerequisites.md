@@ -141,9 +141,9 @@ For Ethereum **Staking**, power backup is critical. A reliable power supply mini
 
 [The Welcome Box](./welcome-box.md) contains all the hardware you need to run a single node or one of a dual node pair.
 
-Optionally, you can also purchase an LCD screen for the Pi. This gives you a quick way of checking that your node is functional. [More information](./lcd-screen)
+Optionally, you can also purchase an LCD screen for the Pi. This gives you a quick way of checking that your node is functional. [More information](./lcd-screen.md)
 
-If you would prefer to use your own existing Raspberry Pi, please read the [Hardware Checklist](./hardware-checklist) to make sure you have everything you need. If you need to purchase anything further, the [Hardware Recommendations](hardware-recommendations) document will help you choose suitable additions to your existing setup.
+If you would prefer to use your own existing Raspberry Pi, please read the [Hardware Checklist](./hardware-checklist.md) to make sure you have everything you need. If you need to purchase anything further, the [Hardware Recommendations](./hardware-recommendations.md) document will help you choose suitable additions to your existing setup.
 
 [Back to Index](#index)
 
