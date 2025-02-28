@@ -41,10 +41,13 @@ You can also use a  USB to SATA adapter plus SSD 2.5" drive.
 
 **Sample links result from a quick Google search mainly for the reader's convenience & quick price reference; we invite you to do your own research and find local hardware providers.*
 
-[USB Drive](usb-drive)
-[NVMe Drive](nvme-Drive)
-[NVMe Hat](nvme-hat)
-[USB to NVMe adapters](usb-to-nvme-adapters)
+[USB Drive](#usb-drive)
+
+[NVMe Drive](#nvme-Drive)
+
+[NVMe Hat](#nvme-hat)
+
+[USB to NVMe adapters](#usb-to-nvme-adapters)
 
 [Back to index](#index)
 
@@ -138,7 +141,7 @@ A few examples:
 - [SanDisk Ultra](https://www.westerndigital.com/en-ap/products/memory-cards/sandisk-ultra-uhs-i-microsd-120-mbps?sku=SDSQUA4-064G-GN6MA)
 - [SanDisk Max Endurance](https://www.westerndigital.com/en-ap/products/memory-cards/sandisk-max-endurance-uhs-i-microsd?sku=SDSQQVR-064G-GN6IA)
 - [Kingston Canvas React](https://www.tomshardware.com/best-picks/raspberry-pi-microsd-cards#section-fastest-booting-raspberry-pi-microsd)
-- [Samsung 64 Evo Plus]([Samsung Memory - dyski SSD, dyski PSSD, karty pamięci | Samsung Polska](https://www.samsung.com/pl/memory-storage/memory-card/evo-plus-128gb-microsd-card-2021-mb-mc128ka-eu/))
+- [Samsung 64 Evo Plus](Samsung Memory - dyski SSD, dyski PSSD, karty pamięci | Samsung Polska](https://www.samsung.com/pl/memory-storage/memory-card/evo-plus-128gb-microsd-card-2021-mb-mc128ka-eu/))
 - [Lexar Professional 1000X](www.amazon.com/Lexar-Professional-1000x-UHS-II-LSD64GCRBNA1000/dp/B00PLENZX4)
 
 [**More Information**](https://www.tomshardware.com/best-picks/raspberry-pi-microsd-cards)
@@ -149,7 +152,7 @@ A few examples:
 
 ### Enclosures for Raspberry Pi 5
 
-| Brand/Model                  | Link*                                                                                                                                                                                                                                                                                                                               |
+| Brand/Model                  | Link                                                                                                                                                                                                                                                                                                                                |
 | ---------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Argon NEO 5 M.2 NVMe**     | [Product page](https://argon40.com/products/argon-neo-5-m-2-nvme-for-raspberry-pi-5?_pos=1&_psq=Argon+NEO+5+M.2+NVME+PCIE+Case+for+Raspberry+Pi+5&_ss=e&_v=1.0)<br>[Shop](https://botland.store/raspberry-pi-5-cases/24397-argon-neo-5-m2-nvme-pcie-case-for-raspberry-pi-5-with-fan-and-heatsink-aluminum-black-860011360049.html) |
 | **Argon NEO 5**(Recommended) | [Product page](https://argon40.com/products/argon-neo-case-for-raspberry-pi-5)<br>[Shop](https://botland.store/raspberry-pi-5-cases/24095-argon-neo-5-bred-case-for-raspberry-pi-5-with-fan-black-and-red-6974297861856.html)                                                                                                       |
@@ -158,6 +161,10 @@ A few examples:
 
 ### Enclosures for Raspberry Pi 4B
 
-
+| Brand/Model          | Comment                                                                                                                                                                                              | Link                                                                                                                                                                                                                                                                                                           |
+| -------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Case justPi**      | [assembly instructions](https://www.youtube.com/watch?v=qEsSK9WIRM4)                                                                                                                                 | [Product page](https://botland.store/raspberry-pi-4b-cases/15106-case-justpi-for-raspberry-pi-4b-aluminum-with-dual-fan-black-lt-4b02-5903351242660.html)<br>[Shop](https://botland.store/raspberry-pi-4b-cases/15106-case-justpi-for-raspberry-pi-4b-aluminum-with-dual-fan-black-lt-4b02-5903351242660.html) |
+| **Argon One V2**     | Fan control needs additional configuration as described by the manufacturer [manual](https://cdn.shopify.com/s/files/1/0556/1660/2177/files/AR1_PI4-V2_INSTRUCTION_MANUAL_20200922.pdf?v=1646125923) | [Product page](https://argon40.com/products/argon-one-v2-case-for-raspberry-pi-4)<br>[Shop](https://botland.store/raspberry-pi-4b-cases/15391-raspberry-pi-4-aluminum-case-with-fan-argon-one-v2-grey-5904422301347.html)                                                                                      |
+| **Argon One V2 m.2** | Fan control needs additional configuration as described by the manufacturer [manual](https://cdn.shopify.com/s/files/1/0556/1660/2177/files/AR1_NVME_INSTRUCTION_MANUAL_20220531.pdf?v=1659581194)   | [Product page](https://argon40.com/products/argon-one-m-2-case-for-raspberry-pi-4)<br>[Shop](https://botland.store/raspberry-pi-4b-cases/17273-raspberry-pi-4-aluminum-case-with-fan-argon-one-m2-grey-5904422328597.html)                                                                                     |
 
 [Back to index](#index)
