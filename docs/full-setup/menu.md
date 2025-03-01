@@ -1,1 +1,17 @@
-## Page under construction
+# Web 3 Pi: Setup Guide
+
+This guide covers both hardware and software setup. Since flashing the boot card is time consuming, you may like to begin this process, and assemble the hardware while it's in progress.
+
+After setup, the node takes about 19 hours to sync with Ethereum, so allow for this process, which will need to be monitored from time to time.
+
+[Flashing the boot card: Single Node](./software-single.md)
+
+[Flashing the boot card: Dual Node](./software-dual.md)
+
+[Hardware setup](./hardware.md)
+
+[Initiating and Monitoring the Installation](./monitoring-installation.md)
+
+
+
+[Back to Main Index](../index.md)
