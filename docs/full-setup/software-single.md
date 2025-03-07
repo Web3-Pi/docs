@@ -114,7 +114,9 @@ Download the Web 3 Pi Imager from the latest release of the [Github Repository](
 
 2. Open the Web3 Pi Imager on your PC and choose 'Single Mode Device'. 
 
-<img title="" src="../img/w3_imager1.jpg" alt="" width="369" data-align="center">Next you'll be asked for some configuration details:
+<img title="" src="../img/w3_imager1.jpg" alt="" width="369" data-align="center">
+
+Next you'll be asked for some configuration details:
 
 <img title="" src="../img/w3_imager2.jpg" alt="" width="369" data-align="center">
 
