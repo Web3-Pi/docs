@@ -6,9 +6,9 @@ The hardware assembly instructions are based on the Welcome Box, but will also b
 
 After setup, the node takes about 19 hours to sync with Ethereum, so allow for this process, which will need to be monitored from time to time.
 
-[Flashing the boot card: Single Node](./software-single.md)
+[Flashing the boot card: Single Device Node](./software-single.md)
 
-[Flashing the boot card: Dual Node](./software-dual.md)
+[Flashing the boot card: Dual Device Node](./software-dual.md)
 
 [Hardware assembly](./hardware.md)
 
