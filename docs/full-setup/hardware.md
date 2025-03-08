@@ -5,7 +5,8 @@ This assembly guide is primarily aimed at assembling the components included in 
 Please also see the [video instructions](https://www.youtube.com/watch?v=-3Bj0rSCskk) for more information.
 
 <img title="" src="../img/hardware0.jpg" alt="" width="400" data-align="center">
-<sub>Source of case images and assembly diagrams: [Argon Neo Manual](https://argon40.com/blogs/argon-resources/argon-neo-5-m-2-nvme-pcie-case-for-rpi-5-manual)</sub>
+
+Source of case images and assembly diagrams: [Argon Neo Manual](https://argon40.com/blogs/argon-resources/argon-neo-5-m-2-nvme-pcie-case-for-rpi-5-manual)
 
 ## Argon Neo Parts List
 
@@ -13,7 +14,7 @@ Please also see the [video instructions](https://www.youtube.com/watch?v=-3Bj0rS
 
 ## Assembly Instructions
 
-Some partsarein two zipper bags. Open them and carefully pur out the contents. You will find:
+Some parts are in two zipper bags. Open them and carefully pour out the contents. You will find:
 
 - Screws (Two types)
 
@@ -21,22 +22,24 @@ Some partsarein two zipper bags. Open them and carefully pur out the contents. Y
 
 - Two ribbon cables. You need one: the other is a spare.
 
-| Step  | Instructions                                                         |                                                                                   |
-| ----- | -------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| **1** | Place the thermal pads on the CPU, RP1, RAM and PMIC chip of the RP5 | <img title="" src="../img/hardware1.jpg" alt="" width="400" data-align="center">  |
-|       |                                                                      | <img title="" src="../img/hardware2.jpg" alt="" width="400" data-align="center">  |
-|       |                                                                      | <img title="" src="../img/hardware2a.jpg" alt="" width="400" data-align="center"> |
-|       |                                                                      | <img title="" src="../img/hardware3.jpg" alt="" width="400" data-align="center">  |
-|       |                                                                      | <img title="" src="../img/hardware3b.jpg" alt="" width="400" data-align="center"> |
-|       |                                                                      | <img title="" src="../img/hardware4.jpg" alt="" width="400" data-align="center">  |
-|       |                                                                      | <img title="" src="../img/hardware5.jpg" alt="" width="400" data-align="center">  |
-|       |                                                                      | <img title="" src="../img/hardware6.jpg" alt="" width="400" data-align="center">  |
-|       |                                                                      | <img title="" src="../img/hardware7.jpg" alt="" width="400" data-align="center">  |
-|       |                                                                      | <img title="" src="../img/hardware8.jpg" alt="" width="400" data-align="center">  |
-|       |                                                                      | <img title="" src="../img/hardware9.jpg" alt="" width="400" data-align="center">  |
-|       |                                                                      | <img title="" src="../img/hardware10.jpg" alt="" width="400" data-align="center"> |
-|       |                                                                      | <img title="" src="../img/hardware11.jpg" alt="" width="400" data-align="center"> |
-|       |                                                                      | <img title="" src="../img/hardware12.jpg" alt="" width="400" data-align="center"> |
-|       |                                                                      | <img title="" src="../img/hardware13.jpg" alt="" width="400" data-align="center"> |
-|       |                                                                      | <img title="" src="../img/hardware14.jpg" alt="" width="400" data-align="center"> |
-|       |                                                                      | <img title="" src="../img/hardware15.jpg" alt="" width="400" data-align="center"> |
+
+
+| Instructions                                                                   |                                                                                   |
+| ------------------------------------------------------------------------------ | --------------------------------------------------------------------------------- |
+| Place the thermal pads<br> on the CPU, RP1, RAM <br> and  PMIC chip of the RP5 | <img title="" src="../img/hardware1.jpg" alt="" width="400" data-align="center">  |
+|                                                                                | <img title="" src="../img/hardware2.jpg" alt="" width="400" data-align="center">  |
+|                                                                                | <img title="" src="../img/hardware2a.jpg" alt="" width="400" data-align="center"> |
+|                                                                                | <img title="" src="../img/hardware3.jpg" alt="" width="400" data-align="center">  |
+|                                                                                | <img title="" src="../img/hardware3b.jpg" alt="" width="400" data-align="center"> |
+|                                                                                | <img title="" src="../img/hardware4.jpg" alt="" width="400" data-align="center">  |
+|                                                                                | <img title="" src="../img/hardware5.jpg" alt="" width="400" data-align="center">  |
+|                                                                                | <img title="" src="../img/hardware6.jpg" alt="" width="400" data-align="center">  |
+|                                                                                | <img title="" src="../img/hardware7.jpg" alt="" width="400" data-align="center">  |
+|                                                                                | <img title="" src="../img/hardware8.jpg" alt="" width="400" data-align="center">  |
+|                                                                                | <img title="" src="../img/hardware9.jpg" alt="" width="400" data-align="center">  |
+|                                                                                | <img title="" src="../img/hardware10.jpg" alt="" width="400" data-align="center"> |
+|                                                                                | <img title="" src="../img/hardware11.jpg" alt="" width="400" data-align="center"> |
+|                                                                                | <img title="" src="../img/hardware12.jpg" alt="" width="400" data-align="center"> |
+|                                                                                | <img title="" src="../img/hardware13.jpg" alt="" width="400" data-align="center"> |
+|                                                                                | <img title="" src="../img/hardware14.jpg" alt="" width="400" data-align="center"> |
+|                                                                                | <img title="" src="../img/hardware15.jpg" alt="" width="400" data-align="center"> |
