@@ -111,7 +111,33 @@ If you're using PuTTY, you'd configure it as shown in the image below.
 
 <img src="../img/install7.jpg" title="" alt="" data-align="center">
 
-You now have a fully operational Ethereum node.
+
+
+### Network Configuration Verification
+
+To check that the network is working correctly, SSH into the Rasberry Pi and run a `ping` command:
+
+```
+ping -c 4 google.com
+```
+
+You should see the following response:
+
+```
+PING google.com (142.250.186.206) 56(84) bytes of data.
+64 bytes from waw07s05-in-f14.1e100.net (142.250.186.206): icmp_seq=1 ttl=59 time=2.83 ms
+64 bytes from waw07s05-in-f14.1e100.net (142.250.186.206): icmp_seq=2 ttl=59 time=3.62 ms
+64 bytes from waw07s05-in-f14.1e100.net (142.250.186.206): icmp_seq=3 ttl=59 time=2.23 ms
+64 bytes from waw07s05-in-f14.1e100.net (142.250.186.206): icmp_seq=4 ttl=59 time=3.73 ms
+
+--- google.com ping statistics ---
+4 packets transmitted, 4 received, 0% packet loss, time 3005ms
+rtt min/avg/max/mdev = 2.229/3.102/3.734/0.614 ms
+```
+
+You now have a fully operational Ethereum node running Geth and Nimbus.
+
+For more information on managing, configuring and troubleshooting your node, please refer to the [Managing Your Node](../managing/menu.md) menu.
 
 You may like to look into also running the Web3 Pi Reverse Proxy: https://docs.proxy.web3pi.io/
 
