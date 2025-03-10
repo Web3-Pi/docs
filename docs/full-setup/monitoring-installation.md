@@ -70,7 +70,7 @@ At this point, the software is installed, and it then begins syncing the node. Y
 
 To access Grafana, click the link labeled 'Grafana Monitoring' in the page shown above.
 
-If everything the installation was successful, you should see the login panel as shown below. 
+If the installation was successful, you should see the login panel as shown below. 
 
 The default username is 'admin', and the password is 'admin'. You will be
 required to change the password upon first login.
@@ -81,15 +81,15 @@ You'll then see the Grafana dashboard as shown below.
 
 <img src="../img/install4.jpg" title="" alt="" data-align="center">
 
-<img src="../img/install5.jpg" title="" alt="" data-align="center">
-
-You can access this dashboard on http://eop-1.local:3000 (or the hostname you configured) at any time to monitor the status of your node.
+You can access this dashboard on [http://eop-1.local:3000](http://eop-1.local:3000) (or the hostname you configured) at any time to monitor the status of your node.
 
 You will see the node status and the status of each client near the top on the left.
 
 While the node is syncing, **pay attention to the status of the consensus and execution clients. Initially, both will be 'inactive'.**
 
-In the next step, the execution client will change to 'waiting', then both will transition to the 'syncing' state.
+Next, the execution client will change to 'waiting', then both will transition to the 'syncing' state.
+
+<img src="../img/install5.jpg" title="" alt="" data-align="center">
 
 At this point, the blockchain synchronization process has begun, and will take approximately 19 hours.
 
@@ -99,7 +99,7 @@ When syncing has completed, the Grafana status will look like this:
 
 <img src="../img/install6.jpg" title="" alt="" data-align="center">
 
-You'll notice that bot the execution and the consensus client have turned green.
+You'll notice that both the execution and the consensus client have turned green.
 
 You'll now be able to use SSH to access the Raspberry Pi on `<hostname>.local`, for example `eop-1.local`. You can also use the IP address if you know it.
 
