@@ -15,3 +15,12 @@ After setup, the node takes about 19 hours to sync with Ethereum, so allow for t
 [Initiating and Monitoring the Installation](./monitoring-installation.md)
 
 [Back to Main Index](../index.md)
+
+## 
+
+## ⚠️Disclaimer ⚠️
+
+The Web3 Pi is a community driven project and it is currently in its early development phase (Proof of Concept) and consists of components provided by third-party manufacturers,including but not limited to Raspberry Pi, enclosures, power supplies, storage drives,microSD cards, etc. While the Web3 Pi team rigorously tests all functionalities, we cannot guarantee the performance or compatibility of individual components or solutions at this stage.
+
+
+By engaging with Web3 Pi products during this early phase of development, the “Early Bird” user assumes full responsibility for any interactions with these products. The use of Web3 Pi solutions is at the user’s own risk, and the team does not bear any liability for issues that may arise during this period of initial testing and experimentation.

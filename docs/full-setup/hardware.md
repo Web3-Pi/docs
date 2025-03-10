@@ -2,6 +2,8 @@
 
 This assembly guide is primarily aimed at assembling the components included in the Welcome Box, but will also be useful for anyone assembling their own hardware.
 
+⚠️ To avoid errors during the first setup, please follow the instructions precisely. ⚠️
+
 Please also see the [video instructions](https://www.youtube.com/watch?v=-3Bj0rSCskk) for more information.
 
 If you have a Welcome box, unpack the contents and check them against the components listed [here](../welcome-box.md).
@@ -52,4 +54,4 @@ Installation requires the network and takes about 19 hours to complete.
 
 [Return to Setup menu](./menu.md)
 
-[Return to Documentaion Index](../index.md)
+[Return to Documentation Index](../index.md)

@@ -6,6 +6,8 @@ You can use a Linux, Mac or Windows PC to flash the boot card using a USB SD Car
 
 On Linux and MacOS, you'll use the official Raspberry Pi imager to flash the card. There is a Web 3 Pi imager available for Windows.
 
+⚠️ To avoid errors during the first setup, please follow the instructions precisely. ⚠️s
+
 ## Index
 
 [Instructions for Linux and MacOS](#linux-and-macos)
@@ -150,7 +152,9 @@ Click 'Next' from the main configuration screen.
 
 Your boot card has now been created successfully. 
 
-Once your hardware has been assembled, you can proceed with the installation.
+Pressing 'Next' will attempt to connect to the Raspberry Pi to monitor the installation. If you're not yet ready to start the installation, you can monitor it later as described in the  [installation and monitoring](./monitoring-installation.md) guide. For now, click 'Cancel' and 'Finish'.
+
+Once your hardware has been assembled, you can proceed with the [installation](./monitoring-installation.md).
 
 [Back to Index](#index)
 
@@ -179,6 +183,9 @@ bnm=true
 
 #Execution endpoint address
 exec_url=http://localhost:8551
+
+# Ethereum network: mainnet/holesky/sepolia
+eth_network=mainnet
 
 [geth]
 geth_port=30303
@@ -215,6 +222,15 @@ The services are:
 - **bsm**: The [Basic System Monitor](https://github.com/Web3-Pi/basic-system-monitor) that makes available operating system diagnostics such as temperature and CPU/RAM usage.
 
 - **bnm**: The [Basic Node Monitor](https://github.com/Web3-Pi/basic-eth2-node-monitor) writes node monitoring information to the Influx database for use by Grafana.
+
+Optionally, the file may contain a setting that specifies the Ethereum network that the software will connect to. If this line doesn't exist, the default is Ethereum **mainnet.**
+
+If you wish to connect to one of the test networks, you can add or amend these lines accordingly:
+
+```
+# Ethereum network: mainnet/holesky/sepolia
+eth_network=sepolia
+```
 
 The file also configures the ports for the various services. It's not recommended to change these.
 
