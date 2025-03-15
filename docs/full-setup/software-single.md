@@ -1,12 +1,14 @@
 # Web 3 Pi: Flashing the Boot Card: Single Device Node
 
-To create a boot card, you'll use the Web3 Pi image, which contains a preconfigured Linux distribution capable of running an **Ethereum Node**.
+In this step, you'll create a boot card for the Raspberry Pi containing the Web3 Pi software. 
+
+You'll use the Web3 Pi image, which contains a preconfigured Linux distribution capable of running an **Ethereum Node**.
 
 You can use a Linux, Mac or Windows PC to flash the boot card using a USB SD Card Reader/Writer.
 
 On Linux and MacOS, you'll use the official Raspberry Pi imager to flash the card. There is a Web 3 Pi imager available for Windows.
 
-⚠️ To avoid errors during the first setup, please follow the instructions precisely. ⚠️s
+⚠️ To avoid errors during the first setup, please follow the instructions precisely. ⚠️
 
 ## Index
 
@@ -50,6 +52,12 @@ Select 'Choose OS' and scroll down to 'Custom Image' at the bottom. This will op
 
 4. Select 'Choose Storage'. This shows a list of removable devices available. Provided your SD Card reader/writer is mounted, you will be able to select it.
 
+## ⚠️
+
+**Warning: All data on the device you select will be overwritten. Make sure you choose the right device. Always check the storage capacity, which should be either 32GB or 64GB for the microSD card** 
+
+## ⚠️
+
 <img title="" src="../img/ChooseStorage.jpg" alt="" width="355" data-align="center">
 
 5. Click 'Next'. You'll see a pop-up dialog box as shown below. Choose 'Edit Settings.'
@@ -66,7 +74,7 @@ On the **General** tab:
 
 - Hostname: We suggest using eop-1. If you choose another host name, it must be unique within your network, and you will need to keep a note of it in a safe place.
 
-- Set the user name and password to 'raspberry'. The Web3 Pi software expects these settings, and won't work if you use something different.
+- Set the user name and password to 'raspberry'. The Web3 Pi software expects these settings, and won't work if you use something different. **Note:** After installation, this username and password will be changed to 'ethereum'.
 
 - Unless you will be connecting via wireless LAN, leave the Wireless LAN settings unchecked. We strongly advise using Ethernet cables with DHCP rather than wireless LAN, which can be unreliable.
 
@@ -137,6 +145,12 @@ Click 'Next' from the main configuration screen.
 4. Next, you'll see a list of removable devices available on your PC. Provided your SD Card reader/writer is mounted, you will be able click it to select it.
 
 <img title="" src="../img/w3_imager4.jpg" alt="" width="369" data-align="center">
+
+## ⚠️
+
+**Warning: All data on the device you select will be overwritten. Make sure you choose the right device. Always check the storage capacity, which should be either 32GB or 64GB for the microSD card**
+
+## ⚠️
 
 5. You're now ready to write to the SD card. If you're sure all your options are correct, and the SD card can be overwritten, click 'Yes' in the dialog box below.
 
