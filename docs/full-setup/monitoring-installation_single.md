@@ -1,4 +1,4 @@
-# Web3 Pi Installation Monitoring Guide
+# Web3 Pi: Installation Monitoring Guide - Single Device Node
 
 Once you have flashed the boot card and assembled the hardware, you're ready to install and activate Web3 Pi.
 
@@ -60,9 +60,7 @@ The page contains:
 
 The installation is divided into stages.
 
-
 The installation is complete when you see: "STAGE 100: Installation completed.
-
 
 At this point, the software is installed, and it then begins syncing the node. You can monitor the sync process using the Grafana dashboard.
 
@@ -111,8 +109,6 @@ If you're using PuTTY, you'd configure it as shown in the image below.
 
 <img src="../img/install7.jpg" title="" alt="" data-align="center">
 
-
-
 ### Network Configuration Verification
 
 To check that the network is working correctly, SSH into the Rasberry Pi and run a `ping` command:
@@ -140,8 +136,6 @@ You now have a fully operational Ethereum node running Geth and Nimbus.
 For more information on managing, configuring and troubleshooting your node, please refer to the [Managing Your Node](../managing/menu.md) menu.
 
 You may like to look into also running the Web3 Pi Reverse Proxy: https://docs.proxy.web3pi.io/
-
-
 
 [Return to Menu](./menu.md)
 

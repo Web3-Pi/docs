@@ -46,11 +46,11 @@ You'll need to download:
 
 <img title="" src="../img/rp_choose_device.jpg" alt="" width="356" data-align="center">
 
-Select 'Choose OS' and scroll down to 'Custom Image' at the bottom. This will open a file chooser, so you can browse to the Web 3 Pi image you downloaded, and select it.
+4. Select 'Choose OS' and scroll down to 'Custom Image' at the bottom. This will open a file chooser, so you can browse to the Web 3 Pi image you downloaded, and select it.
 
 <img title="" src="../img/rp_choose_os.jpg" alt="" width="356" data-align="center">
 
-4. Select 'Choose Storage'. This shows a list of removable devices available. Provided your SD Card reader/writer is mounted, you will be able to select it.
+5. Select 'Choose Storage'. This shows a list of removable devices available. Provided your SD Card reader/writer is mounted, you will be able to select it.
 
 ## ⚠️
 
@@ -86,7 +86,7 @@ On the **Services** tab:
 
 On the **Options** tab:
 
-- Ensure 'Eject Media when Finished' and 'Enable Telemetry' are unchecked. The reason you don't want to eject the media when finished is because you will need to check the configuration file after you've flashed the card.
+- Ensure 'Eject Media when Finished' and 'Enable Telemetry' are unchecked. The reason you don't want to eject the media when finished is because you may need to edit the configuration file after you've flashed the card.
 
 Click 'Save' to continue to the next step.
 
@@ -114,7 +114,7 @@ Once your hardware has been assembled, you can proceed with the installation.
 
 ## Windows
 
-Download the Web 3 Pi Imager from the latest release of the [Github Repository]([Release Web3 Pi image - v0.7.6 · Web3-Pi/Ethereum-On-Raspberry-Pi · GitHub](https://github.com/Web3-Pi/Ethereum-On-Raspberry-Pi/releases/latest).
+Download the Web 3 Pi Imager from our [webpage]((https://www.web3pi.io/products/imager)
 
 ### Writing the Image: Windows
 
@@ -126,7 +126,7 @@ Download the Web 3 Pi Imager from the latest release of the [Github Repository](
 
 <img title="" src="../img/w3_imager1.jpg" alt="" width="369" data-align="center">
 
-Next you'll be asked for some configuration details:
+3. Next you'll be asked for some configuration details:
 
 <img title="" src="../img/w3_imager2.jpg" alt="" width="369" data-align="center">
 
@@ -166,6 +166,8 @@ Click 'Next' from the main configuration screen.
 
 Your boot card has now been created successfully. 
 
+**Note: Windows may attempt  to open the drive at this point. If so, it will, in fact, try to open two drives, since the card now has two partitions. It won't recognize the formatting on the second partition, and will request to format it. Cancel this request!**
+
 Pressing 'Next' will attempt to connect to the Raspberry Pi to monitor the installation. If you're not yet ready to start the installation, you can monitor it later as described in the  [installation and monitoring](./monitoring-installation.md) guide. For now, click 'Cancel' and 'Finish'.
 
 Once your hardware has been assembled, you can proceed with the [installation](./monitoring-installation.md).
@@ -176,9 +178,15 @@ Once your hardware has been assembled, you can proceed with the [installation](.
 
 Web3 Pi is preconfigured with working settings. However, users with a good understanding of Ethereum nodes and software configuration may like to adjust the configuration before installation.
 
-Web3 Pi image uses the classic `boot/firmware/config.txt` as its **config** file. Once your boot card has been created, and before you eject the media, you can edit this with any text editor.
+The imager creates a `config.txt` file. Once your boot card has been created, and before you eject the media, you can edit this with any text editor.
 
-After writing the image to the SD card, you should see a new drive in your PC. You will find the `config.txt` file in this drive. This is, in fact, the Raspberry Pi configuration, but Web3 Pi adds its own sections to it.
+After writing the image to the SD card, there will be two partitions on the card:
+
+- `boot` - this is `FAT32` and will be visible from Windows, Mac and Linux
+
+- `root` - this is `exFAT`.  This should be visible in Linux.
+
+The `config.txt` will be in the `boot` partition. This is, in fact, the Raspberry Pi configuration, but Web3 Pi adds its own sections to it.
 
 The sections relevant to Web3 Pi look like this:
 
