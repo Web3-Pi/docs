@@ -10,9 +10,7 @@ Web3 Pi provides simple, step-by-step instructions to build your own Ethereum no
 
 [The Welcome Box](welcome-box.md)
 
-[Quickstart Guide](quickstart.md)
-
-[Full setup guide](full-setup/menu.md)
+[Setup guide](full-setup/menu.md)
 
 [Connecting to Ethereum](connect-ethereum.md)
 

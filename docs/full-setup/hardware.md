@@ -69,6 +69,8 @@ Take care when removing the Raspberry Pi from the box, and avoid thermostatic da
 
 You have now completed the hardware assembly. 
 
+If you wish, you can connect a monitor to the Raspberry Pi, plugging the HDMI cable into the HDMI port.
+
 ## ⚠️
 
 **Please don't turn on the power until you've connected to the network as described in the installation and monitoring guide. Web3 Pi will attempt to carry out the installation as soon as power is connected.**

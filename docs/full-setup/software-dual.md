@@ -43,7 +43,7 @@ You'll need to download:
 
 ### Writing the Images: Linux and MacOS
 
-You'll need two microSD cards and a reader. Connect the reader to your PC: you may need a microSD to SD adaptor.
+You'll need two microSD cards and a reader/writer. Connect the reader to your PC. You may need a microSD to SD adaptor.
 
 <img src="../img/sd_reader_and_card.jpg" title="" alt="" data-align="center">
 
@@ -129,7 +129,7 @@ You can now proceed with the installation as described in the [Installation Guid
 
 ## Windows
 
-Download the Web 3 Pi Imager from our [webpage]((https://www.web3pi.io/products/imager)
+Download the Web 3 Pi Imager from our [webpage](https://www.web3pi.io/products/imager)
 
 ### Writing the Image: Windows
 
@@ -170,13 +170,13 @@ When done, click 'Save'. Click 'Next' on the main settings screen.
 
 4. You'll see a list of removable devices available on your PC. Provided your SD Card reader/writer is mounted, you will be able click it to select it. Make sure the SD card for the Execution Client is in the reader.
 
-<img title="" src="../img/storage_execution.jpg" alt="" data-align="center" width="396">
-
-⚠️
+## ⚠️
 
 **Warning: All data on the device you select will be overwritten. Make sure you choose the right device. Always check the storage capacity, which should be either 32GB or 64GB for the microSD card**
 
 ## ⚠️
+
+<img title="" src="../img/storage_execution.jpg" alt="" data-align="center" width="396">
 
 5. You're now ready to write to the SD card. If you're sure all your options are correct, and the SD card can be overwritten, click 'Yes' in the dialog box below.
 
@@ -192,17 +192,17 @@ When done, click 'Save'. Click 'Next' on the main settings screen.
 
 8. You will then be asked to select the storage device for writing the Consensus Client, as per the screen below.
 
-<img title="" src="../img/storage_consensus.jpg" alt="" data-align="center" width="375"><img title="" src="../img/storage_consensus.jpg" alt="" data-align="center" width="375">
-
-⚠️
+## ⚠️
 
 **Warning: All data on the device you select will be overwritten. Make sure you choose the right device. Always check the storage capacity, which should be either 32GB or 64GB for the microSD card**
 
 ## ⚠️
 
+<img title="" src="../img/storage_consensus.jpg" alt="" data-align="center" width="375">
+
 9. You're now ready to write to the SD card. If you're sure all your options are correct, and the SD card can be overwritten, click 'Yes' in the dialog box below.
 
-<img title="" src="../img/w3-imager5.jpg" alt="" data-align="center" width="294"><img title="" src="../img/w3-imager5.jpg" alt="" data-align="center" width="294">
+<img title="" src="../img/w3-imager5.jpg" alt="" data-align="center" width="294">
 
 10. The imager will then begin flashing, then verifying, the card. Don't interrupt this process at any stage. It may take some time, depending on the speed of your SD Card Reader/Writer. The screen will show progress as per the image below.
 
@@ -223,8 +223,6 @@ Your boot cards have now been created successfully.
 You can now follow the [Installation Guide](./monitoring-installation__dual.md) to install Web3 Pi on the two machines.
 
 [Back to Index](#index)
-
-
 
 ## Initial Configuration
 
