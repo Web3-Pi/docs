@@ -115,7 +115,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 Warning: Permanently added 'eop-exec.local' (ED25519) to the list of known hosts.Connection closed by 192.168.X.X port 22scp: Connection closed
 ```
 
-5. The `scp` command will ask you for password for the *eop-exec.local* device. Use the new password you set when you tested the login.
+5. The `scp` command will ask you for the password for the *eop-exec.local* device. Use the new password you set when you tested the login.
 
 After executing the above action, the devices can be connected and run as a single **Ethereum Node**.
 
@@ -136,7 +136,7 @@ sudo nano /boot/firmware/config.txt
 
 5. Save the file by pressing Ctrl+X, then confirm by pressing `y`.
 
-6. Restart the system using command:
+6. Restart the system using the command:
 
 ```shell
 sudo ./scripts/reboot.sh
@@ -160,7 +160,7 @@ Log in via SSH to each of the Raspberry Pi devices, and run the command:
 ping -c 4 google.com
 ```
 
-You should see the following response, if the network is working correctly:
+You should see the following response if the network is working correctly:
 
 ```shell
 PING google.com (142.250.186.206) 56(84) bytes of data.64 bytes from waw07s05-in-f14.1e100.net (142.250.186.206): icmp_seq=1 ttl=59 time=2.83 ms64 bytes from waw07s05-in-f14.1e100.net (142.250.186.206): icmp_seq=2 ttl=59 time=3.62 ms64 bytes from waw07s05-in-f14.1e100.net (142.250.186.206): icmp_seq=3 ttl=59 time=2.23 ms64 bytes from waw07s05-in-f14.1e100.net (142.250.186.206): icmp_seq=4 ttl=59 time=3.73 ms--- google.com ping statistics ---4 packets transmitted, 4 received, 0% packet loss, time 3005msrtt min/avg/max/mdev = 2.229/3.102/3.734/0.614 ms
@@ -175,3 +175,7 @@ At this point, the devices are configured and ready to host an **Ethereum Node*
 Unless you've disabled them in `config.txt`,  the Geth and Nimbus services will start automatically, and will sync with the network.
 
 For more information on configuring or modifying elements of the Web3 Pi installation, please see the [Configuration Guide](../managing/configuration).
+
+[Back to Menu](./menu.md)
+
+[Back to Main Index](../index.md)
