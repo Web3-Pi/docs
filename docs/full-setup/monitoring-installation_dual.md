@@ -150,7 +150,7 @@ The system will reboot, then start the Geth service automatically.
 
 ### Grafana Monitoring verification
 
-Grafana, InfluxDB, and Basic Node Monitor (BNM) are disabled in pair devices mode. After you have manually configured them, they can be enabled and used. Please see the [Configuration Guide](../managing/configuration.md) and the [Tuning, Monitoring and Maintenance Guide](../managing/tuning-monitoring-maintenance-guide.md).
+Grafana, InfluxDB, and Basic Node Monitor (BNM) are disabled in pair devices mode. After you have manually configured them, they can be enabled and used. Please see the [Configuration Guide](../managing/configuration.md) and the [Tuning, Monitoring and Maintenance Guide](../managing/tuning-monitoring-maintenance.md).
 
 ### Network configuration verification
 
