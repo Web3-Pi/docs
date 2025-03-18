@@ -174,7 +174,7 @@ At this point, the devices are configured and ready to host an **Ethereum Node*
 
 Unless you've disabled them in `config.txt`,  the Geth and Nimbus services will start automatically, and will sync with the network.
 
-For more information on configuring or modifying elements of the Web3 Pi installation, please see the [Configuration Guide](../managing/configuration).
+For more information on configuring or modifying elements of the Web3 Pi installation, please see the [Configuration Guide](../managing/configuration.md).
 
 [Back to Menu](./menu.md)
 
