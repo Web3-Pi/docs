@@ -71,15 +71,15 @@ You have now completed the hardware assembly.
 
 If you wish, you can connect a monitor to the Raspberry Pi, plugging the HDMI cable into the HDMI port.
 
-## ⚠️
+!!! note
 
-**Please don't turn on the power until you've connected to the network as described in the installation and monitoring guide. Web3 Pi will attempt to carry out the installation as soon as power is connected.**
-
-## ⚠️
+    Please don't turn on the power until you've connected to the network as described in the installation and monitoring guide. Web3 Pi will attempt to carry out the installation as soon as power is connected.
 
 Installation requires the network. Syncing will begin immediately after installation, which takes about 19 hours to complete.
 
-[Continue to Installation and Monitoring Guide](monitoring-installation.md)
+[Continue to Installation Guide - Single Device Node](monitoring-installation-single.md)
+
+[Continue to Installation Guide - Dual Device Node](monitoring-installation-dual.md)
 
 [Return to Setup menu](./menu.md)
 

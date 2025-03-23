@@ -43,7 +43,7 @@ You can also use a  USB to SATA adapter plus SSD 2.5" drive.
 
 [USB Drive](#usb-drive)
 
-[NVMe Drive](#nvme-Drive)
+[NVMe Drive](#nvme-drive)
 
 [NVMe Hat](#nvme-hat)
 
@@ -124,7 +124,7 @@ or other similar.
 
 ## SD Card Reader and Writer
 
-You will use this on your PC for flashing the boot card. Since this operation takes time, we recommend a high-speed device such as [Ugreen 2-in-1 USB 3 SD/TF]([UGREEN 2 in 1 USB SD Card Reader | UGREEN US](https://www.ugreen.com/products/ugreen-2-in-1-usb-sd-card-reader?variant=39915662803006))
+You will use this on your PC for flashing the boot card. Since this operation takes time, we recommend a high-speed device such as [Ugreen 2-in-1 USB 3 SD/TF](https://www.ugreen.com/products/ugreen-2-in-1-usb-sd-card-reader?variant=39915662803006)
 
 [Back to index](#index)
 
@@ -141,7 +141,7 @@ A few examples:
 - [SanDisk Ultra](https://www.westerndigital.com/en-ap/products/memory-cards/sandisk-ultra-uhs-i-microsd-120-mbps?sku=SDSQUA4-064G-GN6MA)
 - [SanDisk Max Endurance](https://www.westerndigital.com/en-ap/products/memory-cards/sandisk-max-endurance-uhs-i-microsd?sku=SDSQQVR-064G-GN6IA)
 - [Kingston Canvas React](https://www.tomshardware.com/best-picks/raspberry-pi-microsd-cards#section-fastest-booting-raspberry-pi-microsd)
-- [Samsung 64 Evo Plus](Samsung Memory - dyski SSD, dyski PSSD, karty pamięci | Samsung Polska](https://www.samsung.com/pl/memory-storage/memory-card/evo-plus-128gb-microsd-card-2021-mb-mc128ka-eu/))
+- [Samsung 64 Evo Plus](https://www.samsung.com/pl/memory-storage/memory-card/evo-plus-128gb-microsd-card-2021-mb-mc128ka-eu/)
 - [Lexar Professional 1000X](www.amazon.com/Lexar-Professional-1000x-UHS-II-LSD64GCRBNA1000/dp/B00PLENZX4)
 
 [**More Information**](https://www.tomshardware.com/best-picks/raspberry-pi-microsd-cards)

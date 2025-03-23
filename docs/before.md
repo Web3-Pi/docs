@@ -68,9 +68,7 @@ You can also opt to add an LCD display to your Raspberry Pi. You'll find the det
 
 - If you have obtained a Welcome Box, refer to the [instructions](welcome-box.md) here.
 
-- If you're tech-savvy and you simply want to set up a standard single node, read the [quickstart guide](quickstart.md).
-
-- For more detailed instructions, see the [full setup guide](full-setup/menu.md).
+- For more detailed setup instructions, see the [full setup guide](full-setup/menu.md).
 
 - When you're ready to connect to Ethereum, read the [connection guide](connect-ethereum.md).
 

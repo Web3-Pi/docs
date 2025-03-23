@@ -123,7 +123,7 @@ Once you've followed these instructions for both cards, your boot cards will hav
 
 For more information on the Rasberry Pi imager, visit the Raspberry Pi [official documentation](https://www.raspberrypi.com/documentation/computers/getting-started.html#raspberry-pi-imager).
 
-You can now proceed with the installation as described in the [Installation Guide](./monitoring_installation_dual.md).
+You can now proceed with the installation as described in the [Installation Guide](./monitoring-installation-dual.md).
 
 [Back to Index](#index)
 
@@ -220,7 +220,7 @@ Your boot cards have now been created successfully.
 
 **Note: Windows may attempt to open the drive at this point. If so, it will, in fact, try to open two drives, since the card now has two partitions. It won't recognize the formatting on the second partition, and will request to format it. Cancel this request!**
 
-You can now follow the [Installation Guide](./monitoring-installation__dual.md) to install Web3 Pi on the two machines.
+You can now follow the [Installation Guide](./monitoring-installation-dual.md) to install Web3 Pi on the two machines.
 
 [Back to Index](#index)
 
