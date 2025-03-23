@@ -36,37 +36,35 @@ You'll need to download:
 
 1. You'll need the microSD card and reader. Connect the reader to your PC: you may need a microSD to SD adaptor. Insert the card in the reader.
 
-<img src="../img/sd_reader_and_card.jpg" title="" alt="" data-align="center">
+<img src="/img/sd_reader_and_card.jpg" title="" alt="" data-align="center">
 
 2. Open the Raspberry Pi Imager on your PC. 
 
-<img title="" src="../img/rp_imager.jpg" alt="" width="369" data-align="center">
+<img title="" src="/img/rp_imager.jpg" alt="" width="369" data-align="center">
 
 3. Select 'Choose Device'. Select your device type from the list. If you have the Welcome Box, the device will be Raspberry Pi 5.
 
-<img title="" src="../img/rp_choose_device.jpg" alt="" width="356" data-align="center">
+<img title="" src="/img/rp_choose_device.jpg" alt="" width="356" data-align="center">
 
 4. Select 'Choose OS' and scroll down to 'Custom Image' at the bottom. This will open a file chooser, so you can browse to the Web 3 Pi image you downloaded, and select it.
 
-<img title="" src="../img/rp_choose_os.jpg" alt="" width="356" data-align="center">
+<img title="" src="/img/rp_choose_os.jpg" alt="" width="356" data-align="center">
 
 5. Select 'Choose Storage'. This shows a list of removable devices available. Provided your SD Card reader/writer is mounted, you will be able to select it.
+   
+!!! note
+   
+    Warning: All data on the device you select will be overwritten. Make sure you choose the right device. Always check the storage capacity, which should be either 32GB or 64GB for the microSD card
 
-## ⚠️
-
-**Warning: All data on the device you select will be overwritten. Make sure you choose the right device. Always check the storage capacity, which should be either 32GB or 64GB for the microSD card** 
-
-## ⚠️
-
-<img title="" src="../img/ChooseStorage.jpg" alt="" width="355" data-align="center">
+<img title="" src="/img/ChooseStorage.jpg" alt="" width="355" data-align="center">
 
 5. Click 'Next'. You'll see a pop-up dialog box as shown below. Choose 'Edit Settings.'
 
-<img title="" src="../img/EditSettings.jpg" alt="" width="349" data-align="center">
+<img title="" src="/img/EditSettings.jpg" alt="" width="349" data-align="center">
 
 6. You'll next see the settings dialog box as shown in the expanded image below.
 
-<img title="" src="../img/rp_imager_config.jpg" alt="" width="624" data-align="center">
+<img title="" src="/img/rp_imager_config.jpg" alt="" width="624" data-align="center">
 
 Edit the settings as follows:
 
@@ -92,15 +90,15 @@ Click 'Save' to continue to the next step.
 
 7. You'll be returned to the dialog box below. Click 'Yes'.
 
-<img title="" src="../img/EditSettings.jpg" alt="" width="380" data-align="center">
+<img title="" src="/img/EditSettings.jpg" alt="" width="380" data-align="center">
 
 8. You're now ready to write to the SD card. If you're sure all your options are correct, and the SD card can be overwritten, click 'Yes' in the dialog box below.
 
-<img title="" src="../img/rp_conf.jpg" alt="" width="286" data-align="center">
+<img title="" src="/img/rp_conf.jpg" alt="" width="286" data-align="center">
 
 9. The imager will then begin flashing, then verifying the card. Don't interrupt this process at any stage. It may take some time, depending on the speed of your SD Card Reader/Writer. If you haven't already assembled your hardware, you can do this while you're waiting. When it's finished, you'll see the dialog box below. Click 'Continue' to finish the program.
 
-<img title="" src="../img/rp_success.jpg" alt="" data-align="center" width="355">
+<img title="" src="/img/rp_success.jpg" alt="" data-align="center" width="355">
 
 Your boot card has now been created successfully. 
 
@@ -120,15 +118,15 @@ Download the Web 3 Pi Imager from our [webpage]((https://www.web3pi.io/products/
 
 1. You'll need the microSD card and reader. Connect the reader to your PC: you may need a microSD to SD adaptor. Insert the card in the reader.
 
-<img src="../img/sd_reader_and_card.jpg" title="" alt="" data-align="center">
+<img src="/img/sd_reader_and_card.jpg" title="" alt="" data-align="center">
 
 2. Open the Web3 Pi Imager on your PC and choose 'Single Mode Device'. 
 
-<img title="" src="../img/w3_imager1.jpg" alt="" width="369" data-align="center">
+<img title="" src="/img/w3_imager1.jpg" alt="" width="369" data-align="center">
 
 3. Next you'll be asked for some configuration details:
 
-<img title="" src="../img/w3_imager2.jpg" alt="" width="369" data-align="center">
+<img title="" src="/img/w3_imager2.jpg" alt="" width="369" data-align="center">
 
 Normally, you'd leave these settings unchanged, unless you're an advanced user creating an image to specific specs.
 
@@ -136,7 +134,7 @@ If you change the hostname, please keep a note of it safely, as you'll use this 
 
 The 'Advanced' button shows more options that you wouldnt normally change:
 
-<img title="" src="../img/w3_imageradvanced.jpg" alt="" width="369" data-align="center">
+<img title="" src="/img/w3_imageradvanced.jpg" alt="" width="369" data-align="center">
 
 If you plan to connect via Wifi, you would use this screen to configure your wireless LAN before clicking 'Save'. This is not recommended: Ethernet cable connections are less likely to result in performance issues later.
 
@@ -144,25 +142,24 @@ Click 'Next' from the main configuration screen.
 
 4. Next, you'll see a list of removable devices available on your PC. Provided your SD Card reader/writer is mounted, you will be able click it to select it.
 
-<img title="" src="../img/w3_imager4.jpg" alt="" width="369" data-align="center">
+<img title="" src="/img/w3_imager4.jpg" alt="" width="369" data-align="center">
 
-## ⚠️
+!!! note
 
-**Warning: All data on the device you select will be overwritten. Make sure you choose the right device. Always check the storage capacity, which should be either 32GB or 64GB for the microSD card**
+    Warning: All data on the device you select will be overwritten. Make sure you choose the right device. Always check the storage capacity, which should be either 32GB or 64GB for the microSD card
 
-## ⚠️
 
 5. You're now ready to write to the SD card. If you're sure all your options are correct, and the SD card can be overwritten, click 'Yes' in the dialog box below.
 
-<img title="" src="../img/w3-imager5.jpg" alt="" width="286" data-align="center">
+<img title="" src="/img/w3-imager5.jpg" alt="" width="286" data-align="center">
 
 6. The imager will then begin flashing, then verifying, the card. Don't interrupt this process at any stage. It may take some time, depending on the speed of your SD Card Reader/Writer. If you haven't already assembled your hardware, you can do this while you're waiting. The screen will show progress as per the image below.
 
-<img title="" src="../img/w3-imager6.jpg" alt="" width="286" data-align="center">
+<img title="" src="/img/w3-imager6.jpg" alt="" width="286" data-align="center">
 
 7. When it's finished, you'll see the dialog box below. Click 'Continue' to finish the program.
 
-<img title="" src="../img/w3-imager7.jpg" alt="" data-align="center" width="355">
+<img title="" src="/img/w3-imager7.jpg" alt="" data-align="center" width="355">
 
 Your boot card has now been created successfully. 
 

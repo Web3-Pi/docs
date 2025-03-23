@@ -6,13 +6,13 @@ Once you have flashed the boot card and assembled the hardware, you're ready to 
 
 Your assembled device should look like this.
 
-<img src="../img/install1.jpg" title="" alt="" data-align="center">Before you connect power, make sure the ethernet cable is connected with DHCP. Internet connection is required during the installation process. 
+<img src="/img/install1.jpg" title="" alt="" data-align="center">Before you connect power, make sure the ethernet cable is connected with DHCP. Internet connection is required during the installation process. 
 
 ## Connecting to the Network
 
 Please make sure your network is set up as per the image below. Your network must include the Raspberry Pi and a control PC, which you will use to monitor the installation process.
 
-<img src="../img/img-rpi5-connection-diagram-1.png" title="" alt="" data-align="center">
+<img src="/img/img-rpi5-connection-diagram-1.png" title="" alt="" data-align="center">
 
 ## Pre-installation Checklist
 
@@ -44,7 +44,7 @@ This is an HTTP server running at Port 80 on the Raspberry Pi.
 
 The page will look like this:
 
-<img src="../img/install2.jpg" title="" alt="" data-align="center">
+<img src="/img/install2.jpg" title="" alt="" data-align="center">
 
 The page contains:
 
@@ -73,11 +73,11 @@ If the installation was successful, you should see the login panel as shown belo
 The default username is 'admin', and the password is 'admin'. You will be
 required to change the password upon first login.
 
-<img src="../img/install3.jpg" title="" alt="" data-align="center">
+<img src="/img/install3.jpg" title="" alt="" data-align="center">
 
 You'll then see the Grafana dashboard as shown below.
 
-<img src="../img/install4.jpg" title="" alt="" data-align="center">
+<img src="/img/install4.jpg" title="" alt="" data-align="center">
 
 You can access this dashboard on [http://eop-1.local:3000](http://eop-1.local:3000) (or the hostname you configured) at any time to monitor the status of your node.
 
@@ -87,7 +87,7 @@ While the node is syncing, **pay attention to the status of the consensus and ex
 
 Next, the execution client will change to 'waiting', then both will transition to the 'syncing' state.
 
-<img src="../img/install5.jpg" title="" alt="" data-align="center">
+<img src="/img/install5.jpg" title="" alt="" data-align="center">
 
 At this point, the blockchain synchronization process has begun, and will take approximately 19 hours.
 
@@ -95,7 +95,7 @@ The CPU load will increase until it reaches its maximum possible value. Disk usa
 
 When syncing has completed, the Grafana status will look like this:
 
-<img src="../img/install6.jpg" title="" alt="" data-align="center">
+<img src="/img/install6.jpg" title="" alt="" data-align="center">
 
 You'll notice that both the execution and the consensus client have turned green.
 
@@ -107,7 +107,7 @@ The password should be treated as highly confidential, since it will allow acces
 
 If you're using PuTTY, you'd configure it as shown in the image below.
 
-<img src="../img/install7.jpg" title="" alt="" data-align="center">
+<img src="/img/install7.jpg" title="" alt="" data-align="center">
 
 ### Network Configuration Verification
 

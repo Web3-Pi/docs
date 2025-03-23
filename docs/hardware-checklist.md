@@ -31,9 +31,9 @@ Optionally, you can add an [LCD display](./lcd-screen.md) for monitoring purpose
 ### Raspberry Pi 5
 
 - 1 x [Raspberry Pi 5 (8GB)](https://botland.store/raspberry-pi-5-modules-and-kits/23905-raspberry-pi-5-8gb-5056561803326.html) 
-- 1 X [2TB SSD drive (external USB SSD or NVMe m.2 with adapter)](/hardware-recommendations.md#ssd-drive) 
-- 1 X [SD Card reader/writer](/hardware-recommendations.md#sd-card-reader-and-writer) 
-- 1 x [microSD Card](/hardware-recommendations.md#microsd-card)
+- 1 X [2TB SSD drive (external USB SSD or NVMe m.2 with adapter)](./hardware-recommendations.md#ssd-drive) 
+- 1 X [SD Card reader/writer](./hardware-recommendations.md#sd-card-reader-and-writer) 
+- 1 x [microSD Card](./hardware-recommendations.md#microsd-card)
 - 1 x [Power supply](https://botland.store/raspberry-pi-5-power-supply/23907-raspberry-pi-27w-usb-c-power-supply-official-51v-5a-psu-for-raspberry-pi-5-black-5056561803418.html)
 - 1 X [Raspberry Pi 5 Active Cooler]([Raspberry Pi Active Cooler - heatsink + fan for Raspberry Pi 5 Botland - Robotic Shop](https://botland.store/raspberry-pi-5-mounting-elements/23925-raspberry-pi-active-cooler-heatsink-fan-for-raspberry-pi-5-5056561803357.html)
 
@@ -42,9 +42,9 @@ Optionally, you can add an [LCD display](./lcd-screen.md) for monitoring purpose
 ### Raspberry Pi 4
 
 - 1 x [Raspberry Pi 4 (8GB)](https://botland.store/raspberry-pi-4b-modules-and-kits/16579-raspberry-pi-4-model-b-wifi-dualband-bluetooth-8gb-ram-18ghz-5056561800356.html) 
-- 1 x [2TB SSD drive (external USB SSD or NVMe with m.2 to USB adapter](/hardware-recommendations.md#ssd-drive))
-- 1 x [SD Card reader/writer](/hardware-recommendations.md#sd-card-reader-and-writer) 
-- 1 x [microSD Card](/hardware-recommendations.md#microsd-card)
+- 1 x [2TB SSD drive (external USB SSD or NVMe with m.2 to USB adapter](./hardware-recommendations.md#ssd-drive))
+- 1 x [SD Card reader/writer](./hardware-recommendations.md#sd-card-reader-and-writer) 
+- 1 x [microSD Card](./hardware-recommendations.md#microsd-card)
 - 1 X [Raspberry Pi 4 Active Cooler](https://botland.store/raspberry-pi-4b-cases/15106-case-justpi-for-raspberry-pi-4b-aluminum-with-dual-fan-black-lt-4b02-5903351242660.html)
 - 1 x [Power supply](https://botland.store/raspberry-pi-4b-power-supply/14348-power-supply-for-raspberry-pi-4-usb-c-51v-3a-original-black-644824914886.html)
 
@@ -57,7 +57,7 @@ The CM4 module needs a carrier board. There are many on the market.
 Minimum requiments are:
 
 - 1 x [Raspberry Pi CM4 (8GB)](https://botland.store/raspberry-pi-cm/18211-raspberry-pi-cm4-compute-module-4-8gb-ram-32gb-emmc-wifibluetooth-cm4108032-5904422368593.html) 
-- 1 x [2TB fast storage](hardware-recommendations.md#ssd-drive) 
+- 1 x [2TB fast storage](./hardware-recommendations.md#ssd-drive) 
 - 1 x Power supply
 - 1 X [Raspberry Pi CM4 Active Cooler]((https://botland.store/raspberry-pi-cm/21716-dedicated-all-in-one-3007-cooling-fan-for-raspberry-pi-cm4-waveshare-22096.htm)
 - 32GB+ storage for operating system (microSD or eMMC)

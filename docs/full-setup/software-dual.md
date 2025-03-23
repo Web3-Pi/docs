@@ -45,41 +45,41 @@ You'll need to download:
 
 You'll need two microSD cards and a reader/writer. Connect the reader to your PC. You may need a microSD to SD adaptor.
 
-<img src="../img/sd_reader_and_card.jpg" title="" alt="" data-align="center">
+<img src="/img/sd_reader_and_card.jpg" title="" alt="" data-align="center">
 
 For each of the files you downloaded (Consensus and Execution Client), follow the instructions below, paying attention to the different configuration settings provided for each image.
 
 1. Open the Raspberry Pi Imager on your PC, and insert a blank microSD card in the reader.
 
-<img title="" src="../img/rp_imager.jpg" alt="" width="369" data-align="center">
+<img title="" src="/img/rp_imager.jpg" alt="" width="369" data-align="center">
 
 2. Select 'Choose Device'. Select your device type from the list.
 
-<img title="" src="../img/rp_choose_device.jpg" alt="" width="356" data-align="center">
+<img title="" src="/img/rp_choose_device.jpg" alt="" width="356" data-align="center">
 
 3. Select 'Choose OS' and scroll down to 'Custom Image' at the bottom. This will open a file chooser, so you can browse to the Web 3 Pi image you downloaded, and select it.
 
-<img title="" src="../img/rp_choose_os.jpg" alt="" width="356" data-align="center">
+<img title="" src="/img/rp_choose_os.jpg" alt="" width="356" data-align="center">
 
 For the first card, choose the Execution Client that you downloaded. For the second card, choose the Consensus Client.
 
 4. Select 'Choose Storage'. This shows a list of removable devices available. Provided your SD Card reader/writer is mounted, you will be able to select it.
 
-## ⚠️
+!!! note
 
-**Warning: All data on the device you select will be overwritten. Make sure you choose the right device. Always check the storage capacity, which should be either 32GB or 64GB for the microSD card**
+    Warning: All data on the device you select will be overwritten. Make sure you choose the right device. Always check the storage capacity, which should be either 32GB or 64GB for the microSD card
 
-## ⚠️
 
-<img title="" src="../img/ChooseStorage.jpg" alt="" width="355" data-align="center">
+
+<img title="" src="/img/ChooseStorage.jpg" alt="" width="355" data-align="center">
 
 5. Click 'Next'. You'll see a pop-up dialog box as shown below. Choose 'Edit Settings.'
 
-<img title="" src="../img/EditSettings.jpg" alt="" width="349" data-align="center">
+<img title="" src="/img/EditSettings.jpg" alt="" width="349" data-align="center">
 
 6. You'll next see the settings dialog box as shown in the expanded image below.
 
-<img title="" src="../img/rp_imager_config.jpg" alt="" width="624" data-align="center">
+<img title="" src="/img/rp_imager_config.jpg" alt="" width="624" data-align="center">
 
 Edit the settings as follows:
 
@@ -105,15 +105,15 @@ Click 'Save' to continue to the next step.
 
 7. You'll be returned to the dialog box below. Click 'Yes'.
 
-<img title="" src="../img/EditSettings.jpg" alt="" width="380" data-align="center">
+<img title="" src="/img/EditSettings.jpg" alt="" width="380" data-align="center">
 
 8. You're now ready to write to the SD card. If you're sure all your options are correct, and the SD card can be overwritten, click 'Yes' in the dialog box below.
 
-<img title="" src="../img/rp_conf.jpg" alt="" width="286" data-align="center">
+<img title="" src="/img/rp_conf.jpg" alt="" width="286" data-align="center">
 
 9. The imager will then begin flashing, then verifying the card. Don't interrupt this process at any stage. It may take some time, depending on the speed of your SD Card Reader/Writer. When it's finished, you'll see the dialog box below. Click 'Continue' to finish the program.
 
-<img title="" src="../img/rp_success.jpg" alt="" data-align="center" width="355">
+<img title="" src="/img/rp_success.jpg" alt="" data-align="center" width="355">
 
 10. For advanced users, you can, if you wish, [adjust the configuration](#initial-configuration) file as needed.
 
@@ -135,15 +135,15 @@ Download the Web 3 Pi Imager from our [webpage](https://www.web3pi.io/products/i
 
 1. You'll need the microSD card and reader. Connect the reader to your PC: you may need a microSD to SD adaptor. Insert the card in the reader.
 
-<img src="../img/sd_reader_and_card.jpg" title="" alt="" data-align="center">
+<img src="/img/sd_reader_and_card.jpg" title="" alt="" data-align="center">
 
 2. Open the Web3 Pi Imager on your PC and choose 'Dual Mode Device'.
 
-<img title="" src="../img/w3_imager1.jpg" alt="" data-align="center" width="402">
+<img title="" src="/img/w3_imager1.jpg" alt="" data-align="center" width="402">
 
 3. Next you'll be asked for some configuration details:
 
-<img title="" src="../img/dual_web3pi_settings.jpg" alt="" data-align="center" width="398">
+<img title="" src="/img/dual_web3pi_settings.jpg" alt="" data-align="center" width="398">
 
 Normally, you wouldn't need to change these, unless you're an advanced user with specific goals in mind.
 
@@ -164,57 +164,57 @@ The settings are:
 
 Optionaly, you can click 'Advanced' to change more settings as shown in the image below. If you're using WLAN, you'd need to enter your connection details here. **Note**: WLAN is not recommended. Ethernet is more stable and less prone to issues.
 
-<img title="" src="../img/dual_advanced.jpg" alt="" data-align="center" width="384">
+<img title="" src="/img/dual_advanced.jpg" alt="" data-align="center" width="384">
 
 When done, click 'Save'. Click 'Next' on the main settings screen. 
 
 4. You'll see a list of removable devices available on your PC. Provided your SD Card reader/writer is mounted, you will be able click it to select it. Make sure the SD card for the Execution Client is in the reader.
 
-## ⚠️
+!!! note
 
-**Warning: All data on the device you select will be overwritten. Make sure you choose the right device. Always check the storage capacity, which should be either 32GB or 64GB for the microSD card**
+    Warning: All data on the device you select will be overwritten. Make sure you choose the right device. Always check the storage capacity, which should be either 32GB or 64GB for the microSD card
 
-## ⚠️
 
-<img title="" src="../img/storage_execution.jpg" alt="" data-align="center" width="396">
+
+<img title="" src="/img/storage_execution.jpg" alt="" data-align="center" width="396">
 
 5. You're now ready to write to the SD card. If you're sure all your options are correct, and the SD card can be overwritten, click 'Yes' in the dialog box below.
 
-<img title="" src="../img/w3-imager5.jpg" alt="" data-align="center" width="252">
+<img title="" src="/img/w3-imager5.jpg" alt="" data-align="center" width="252">
 
 6. The imager will begin flashing and verifying your card, showing the progress screen below. Please don't interrupt this process.
 
-<img title="" src="../img/dual_write_consensus.jpg" alt="" data-align="center" width="317">
+<img title="" src="/img/dual_write_consensus.jpg" alt="" data-align="center" width="317">
 
 7. When it's finished, you'll see the dialog box below. Remove the SD card, and insert the card for the Consensus Client before clicking 'Next'.
 
-<img title="" src="../img/dual_execution_complete.jpg" alt="" data-align="center" width="306">
+<img title="" src="/img/dual_execution_complete.jpg" alt="" data-align="center" width="306">
 
 8. You will then be asked to select the storage device for writing the Consensus Client, as per the screen below.
 
-## ⚠️
+!!! note
 
-**Warning: All data on the device you select will be overwritten. Make sure you choose the right device. Always check the storage capacity, which should be either 32GB or 64GB for the microSD card**
+    Warning: All data on the device you select will be overwritten. Make sure you choose the right device. Always check the storage capacity, which should be either 32GB or 64GB for the microSD card
 
-## ⚠️
 
-<img title="" src="../img/storage_consensus.jpg" alt="" data-align="center" width="375">
+
+<img title="" src="/img/storage_consensus.jpg" alt="" data-align="center" width="375">
 
 9. You're now ready to write to the SD card. If you're sure all your options are correct, and the SD card can be overwritten, click 'Yes' in the dialog box below.
 
-<img title="" src="../img/w3-imager5.jpg" alt="" data-align="center" width="294">
+<img title="" src="/img/w3-imager5.jpg" alt="" data-align="center" width="294">
 
 10. The imager will then begin flashing, then verifying, the card. Don't interrupt this process at any stage. It may take some time, depending on the speed of your SD Card Reader/Writer. The screen will show progress as per the image below.
 
-<img title="" src="../img/dual_write_consensus.jpg" alt="" data-align="center" width="344">
+<img title="" src="/img/dual_write_consensus.jpg" alt="" data-align="center" width="344">
 
 11. When it's finished, you'll see the dialog box below. Remove the SD card and click 'Next'.
 
-<img title="" src="../img/dual_consensus_complete.jpg" alt="" data-align="center" width="327">
+<img title="" src="/img/dual_consensus_complete.jpg" alt="" data-align="center" width="327">
 
 12. Finally, you'll see the dialog box shown in the image. Click 'Finish'.
 
-<img title="" src="../img/dual_write_complete.jpg" alt="" data-align="center" width="323">
+<img title="" src="/img/dual_write_complete.jpg" alt="" data-align="center" width="323">
 
 Your boot cards have now been created successfully.
 

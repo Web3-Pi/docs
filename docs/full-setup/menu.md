@@ -16,11 +16,11 @@ After setup, the node takes about 19 hours to sync with Ethereum, so allow for t
 
 [Flashing the boot card: Single Device Node](./software-single.md)
 
-[Initiating and Monitoring the Installation: Single Device Node](./monitoring-installation_single.md)
+[Initiating and Monitoring the Installation: Single Device Node](./monitoring-installation-single.md)
 
 [Flashing the boot cards: Dual Device Node](./software-dual.md)
 
-[Initiating and Monitoring the Installation: Dual Device Node](./monitoring-installation_dual.md)
+[Initiating and Monitoring the Installation: Dual Device Node](./monitoring-installation-dual.md)
 
 [Back to Main Index](../index.md)
 
