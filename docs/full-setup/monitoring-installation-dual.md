@@ -6,7 +6,7 @@ Once you have flashed the boot cards and assembled the hardware, you're ready to
 
 Your assembled devices should look like this.
 
-<img src="/img/install1.jpg" title="" alt="" data-align="center">
+<img src="../img/install1.jpg" title="" alt="" data-align="center">
 
 **Before you connect power to your devices, make sure the ethernet cable is connected with DHCP. Internet connection is required during the installation process.**
 
@@ -14,7 +14,7 @@ Your assembled devices should look like this.
 
 Please make sure your network is set up as shown in the diagram below. Your network must include the two Raspberry Pis and a control PC, which you will use to monitor the installation process.
 
-<img src="/img/dual_network.jpg" title="" alt="" data-align="center">
+<img src="../img/dual_network.jpg" title="" alt="" data-align="center">
 
 ## Pre-installation Checklist
 
@@ -28,7 +28,7 @@ Please make sure your network is set up as shown in the diagram below. Your netw
 
 - Connect the Raspberry Pis using Ethernet cables to your network, and ensure the network is connected to the Internet.
 
-<img title="" src="/img/dual_network2.jpg" alt="" data-align="center" width="508">
+<img title="" src="../img/dual_network2.jpg" alt="" data-align="center" width="508">
 
 ## Installation
 
