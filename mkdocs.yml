@@ -27,6 +27,7 @@ theme:
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
+    - navigation.footer
   icon:
     repo: fontawesome/brands/github
   language: en
@@ -65,8 +66,9 @@ markdown_extensions:
   - pymdownx.mark
   - attr_list
   - pymdownx.emoji:
-      emoji_index: !!python/name:pymdownx.emoji.twemoji
-      emoji_generator: !!python/name:pymdownx.emoji.to_svg
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - md_in_html
 
 
 copyright: |
@@ -75,11 +77,9 @@ copyright: |
 
 
 nav:
-  - Menu 1:
+  - Documentation Index:
       - Web3 Pi: 'index.md'
-  - Menu 2:
-      - Introduction: 'menu2.md'
-  - Menu 3:
-      - Introduction: 'menu3.md'
-  - Menu 4:
-      - Introduction: 'menu4.md'
+  - Full Setup Guide:
+      - Introduction: 'full-setup/menu.md'
+  - Managing Your Node:
+      - Introduction: 'managing/menu.md'

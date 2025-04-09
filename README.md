@@ -1,5 +1,8 @@
 # Web3 Pi Documentation
 
+> [!WARNING]
+> This documentation is currently under development and will soon replace the old one. For now, please refer to the [old documentation](https://setup-guide.web3pi.io/).
+
 ## How to Run the Project
 
 ## Prerequisites

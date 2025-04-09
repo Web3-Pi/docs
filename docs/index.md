@@ -1,16 +1,57 @@
+---
+hide:
+  - navigation
+  - toc
+---
+
 # Web3 Pi documentation
 
-!!! warning "This website is under development"
-    This website is under development and should not be used at this stage.
+Web3 Pi provides simple, step-by-step instructions to build your own Ethereum node using Raspberry Pi products. Set up your node on these low-power, small form factor devices for faster and easier access to the Ethereum blockchain.
 
+## Getting Started
 
-## Commands
+<div class="grid cards" markdown>
 
-* Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-* Aliquam tincidunt mauris eu risus.
-* Vestibulum auctor dapibus neque.
-* Nunc dignissim risus id metus.
+-   :fontawesome-solid-flag: __Before You Begin__
 
-## Instruction
+    ---
+    Essential information before starting your Web3 Pi journey
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    [:fontawesome-solid-arrow-right: Before you start](before.md)
+
+</div>
+
+## Setup & Configuration
+
+<div class="grid cards" markdown>
+
+-   :fontawesome-solid-box-open: __Hardware Setup__
+
+    ---
+    Learn about the hardware and initial configuration
+
+    [:fontawesome-solid-arrow-right: Prerequisites](prerequisites.md)
+    [:fontawesome-solid-arrow-right: The Welcome Box](welcome-box.md)
+
+-   :fontawesome-solid-gears: __Configuration__
+
+    ---
+    Complete setup guides and connection instructions
+
+    [:fontawesome-solid-arrow-right: Setup guide](full-setup/menu.md)
+    [:fontawesome-solid-arrow-right: Connecting to Ethereum](connect-ethereum.md)
+
+</div>
+
+## Maintenance & Management
+
+<div class="grid cards" markdown>
+
+-   :fontawesome-solid-screwdriver-wrench: __Node Management__
+
+    ---
+    Learn how to manage and maintain your node
+
+    [:fontawesome-solid-arrow-right: Managing your node](managing/menu.md)
+
+</div>
