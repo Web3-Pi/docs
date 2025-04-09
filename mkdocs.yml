@@ -33,7 +33,8 @@ theme:
     repo: fontawesome/brands/github
   language: en
   palette:
-    - scheme: slate
+    primary: black
+    scheme: slate
 
 plugins:
   - search

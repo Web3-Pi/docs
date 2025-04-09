@@ -37,8 +37,59 @@
   --md-typeset-font-family: "DM Sans", sans-serif;
   --md-code-font-family: "Fira Code", monospace;
 }
+/* override header background color */
+[data-md-color-primary] .md-header,
+[data-md-color-primary] .md-tabs {
+  background-color: var(--md-primary-fg-color);
+}
 
 /* Hide forks info */
 .md-header__source .md-source__facts > :nth-child(3) {
   display: none;
+}
+
+.home-page-hero {
+  display: grid;
+  gap: 2rem;
+  place-items: center;
+  grid-template-columns: 1fr;
+  background-color: oklch(0.208 0.042 265.755);
+  min-height: auto;
+  padding: 2rem;
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+  }
+  .title {
+    font-family: "DM Sans", sans-serif;
+    font-size: 2.5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 1rem;
+  }
+  .subtitle {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    margin-bottom: 2rem;
+  }
+  img {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .home-page-hero {
+    grid-template-columns: 1fr 2fr;
+    padding: 4rem;
+    min-height: 450px;
+    img {
+      display: block;
+      height: 400px;
+      margin-top: -100px;
+      margin-bottom: -100px;
+    }
+  }
 }
