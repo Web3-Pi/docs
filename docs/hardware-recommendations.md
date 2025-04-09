@@ -1,22 +1,8 @@
 # Web3 Pi: Recommended Hardware
 
-## Index
-
-[SSD Drive](#ssd-drive)
-
-[SD Card Reader and Writer](#sd-card-reader-and-writer)
-
-[MicroSD Card](#microsd-card)
-
-[Enclosures](#enclosures)
-
-[Back to Prerequisites](./prerequisites.md)
-
-[Back to Main Index](./index.md)
-
 ## SSD Drive
 
-**2 TB** fast drive is required for device running **execution** client (Geth) or for a single device node. 
+**2 TB** fast drive is required for device running **execution** client (Geth) or for a single device node.
 **256 GB+** fast drive is required for device running **consensus** client (Nimbus/Lighthouse)
 
 **For the Raspberry Pi 5**, you have three options for storage:
@@ -33,13 +19,13 @@ This option gives the maximum possible performance.
 - external USB SSD drive (wide availability)
 - m.2 NVMe drive with USB m.2 adapter
 
-You can also use a  USB to SATA adapter plus SSD 2.5" drive.
+You can also use a USB to SATA adapter plus SSD 2.5" drive.
 
 **Note: If you use USB always choose USB 3.0 ports (blue)**
 
 ### Recommended SSD Hardware
 
-**Sample links result from a quick Google search mainly for the reader's convenience & quick price reference; we invite you to do your own research and find local hardware providers.*
+\*_Sample links result from a quick Google search mainly for the reader's convenience & quick price reference; we invite you to do your own research and find local hardware providers._
 
 [USB Drive](#usb-drive)
 
@@ -49,15 +35,13 @@ You can also use a  USB to SATA adapter plus SSD 2.5" drive.
 
 [USB to NVMe adapters](#usb-to-nvme-adapters)
 
-[Back to index](#index)
-
 #### USB Drive
 
-| Brand   | Storage | Model          | Link*                                                                                    | Comment                                                              |
+| Brand   | Storage | Model          | Link\*                                                                                   | Comment                                                              |
 | ------- | ------- | -------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
 | Samsung | 2 TB    | T7 2TB USB 3.2 | https://tweakers.net/pricewatch/1560668/samsung-portable-ssd-t7-2tb-grijs/specificaties/ | **Recommended for most users. Compatible with Raspberry Pi 4 and 4** |
 
-**Tip:** Some external disks consume more power than Raspberry Pi can deliver via USB. For Raspberry Pi 5, the max power output of the USB ports is 600mA if you're using a 3A supply, and1600mA if you're using a 5A supply. You can edit `/boot/firmware/config.txt` and add `usb_max_current_enable=1` to disable the current limit. Please read the documentation: 
+**Tip:** Some external disks consume more power than Raspberry Pi can deliver via USB. For Raspberry Pi 5, the max power output of the USB ports is 600mA if you're using a 3A supply, and1600mA if you're using a 5A supply. You can edit `/boot/firmware/config.txt` and add `usb_max_current_enable=1` to disable the current limit. Please read the documentation:
 
 https://www.raspberrypi.com/documentation/computers/raspberry-pi.html
 
@@ -81,7 +65,7 @@ These drives need adapters.
 
 **Note:** Double-sided NVMe M.2 memory modules (with memory chips on both sides of the PCB) may not be fully compatible with every adapter due to physical dimensions, specifically the height of the M.2 slot in the adapter/enclosure.
 
-[Full compatibility list for Ethereum node](https://gist.github.com/yorickdowne/f3a3e79a573bf35767cd002cc977b038)  
+[Full compatibility list for Ethereum node](https://gist.github.com/yorickdowne/f3a3e79a573bf35767cd002cc977b038)
 
 [Full compatibility list for Pimoroni adapter](https://shop.pimoroni.com/products/nvme-base?variant=41219587178579)
 
@@ -91,7 +75,7 @@ These drives need adapters.
 
 ##### NVMe HAT for Raspberry Pi 5
 
-| Brand                       | Link*                                                                                               |
+| Brand                       | Link\*                                                                                              |
 | --------------------------- | --------------------------------------------------------------------------------------------------- |
 | Pimoroni                    | [NVMe Base for Raspberry Pi 5](https://shop.pimoroni.com/products/nvme-base?variant=41219587178579) |
 | Raspberry Pi m.2 Hat        | https://www.raspberrypi.com/products/m2-hat-plus/                                                   |
@@ -110,7 +94,7 @@ We do not recommend the following:
 
 #### USB to NVMe adapters
 
-| Brand   | Link*                                                                                                |
+| Brand   | Link\*                                                                                               |
 | ------- | ---------------------------------------------------------------------------------------------------- |
 | ZenWire | https://zenwire.eu/pl/p/Adapter-SSD-M2-NVMESATA-kieszen-na-dysk-obudowa-M.2-USB-C-10-GBs-Zenwire/289 |
 | RIITOP  | https://www.amazon.nl/dp/B0B1HVGBZ3?ref_=pe_28126711_487767311_302_E_DDE_dt_1                        |
@@ -126,11 +110,9 @@ or other similar.
 
 You will use this on your PC for flashing the boot card. Since this operation takes time, we recommend a high-speed device such as [Ugreen 2-in-1 USB 3 SD/TF](https://www.ugreen.com/products/ugreen-2-in-1-usb-sd-card-reader?variant=39915662803006)
 
-[Back to index](#index)
-
 ## MicroSD Card
 
-Flashing a microSD card takes time, but it can be reduced by using a fast device. Additionally, using a fast micro SD card results in a shorter booting time. 
+Flashing a microSD card takes time, but it can be reduced by using a fast device. Additionally, using a fast micro SD card results in a shorter booting time.
 
 You will require at least 32GB capacity.
 
@@ -142,11 +124,9 @@ A few examples:
 - [SanDisk Max Endurance](https://www.westerndigital.com/en-ap/products/memory-cards/sandisk-max-endurance-uhs-i-microsd?sku=SDSQQVR-064G-GN6IA)
 - [Kingston Canvas React](https://www.tomshardware.com/best-picks/raspberry-pi-microsd-cards#section-fastest-booting-raspberry-pi-microsd)
 - [Samsung 64 Evo Plus](https://www.samsung.com/pl/memory-storage/memory-card/evo-plus-128gb-microsd-card-2021-mb-mc128ka-eu/)
-- [Lexar Professional 1000X](www.amazon.com/Lexar-Professional-1000x-UHS-II-LSD64GCRBNA1000/dp/B00PLENZX4)
+- [Lexar Professional 1000X](https://www.amazon.com/Lexar-Professional-1000x-UHS-II-LSD64GCRBNA1000/dp/B00PLENZX4)
 
 [**More Information**](https://www.tomshardware.com/best-picks/raspberry-pi-microsd-cards)
-
-[Back to index](#index)
 
 ## Enclosures
 
@@ -166,5 +146,3 @@ A few examples:
 | **Case justPi**      | [assembly instructions](https://www.youtube.com/watch?v=qEsSK9WIRM4)                                                                                                                                 | [Product page](https://botland.store/raspberry-pi-4b-cases/15106-case-justpi-for-raspberry-pi-4b-aluminum-with-dual-fan-black-lt-4b02-5903351242660.html)<br>[Shop](https://botland.store/raspberry-pi-4b-cases/15106-case-justpi-for-raspberry-pi-4b-aluminum-with-dual-fan-black-lt-4b02-5903351242660.html) |
 | **Argon One V2**     | Fan control needs additional configuration as described by the manufacturer [manual](https://cdn.shopify.com/s/files/1/0556/1660/2177/files/AR1_PI4-V2_INSTRUCTION_MANUAL_20200922.pdf?v=1646125923) | [Product page](https://argon40.com/products/argon-one-v2-case-for-raspberry-pi-4)<br>[Shop](https://botland.store/raspberry-pi-4b-cases/15391-raspberry-pi-4-aluminum-case-with-fan-argon-one-v2-grey-5904422301347.html)                                                                                      |
 | **Argon One V2 m.2** | Fan control needs additional configuration as described by the manufacturer [manual](https://cdn.shopify.com/s/files/1/0556/1660/2177/files/AR1_NVME_INSTRUCTION_MANUAL_20220531.pdf?v=1659581194)   | [Product page](https://argon40.com/products/argon-one-m-2-case-for-raspberry-pi-4)<br>[Shop](https://botland.store/raspberry-pi-4b-cases/17273-raspberry-pi-4-aluminum-case-with-fan-argon-one-m2-grey-5904422328597.html)                                                                                     |
-
-[Back to index](#index)

@@ -18,7 +18,7 @@ Source of case images and assembly diagrams: [Argon Neo Manual](https://argon40.
 
 ## Assembly Instructions
 
-Open the Argon Neo case by removing the top cover containing the logo, and make sure you have all the parts shown in the diagram above. 
+Open the Argon Neo case by removing the top cover containing the logo, and make sure you have all the parts shown in the diagram above.
 
 There should be a book of assembly instructions included. You can refer to this if any of the following instructions need clarifying, but please work according to this guide, since a few steps are unique to Web3 Pi.
 
@@ -67,7 +67,7 @@ Take care when removing the Raspberry Pi from the box, and avoid thermostatic da
 | **1.** If you have the <br>optional plastic cover <br>with [LCD display](https://github.com/Web3-Pi/web3-pi-dashboard), <br>connect it instead <br>of the original <br>aluminium cover.<br><br>Please follow the <br>diagram for connection <br>instructions.<br><br>It's possible the case <br>manufacturer may  <br>label the case <br>differently.If so, you <br>will have to count <br>the pins to find the <br>correct positions <br>for the cables. <br><br>Pay attention to the <br>position of the cables <br>when mounting the <br>cover to ensure they <br>don't mechanically <br>obstruct the fan blades. | <img title="" src="../img/hardware14.jpg" alt="" width="400" data-align="center"> |
 | **2.** The completed <br>assembly including <br>the LCD screen should <br>look like this.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | <img title="" src="../img/hardware15.jpg" alt="" width="400" data-align="center"> |
 
-You have now completed the hardware assembly. 
+You have now completed the hardware assembly.
 
 If you wish, you can connect a monitor to the Raspberry Pi, plugging the HDMI cable into the HDMI port.
 
@@ -80,7 +80,3 @@ Installation requires the network. Syncing will begin immediately after installa
 [Continue to Installation Guide - Single Device Node](monitoring-installation-single.md)
 
 [Continue to Installation Guide - Dual Device Node](monitoring-installation-dual.md)
-
-[Return to Setup menu](./menu.md)
-
-[Return to Documentation Index](../index.md)

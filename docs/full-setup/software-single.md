@@ -1,6 +1,6 @@
 # Web 3 Pi: Flashing the Boot Card: Single Device Node
 
-In this step, you'll create a boot card for the Raspberry Pi containing the Web3 Pi software. 
+In this step, you'll create a boot card for the Raspberry Pi containing the Web3 Pi software.
 
 You'll use the Web3 Pi image, which contains a preconfigured Linux distribution capable of running an **Ethereum Node**.
 
@@ -10,26 +10,16 @@ On Linux and MacOS, you'll use the official Raspberry Pi imager to flash the car
 
 ⚠️ To avoid errors during the first setup, please follow the instructions precisely. ⚠️
 
-## Index
-
-[Instructions for Linux and MacOS](#linux-and-macos)
-
-[Instructions for Windows](#windows)
-
-[Initial Configuration (Optional)](#initial-configuration)
-
-[Back to Menu](./menu.md)
-
 ## Linux and MacOS
 
 You'll need to download:
 
 - The [Raspberry Pi Imager](https://www.raspberrypi.com/software/) from the official Raspberry site, choosing the version for the operating system you're working on;
 
-- The Web3 Pi image from the latest release of the  [Github Repository](https://github.com/Web3-Pi/Ethereum-On-Raspberry-Pi/releases/latest).
-  
+- The Web3 Pi image from the latest release of the [Github Repository](https://github.com/Web3-Pi/Ethereum-On-Raspberry-Pi/releases/latest).
+
   - For Linux, choose the **single device** .img download.
-  
+
   - For MacOs, choose the **single device** .dmg download.
 
 ### Writing the Image: Linux and MacOS
@@ -38,7 +28,7 @@ You'll need to download:
 
 <img src="../img/sd_reader_and_card.jpg" title="" alt="" width="369" data-align="center">
 
-2. Open the Raspberry Pi Imager on your PC. 
+2. Open the Raspberry Pi Imager on your PC.
 
 <img title="" src="../img/rp_imager.jpg" alt="" width="369" data-align="center">
 
@@ -80,7 +70,7 @@ On the **General** tab:
 
 On the **Services** tab:
 
-- Tick 'Enable SSH' and 'Use Password Authentication'. 
+- Tick 'Enable SSH' and 'Use Password Authentication'.
 
 On the **Options** tab:
 
@@ -100,15 +90,13 @@ Click 'Save' to continue to the next step.
 
 <img title="" src="../img/rp_success.jpg" alt="" data-align="center" width="369">
 
-Your boot card has now been created successfully. 
+Your boot card has now been created successfully.
 
 For more information on the Rasberry Pi imager, visit the Raspberry Pi [official documentation](https://www.raspberrypi.com/documentation/computers/getting-started.html#raspberry-pi-imager).
 
 Advanced users may wish to make [initial configuration changes](#initial-configuration) before ejecting the boot card.
 
 Once your hardware has been assembled, you can proceed with the installation.
-
-[Back to Index](#index)
 
 ## Windows
 
@@ -120,7 +108,7 @@ Download the Web 3 Pi Imager from our [webpage]((https://www.web3pi.io/products/
 
 <img src="../img/sd_reader_and_card.jpg" title="" alt="" data-align="center">
 
-2. Open the Web3 Pi Imager on your PC and choose 'Single Mode Device'. 
+2. Open the Web3 Pi Imager on your PC and choose 'Single Mode Device'.
 
 <img title="" src="../img/w3_imager1.jpg" alt="" width="369" data-align="center">
 
@@ -160,15 +148,13 @@ Click 'Next' from the main configuration screen.
 
 <img title="" src="../img/w3-imager7.jpg" alt="" data-align="center" width="369">
 
-Your boot card has now been created successfully. 
+Your boot card has now been created successfully.
 
-**Note: Windows may attempt  to open the drive at this point. If so, it will, in fact, try to open two drives, since the card now has two partitions. It won't recognize the formatting on the second partition, and will request to format it. Cancel this request!**
+**Note: Windows may attempt to open the drive at this point. If so, it will, in fact, try to open two drives, since the card now has two partitions. It won't recognize the formatting on the second partition, and will request to format it. Cancel this request!**
 
-Pressing 'Next' will attempt to connect to the Raspberry Pi to monitor the installation. If you're not yet ready to start the installation, you can monitor it later as described in the  [installation and monitoring](./monitoring-installation-single.md) guide. For now, click 'Cancel' and 'Finish'.
+Pressing 'Next' will attempt to connect to the Raspberry Pi to monitor the installation. If you're not yet ready to start the installation, you can monitor it later as described in the [installation and monitoring](./monitoring-installation-single.md) guide. For now, click 'Cancel' and 'Finish'.
 
 Once your hardware has been assembled, you can proceed with the [installation](./monitoring-installation-single.md).
-
-[Back to Index](#index)
 
 ## Initial Configuration
 
@@ -180,7 +166,7 @@ After writing the image to the SD card, there will be two partitions on the card
 
 - `boot` - this is `FAT32` and will be visible from Windows, Mac and Linux
 
-- `root` - this is `exFAT`.  This should be visible in Linux.
+- `root` - this is `exFAT`. This should be visible in Linux.
 
 The `config.txt` will be in the `boot` partition. This is, in fact, the Raspberry Pi configuration, but Web3 Pi adds its own sections to it.
 
@@ -219,7 +205,7 @@ lighthouse_port=9000
 
 Here you can choose which services will automatically start during boot.
 
-**true** = service enabled 
+**true** = service enabled
 
 **false** = service disabled
 
@@ -253,5 +239,3 @@ eth_network=sepolia
 The file also configures the ports for the various services. It's not recommended to change these.
 
 For more information, see the [Configuration Guide](../managing/configuration.md).
-
-[Back to Index](#index)

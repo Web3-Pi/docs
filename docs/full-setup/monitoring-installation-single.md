@@ -6,7 +6,7 @@ Once you have flashed the boot card and assembled the hardware, you're ready to 
 
 Your assembled device should look like this.
 
-<img src="../img/install1.jpg" title="" alt="" data-align="center">Before you connect power, make sure the ethernet cable is connected with DHCP. Internet connection is required during the installation process. 
+<img src="../img/install1.jpg" title="" alt="" data-align="center">Before you connect power, make sure the ethernet cable is connected with DHCP. Internet connection is required during the installation process.
 
 ## Connecting to the Network
 
@@ -68,7 +68,7 @@ At this point, the software is installed, and it then begins syncing the node. Y
 
 To access Grafana, click the link labeled 'Grafana Monitoring' in the page shown above.
 
-If the installation was successful, you should see the login panel as shown below. 
+If the installation was successful, you should see the login panel as shown below.
 
 The default username is 'admin', and the password is 'admin'. You will be
 required to change the password upon first login.
@@ -101,7 +101,7 @@ You'll notice that both the execution and the consensus client have turned green
 
 You'll now be able to use SSH to access the Raspberry Pi on `<hostname>.local`, for example `eop-1.local`. You can also use the IP address if you know it.
 
-The username will be **ethereum**. Initially, the password will also be **ethereum**, but you'll be required to change it when you fist log in. 
+The username will be **ethereum**. Initially, the password will also be **ethereum**, but you'll be required to change it when you fist log in.
 
 The password should be treated as highly confidential, since it will allow access to an ethereum node. Keep it safe, as you won't be able to access the node without it.
 
@@ -136,7 +136,3 @@ You now have a fully operational Ethereum node running Geth and Nimbus.
 For more information on managing, configuring and troubleshooting your node, please refer to the [Managing Your Node](../managing/menu.md) menu.
 
 You may like to look into also running the Web3 Pi Reverse Proxy: https://docs.proxy.web3pi.io/
-
-[Return to Menu](./menu.md)
-
-[Return to Main Index](../index.md)

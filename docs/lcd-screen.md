@@ -28,4 +28,4 @@ The LCD display should be 1.69" with ST7789V2 Driver. Suitable models are:
 
 ## Software
 
-The software is included in the Web3 Pi image, and can also be downloaded separately from the [Web 3 Pi Dashboard Project](GitHub - Web3-Pi/web3-pi-dashboard).
+The software is included in the Web3 Pi image, and can also be downloaded separately from the [Web 3 Pi Dashboard Project](https://github.com/Web3-Pi/web3-pi-dashboard).

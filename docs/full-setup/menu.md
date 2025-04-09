@@ -10,20 +10,6 @@ The hardware assembly instructions are based on the Welcome Box, but will also b
 
 After setup, the node takes about 19 hours to sync with Ethereum, so allow for this process. You'll need to monitor the installation from time to time to make sure no problems are encountered.
 
-## Index
-
-[Hardware assembly](./hardware.md)
-
-[Flashing the boot card: Single Device Node](./software-single.md)
-
-[Initiating and Monitoring the Installation: Single Device Node](./monitoring-installation-single.md)
-
-[Flashing the boot cards: Dual Device Node](./software-dual.md)
-
-[Initiating and Monitoring the Installation: Dual Device Node](./monitoring-installation-dual.md)
-
-[Back to Main Index](../index.md)
-
 !!! note Disclaimer
 
     The Web3 Pi is a community driven project and it is currently in its early development phase (Proof of Concept) and consists of components provided by third-party manufacturers,including but not limited to Raspberry Pi, enclosures, power supplies, storage drives,microSD cards, etc. While the Web3 Pi team rigorously tests all functionalities, we cannot guarantee the performance or compatibility of individual components or solutions at this stage.

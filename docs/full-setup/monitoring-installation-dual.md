@@ -42,7 +42,7 @@ You can monitor the installation from your control PC as detailed below.
 
 ### Installation verification
 
-You can check the progress of the installation via your browser on the control PC. 
+You can check the progress of the installation via your browser on the control PC.
 
 Assuming you used the recommended hostnames when you flashed the SD cards, the URL for the Execution Client is:
 
@@ -52,7 +52,7 @@ The URL for the Consensus Client is:
 
 http://eop-consensus.local:7197/node/system/status
 
-This will return a JSON reply if the installation has reached the stage  of making the URL available.
+This will return a JSON reply if the installation has reached the stage of making the URL available.
 
 When the installation is complete, the JSON will look like this:
 
@@ -62,9 +62,9 @@ When the installation is complete, the JSON will look like this:
 
 If the site is not available, **please wait and try again**. The installation can take up to 15 minutes.
 
-**Note:** The mDNS service needs some time to start.  
+**Note:** The mDNS service needs some time to start.
 
-If you use the Raspberry Pi's IP address, the URL will be available quicker than if you use the host name.  
+If you use the Raspberry Pi's IP address, the URL will be available quicker than if you use the host name.
 
 mDNS should be available in less than **15 min** from the start.
 
@@ -86,13 +86,13 @@ If the *ethereum* user does not exist, it means that the installation failed u
 
 The two devices have to establish a secure communication channel. This is achieved by creating a common JWT secret file shared by the two clients.
 
-The installation script has already generated a common directory structure to store the JWT secret file.  
+The installation script has already generated a common directory structure to store the JWT secret file.
 
-To finish the configuration, the secret file has to be populated across devices.  
+To finish the configuration, the secret file has to be populated across devices.
 
 Once both devices have completed the installation, you will need to copy across the JWT secret file as per the instructions below.
 
-1. Log in to *eop-consensus.local* using an SSH client. 
+1. Log in to *eop-consensus.local* using an SSH client.
 2. Once you've logged in, issue the following commands:
 
 ```shell
@@ -121,11 +121,11 @@ After executing the above action, the devices can be connected and run as a sing
 
 ### Starting the Node
 
-The Consensus Client starts automatically, but the Execution Client can  only be started after you've copied across the JWT secret file, as per the previous step.
+The Consensus Client starts automatically, but the Execution Client can only be started after you've copied across the JWT secret file, as per the previous step.
 
 To activate the Execution Client,
 
-1. Log in to *eop-exec.local* using an SSH client. 
+1. Log in to *eop-exec.local* using an SSH client.
 2. Edit  the configuration file `config.txt` file in order to activate the Geth service:
 
 ```shell
@@ -144,9 +144,9 @@ sudo ./scripts/reboot.sh
 
 The system will reboot, then start the Geth service automatically.
 
-**TIP:**  Service output can be monitored using the command:  
+**TIP:** Service output can be monitored using the command:
 
-`sh sudo journalctl -xefu w3p_geth.service` 
+`sh sudo journalctl -xefu w3p_geth.service`
 
 ### Grafana Monitoring verification
 
@@ -172,10 +172,6 @@ If you're seeing any issues, you can [contact Web3 Pi support](https://www.web3p
 
 At this point, the devices are configured and ready to host an **Ethereum Node**.
 
-Unless you've disabled them in `config.txt`,  the Geth and Nimbus services will start automatically, and will sync with the network.
+Unless you've disabled them in `config.txt`, the Geth and Nimbus services will start automatically, and will sync with the network.
 
 For more information on configuring or modifying elements of the Web3 Pi installation, please see the [Configuration Guide](../managing/configuration.md).
-
-[Back to Menu](./menu.md)
-
-[Back to Main Index](../index.md)

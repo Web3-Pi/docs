@@ -10,7 +10,7 @@ The main goal of this project is to provide a lightweight image creation suite t
 
 ## Running an Ethereum Node
 
-If you've never run an Ethereum node, you should start by gaining a good understanding of the concepts involved.  Start by reading the [overview](https://ethereum.org/en/run-a-node/) provided by Ethereum.org. 
+If you've never run an Ethereum node, you should start by gaining a good understanding of the concepts involved. Start by reading the [overview](https://ethereum.org/en/run-a-node/) provided by Ethereum.org.
 
 If you're planning to make money from your node, you'll need to look into Ethereum staking, where you stake Ether and gain rewards for work done by your node. You can learn about staking in the [Ethereum Staking Guide.](https://ethereum.org/en/staking/)
 
@@ -54,7 +54,7 @@ Single device mode is obviously cheaper to set up, whereas dual device mode is f
 
 If you're staking Eth, you can choose between solo staking, where you put up the entire stake and reap all the rewards, or liquid pool staking, where you share the stake and the rewards with others. [This article](https://atomicwallet.io/academy/articles/should-i-stake-my-ethereum) on the Atomic Wallet website explains the difference.
 
-Not all liquid pools allow you to use your own hardware to run the node. Examples of those who allow this include [Rocketpool](https://rocketpool.net) and [Ether.fi](https://www.ether.fi).  
+Not all liquid pools allow you to use your own hardware to run the node. Examples of those who allow this include [Rocketpool](https://rocketpool.net) and [Ether.fi](https://www.ether.fi).
 
 ### Use your own Hardware or Request the Welcome Box?
 
@@ -73,5 +73,3 @@ You can also opt to add an LCD display to your Raspberry Pi. You'll find the det
 - When you're ready to connect to Ethereum, read the [connection guide](connect-ethereum.md).
 
 - Refer to the 'Managing your Node' [menu](managing/menu.md) to learn how to configure, manage, monitor and upgrade your node.
-
-[Return to Main Menu](index.md)

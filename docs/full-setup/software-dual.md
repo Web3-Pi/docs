@@ -13,16 +13,6 @@ On Linux and MacOS, you'll use the official Raspberry Pi imager to flash the car
 
 ⚠️ To avoid errors during the first setup, please follow the instructions precisely. ⚠️
 
-## Index
-
-[Instructions for Linux and MacOS](#linux-and-macos)
-
-[Instructions for Windows](#windows)
-
-[Initial Configuration (Optional)](#initial-configuration)
-
-[Back to Menu](./menu.md)
-
 ## Linux and MacOS
 
 You'll need to download:
@@ -30,14 +20,14 @@ You'll need to download:
 - The [Raspberry Pi Imager](https://www.raspberrypi.com/software/) from the official Raspberry site, choosing the version for the operating system you're working on;
 
 - The two Web3 Pi images from the latest release of the [Github Repository](https://github.com/Web3-Pi/Ethereum-On-Raspberry-Pi/releases/latest).
-  
+
   - For Linux, download both:
-    
+
     - The **Web3Pi_Dual_Devices_Execution** .img
     - The **Web3Pi_Dual_Devices_Consensus** .img
-  
+
   - For download both:
-    
+
     - The **Web3Pi_Dual_Devices_Execution** .dmg
     - The **Web3Pi_Dual_Devices_Consensus** .dmg
 
@@ -123,8 +113,6 @@ For more information on the Rasberry Pi imager, visit the Raspberry Pi [official
 
 You can now proceed with the installation as described in the [Installation Guide](./monitoring-installation-dual.md).
 
-[Back to Index](#index)
-
 ## Windows
 
 Download the Web 3 Pi Imager from our [webpage](https://www.web3pi.io/products/imager)
@@ -164,7 +152,7 @@ Optionaly, you can click 'Advanced' to change more settings as shown in the imag
 
 <img title="" src="../img/dual_advanced.jpg" alt="" data-align="center" width="369">
 
-When done, click 'Save'. Click 'Next' on the main settings screen. 
+When done, click 'Save'. Click 'Next' on the main settings screen.
 
 4. You'll see a list of removable devices available on your PC. Provided your SD Card reader/writer is mounted, you will be able click it to select it. Make sure the SD card for the Execution Client is in the reader.
 
@@ -215,8 +203,6 @@ Your boot cards have now been created successfully.
 **Note: Windows may attempt to open the drive at this point. If so, it will, in fact, try to open two drives, since the card now has two partitions. It won't recognize the formatting on the second partition, and will request to format it. Cancel this request!**
 
 You can now follow the [Installation Guide](./monitoring-installation-dual.md) to install Web3 Pi on the two machines.
-
-[Back to Index](#index)
 
 ## Initial Configuration
 
@@ -301,5 +287,3 @@ eth_network=sepolia
 The file also configures the ports for the various services. It's not recommended to change these.
 
 For more information, see the [Configuration Guide](../managing/configuration.md).
-
-[Back to Index](#index)
