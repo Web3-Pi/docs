@@ -152,9 +152,9 @@ Your boot card has now been created successfully.
 
 **Note: Windows may attempt to open the drive at this point. If so, it will, in fact, try to open two drives, since the card now has two partitions. It won't recognize the formatting on the second partition, and will request to format it. Cancel this request!**
 
-Pressing 'Next' will attempt to connect to the Raspberry Pi to monitor the installation. If you're not yet ready to start the installation, you can monitor it later as described in the [installation and monitoring](./monitoring-installation-single.md) guide. For now, click 'Cancel' and 'Finish'.
+Pressing 'Next' will attempt to connect to the Raspberry Pi to monitor the installation. If you're not yet ready to start the installation, you can monitor it later as described in the [installation and monitoring](./installation-monitoring.md) guide. For now, click 'Cancel' and 'Finish'.
 
-Once your hardware has been assembled, you can proceed with the [installation](./monitoring-installation-single.md).
+Once your hardware has been assembled, you can proceed with the [installation](./installation-monitoring.md).
 
 ## Initial Configuration
 
@@ -237,5 +237,3 @@ eth_network=sepolia
 ```
 
 The file also configures the ports for the various services. It's not recommended to change these.
-
-For more information, see the [Configuration Guide](../managing/configuration.md).

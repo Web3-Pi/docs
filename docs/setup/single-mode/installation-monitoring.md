@@ -133,6 +133,6 @@ rtt min/avg/max/mdev = 2.229/3.102/3.734/0.614 ms
 
 You now have a fully operational Ethereum node running Geth and Nimbus.
 
-For more information on managing, configuring and troubleshooting your node, please refer to the [Managing Your Node](../managing/menu.md) menu.
+For more information on managing, configuring and troubleshooting your node, please refer to the [Managing Your Node](../../management/ssh.md) menu.
 
 You may like to look into also running the Web3 Pi Reverse Proxy: https://docs.proxy.web3pi.io/

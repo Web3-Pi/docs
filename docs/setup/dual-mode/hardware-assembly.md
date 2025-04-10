@@ -6,7 +6,7 @@ This assembly guide is primarily aimed at assembling the components included in 
 
 Please also see the [video instructions](https://www.youtube.com/watch?v=-3Bj0rSCskk) for more information.
 
-If you have a Welcome box, unpack the contents and check them against the components listed [here](../welcome-box.md).
+If you have a Welcome box, unpack the contents and check them against the components listed [here](../../welcome-box/index.md).
 
 <img title="" src="../img/hardware0.jpg" alt="" width="400" data-align="center">
 
@@ -76,7 +76,3 @@ If you wish, you can connect a monitor to the Raspberry Pi, plugging the HDMI ca
     Please don't turn on the power until you've connected to the network as described in the installation and monitoring guide. Web3 Pi will attempt to carry out the installation as soon as power is connected.
 
 Installation requires the network. Syncing will begin immediately after installation, which takes about 19 hours to complete.
-
-[Continue to Installation Guide - Single Device Node](monitoring-installation-single.md)
-
-[Continue to Installation Guide - Dual Device Node](monitoring-installation-dual.md)

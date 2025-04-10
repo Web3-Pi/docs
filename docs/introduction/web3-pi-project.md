@@ -62,7 +62,7 @@ Web3 Pi offers a welcome box that contains all the hardware you need to run a no
 
 You can also opt to add an LCD display to your Raspberry Pi. You'll find the details in the Prerequisites Guide.
 
-## Next Steps
+<!-- ## Next Steps
 
 - Read the [prerequisites](prerequisites.md) guide to make sure you have everything you need.
 
@@ -72,4 +72,4 @@ You can also opt to add an LCD display to your Raspberry Pi. You'll find the det
 
 - When you're ready to connect to Ethereum, read the [connection guide](connect-ethereum.md).
 
-- Refer to the 'Managing your Node' [menu](managing/menu.md) to learn how to configure, manage, monitor and upgrade your node.
+- Refer to the 'Managing your Node' [menu](managing/menu.md) to learn how to configure, manage, monitor and upgrade your node. -->

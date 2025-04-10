@@ -150,7 +150,7 @@ The system will reboot, then start the Geth service automatically.
 
 ### Grafana Monitoring verification
 
-Grafana, InfluxDB, and Basic Node Monitor (BNM) are disabled in pair devices mode. After you have manually configured them, they can be enabled and used. Please see the [Configuration Guide](../managing/configuration.md) and the [Tuning, Monitoring and Maintenance Guide](../managing/tuning-monitoring-maintenance.md).
+Grafana, InfluxDB, and Basic Node Monitor (BNM) are disabled in pair devices mode. After you have manually configured them, they can be enabled and used. Please see the [Configuration Guide](../../management/ssh.md).
 
 ### Network configuration verification
 
@@ -174,4 +174,4 @@ At this point, the devices are configured and ready to host an **Ethereum Node*
 
 Unless you've disabled them in `config.txt`, the Geth and Nimbus services will start automatically, and will sync with the network.
 
-For more information on configuring or modifying elements of the Web3 Pi installation, please see the [Configuration Guide](../managing/configuration.md).
+For more information on configuring or modifying elements of the Web3 Pi installation, please see the [Configuration Guide](../../management/ssh.md).

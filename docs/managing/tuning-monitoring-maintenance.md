@@ -1,1 +1,0 @@
-** For checking application versions, there are dedicated panels in Cockpit, accessible on port 9090.**

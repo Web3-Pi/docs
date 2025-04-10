@@ -78,25 +78,43 @@ copyright: |
 
 nav:
   - Home: 'index.md'
-  - Before You Start: 'before.md'
-  - Hardware Setup:
-      - 'prerequisites.md'
-      - Hardware Checklist: 'hardware-checklist.md'
-      - Hardware Recommendations: 'hardware-recommendations.md'
-      - LCD Screen: 'lcd-screen.md'
-      - UPS: 'ups.md'
-  - Welcome Box: 'welcome-box.md'
-  - Setup Guide:
-      - 'full-setup/menu.md'
-      - Hardware Assembly: 'full-setup/hardware.md'
-      - 'Flashing the Boot Card: Single Device Node': 'full-setup/software-single.md'
-      - 'Initiating and Monitoring the Installation: Single Device Node': 'full-setup/monitoring-installation-single.md'
-      - 'Flashing the Boot Cards: Dual Device Node': 'full-setup/software-dual.md'
-      - 'Initiating and Monitoring the Installation: Dual Device Node': 'full-setup/monitoring-installation-dual.md'
-  - Connecting to Ethereum: 'connect-ethereum.md'
-  - Managing Your Node: 
-      - 'managing/menu.md'
-      - Tuning, Monitoring and Maintenance Guide: 'managing/tuning-monitoring-maintenance.md'
-      - Configuration Guide: 'managing/configuration.md'
-      - Troubleshooting Guide: 'managing/troubleshooting.md'
-      - Upgrade Guide: 'managing/upgrade.md'
+  - Introduction:
+    - About Web3 Pi: 'introduction/web3-pi-project.md'
+    - What is an Ethereum Node?: 'introduction/ethereum-node.md'
+    - Next Steps: 'introduction/next-steps.md'
+  - Setup:
+    - Prerequisites: 'setup/prerequisites.md'
+    - Supported Configurations: 'setup/supported-configurations.md'
+    - Single Mode Setup:
+      - Required Hardware: 'setup/single-mode/hardware-checklist.md'
+      - Recommended Hardware: 'setup/single-mode/hardware-recommendations.md'
+      - Software Setup: 'setup/single-mode/software-setup.md'
+      - Hardware Assembly: 'setup/single-mode/hardware-assembly.md'
+      - Installation Monitoring: 'setup/single-mode/installation-monitoring.md'
+    - Dual Mode Setup:
+      - Required Hardware: 'setup/dual-mode/hardware-checklist.md'
+      - Recommended Hardware: 'setup/dual-mode/hardware-recommendations.md'
+      - Software Setup: 'setup/dual-mode/software-setup.md'
+      - Hardware Assembly: 'setup/dual-mode/hardware-assembly.md'
+      - Installation Monitoring: 'setup/dual-mode/installation-monitoring.md'
+    - Maintenance Considerations: 'setup/considerations.md'
+    - Next Steps: 'setup/next-steps.md'
+  - Monitoring:
+    - Installation Monitor: 'monitoring/installation-monitor.md'
+    - Grafana: 'monitoring/grafana.md'
+  - Management:
+    - SSH: 'management/ssh.md'
+    - Cockpit:
+      - Dashboard: 'management/cockpit/dashboard.md' 
+      - Web3 Pi Updater: 'management/cockpit/web3-pi-updater.md'
+      - Web3 Pi Link: 'management/cockpit/web3-pi-link.md'
+      - Web3 Pi Script Runner: 'management/cockpit/web3-pi-script-runner.md'
+  - Welcome Box: 'welcome-box/index.md'
+  - Use Cases:
+    - Install in your wallet: 'use-cases/wallet.md'
+    - Transaction Firewall: 'use-cases/transaction-firewall.md'
+    - Solo Staking (coming soon): 'use-cases/solo-staking.md'
+  - Support: 
+    - Troubleshooting: 'support/troubleshooting.md'
+    - Contact: 'support/contact.md'
+  - Downloads: 'downloads/index.md'

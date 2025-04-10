@@ -4,7 +4,7 @@ The Welcome Box contains everything you need to set up a single node, or one of 
 
 ## Welcome Box Contents
 
-![](./img/WelcomeBox.jpg)
+![](../img/WelcomeBox.jpg)
 
 ### Key
 
@@ -22,4 +22,4 @@ The Welcome Box contains everything you need to set up a single node, or one of 
 
 ## Assembly and Installation
 
-Please refer to the [full setup guide](./full-setup/menu.md) for instructions.
+Please refer to the [full setup guide](../setup/prerequisites.md) for instructions.
