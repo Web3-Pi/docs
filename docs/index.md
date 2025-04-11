@@ -6,13 +6,18 @@ hide:
 
 <div class="home-page-hero">
     <div class="content">
-        <h1 class="title">Web3 Pi</h1>
-        <span class="subtitle">Your Ethereum Node on Raspberry Pi.</span>
-        <a href="/prerequisites" class="md-button md-button--primary">
-            Get started
+        <h1 class="title">
+         Web3 Pi
+        </h1>
+        <span class="subtitle">documentation</span>
+        <p class="description">
+        Guide for users that offers tips to help navigate Web3 Pi ecosystem. Whether you're managing clients,
+        configuring settings, or troubleshooting, this document will streamline your workflow.
+        </p>
+        <a href="/setup/prerequisites" class="md-button md-button--primary">
+            Get Started
         </a>
     </div>
-    <img src="img/hero.svg" alt="Web3 Pi" height="100%" />
 </div>
 
 <!-- prettier-ignore-start -->
