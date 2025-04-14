@@ -2,74 +2,38 @@
 
 ## The Web3 Pi Project
 
-The main goal of this project is to provide a lightweight image creation suite that can be used to deploy Ethereum nodes on various devices from the Raspberry Pi family, including:
+The Web3 Pi project provides a lightweight image creation suite designed to simplify deploying Ethereum nodes on specific Raspberry Pi devices. Our goal is to make running your own node accessible and efficient.
 
-- [Raspberry Pi 5](https://www.raspberrypi.com/products/raspberry-pi-5/) with 8GB of RAM
-- [Raspberry Pi 4](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/) with 8GB of RAM
-- [Raspberry Pi Compute Mode (CM 4)](https://www.raspberrypi.com/products/compute-module-4) with 8GB of RAM
+Currently supported devices (at least 8GB RAM required):
 
-## Running an Ethereum Node
+- [Raspberry Pi 5](https://www.raspberrypi.com/products/raspberry-pi-5/)
+- [Raspberry Pi 4](https://www.raspberrypi.com/products/raspberry-pi-4-model-b/)
+- [Raspberry Pi Compute Module 4 (CM4)](https://www.raspberrypi.com/products/compute-module-4/)
 
-If you've never run an Ethereum node, you should start by gaining a good understanding of the concepts involved. Start by reading the [overview](https://ethereum.org/en/run-a-node/) provided by Ethereum.org.
+## Why Web3 Pi?
 
-If you're planning to make money from your node, you'll need to look into Ethereum staking, where you stake Ether and gain rewards for work done by your node. You can learn about staking in the [Ethereum Staking Guide.](https://ethereum.org/en/staking/)
+Web3 Pi images offer several advantages for setting up your Ethereum node:
 
-Make sure you understand the rewards, risks and responsibilities before you start.
+- **Plug & Play:** Simply flash the image to your storage and power up the Raspberry Pi.
+- **Solid Foundation:** Based on Ubuntu 24.04 LTS for ARM64, providing long-term support.
+- **Automated Setup:** Handles initial configuration for network, user accounts, etc.
+- **Disk Management:** Automatically partitions and formats attached USB storage for node data.
+- **Auto-Sync:** Automatically starts the Ethereum Execution Layer sync process (using Geth).
+- **Easy Updates:** Includes an APT repository for straightforward installation and upgrades of Ethereum software components.
+- **Monitoring Included:** Comes with pre-configured monitoring dashboards using Grafana and InfluxDB.
+- **Security Focused:** Includes the UFW firewall configured for basic security.
 
 ## Why Raspberry Pi?
 
-Raspberry Pi devices are a great choice for running an Ethereum Full/Archive/Staking node.
+Raspberry Pi devices are an excellent platform for running an Ethereum node (Full or Archive) due to several key factors:
 
-- Affordable: you can run a Full Ethereum EL / Ethereum CL nodes for less than $350
-- Efficient: resources are focused on one task: run the node
-- Low power consumption: An ARM64 board consumes ~10W
-- Small form factor: Great for running at home as it fits in any corner
-- Great for running 24/7: Small, affordable and low power consumption
+- **Affordable:** You can set up the hardware for a Full Ethereum node (EL/CL) for under $350.
+- **Efficient:** As a dedicated device, resources are focused solely on running the node.
+- **Low Power Consumption:** An ARM64 board typically consumes around 10W, making it cost-effective to run continuously.
+- **Small Form Factor:** Its compact size makes it easy to place anywhere in your home.
+- **Ideal for 24/7 Operation:** The combination of low cost, low power, and small size makes it perfect for continuous operation.
 
-## Why Web3 Pi Images?
+!!! note "What's Next?"
 
-- Plug&Play image, just flash & power up
-- Based on Ubuntu 24.04 LTS for ARM64
-- Automatic configuration (network, user account, etc)
-- Automatic USB disk partitioning and formatting
-- Manages and configures swap memory in order to avoid memory problems
-- Automatically starts Ethereum 1.0 sync (Geth)
-- Includes an APT repository for installing and upgrading Ethereum software
-- Includes monitoring dashboards based on Grafana / InfluxDB
-- Includes UFW firewall
-
-## Your Choices
-
-Before you start, you'll need to make a few choices.
-
-### Dual or Single Node?
-
-An ethereum node has two components: a Consensus Client and an Execution Client. You can read more about what they are in the [Ethereum node documentation](https://ethereum.org/en/developers/docs/nodes-and-clients/).
-
-You can choose to run both nodes on a single Raspberry Pi (Single device mode) or run them on two separate Raspberry Pi machines (Dual device mode).
-
-Single device mode is obviously cheaper to set up, whereas dual device mode is faster and more resilient. Speed and resilience are important when you're staking Eth.
-
-### Solo Staking or Liquid Pool Staking?
-
-If you're staking Eth, you can choose between solo staking, where you put up the entire stake and reap all the rewards, or liquid pool staking, where you share the stake and the rewards with others. [This article](https://atomicwallet.io/academy/articles/should-i-stake-my-ethereum) on the Atomic Wallet website explains the difference.
-
-Not all liquid pools allow you to use your own hardware to run the node. Examples of those who allow this include [Rocketpool](https://rocketpool.net) and [Ether.fi](https://www.ether.fi).
-
-### Use your own Hardware or Request the Welcome Box?
-
-Web3 Pi offers a welcome box that contains all the hardware you need to run a node. You may, of course, already have a Raspberry Pi that you wish to use to run your node. This is fine, but you need to check the Prerequisites Guide to make sure you have everything you need.
-
-You can also opt to add an LCD display to your Raspberry Pi. You'll find the details in the Prerequisites Guide.
-
-<!-- ## Next Steps
-
-- Read the [prerequisites](prerequisites.md) guide to make sure you have everything you need.
-
-- If you have obtained a Welcome Box, refer to the [instructions](welcome-box.md) here.
-
-- For more detailed setup instructions, see the [full setup guide](full-setup/menu.md).
-
-- When you're ready to connect to Ethereum, read the [connection guide](connect-ethereum.md).
-
-- Refer to the 'Managing your Node' [menu](managing/menu.md) to learn how to configure, manage, monitor and upgrade your node. -->
+    - [Learn what exactly is an Ethereum node and how it works](ethereum-node.md).
+    - [Get started with running your own Ethereum node on a Raspberry Pi](next-steps.md).

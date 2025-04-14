@@ -81,6 +81,7 @@ nav:
   - Introduction:
     - About Web3 Pi: 'introduction/web3-pi-project.md'
     - What is an Ethereum Node?: 'introduction/ethereum-node.md'
+    - Can I earn with Web3 Pi?: 'introduction/staking.md'
     - Next Steps: 'introduction/next-steps.md'
   - Setup:
     - Prerequisites: 'setup/prerequisites.md'
@@ -102,6 +103,7 @@ nav:
   - Monitoring:
     - Installation Monitor: 'monitoring/installation-monitor.md'
     - Grafana: 'monitoring/grafana.md'
+    - LCD: 'monitoring/lcd.md'
   - Management:
     - SSH: 'management/ssh.md'
     - Cockpit:
