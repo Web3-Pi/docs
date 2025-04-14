@@ -1,125 +1,129 @@
 # Web3 Pi: Installation Monitoring Guide - Single Device Node
 
-Once you have flashed the boot card and assembled the hardware, you're ready to install and activate Web3 Pi.
+Now that the device is assembled and the card is inside, go back to the Web3 Pi Imager and follow the instructions:
 
-⚠️ To avoid errors during the first setup, please follow the instructions precisely. ⚠️
+1. Connect the necessary cables.
+2. Ensure Internet connection (via DHCP) is available.
+3. Turn on the device and then press the **NEXT** button.
 
-Your assembled device should look like this.
+![Device Setup](../img/single/w3p-inserting.png){ width=650px }
 
-<img src="../img/install1.jpg" title="" alt="" data-align="center">Before you connect power, make sure the ethernet cable is connected with DHCP. Internet connection is required during the installation process.
+## SD Card Installation Complete
 
-## Connecting to the Network
 
-Please make sure your network is set up as per the image below. Your network must include the Raspberry Pi and a control PC, which you will use to monitor the installation process.
+- Web3 Pi installer has been successfully written to the SD card.
+- At this point, the card is ready, and the installation process on the device begins.
+- Now the device is being searched on the network - this may take about 2 minutes, after which the user will be able to monitor the further installation process.
 
-<img src="../img/img-rpi5-connection-diagram-1.png" title="" alt="" data-align="center">
+![Installation Complete](../img/single/w3p-searching.png){ width=700px }
 
-## Pre-installation Checklist
+## Track Installation Progress
 
-- Ensure your Raspberry Pi has active cooling and at least 2 TB SSD storage
+Now you can click the "Track" button - a page with the software installation process on the device will open.
 
-- Make sure the SD card you flashed with the Web3 Pi software is inserted into the device
+![Track Button](../img/single/w3p-track.png){ width=700px }
 
-- Make sure the device is protected against power surges with a UPS
+!!!note
+    
+    From this point, the user can log in via SSH using the credentials **ethereum:ethereum**
 
-- Connect the Raspberry Pi using Ethernet cables to your network, and ensure the network is connected to the Internet.
+## Monitor Installation
 
-## Installation
 
-Installation will begin automatically as soon as you connect the power cable. The actual installation should take about 15 minutes, depending on the speed of your Internet connection.
+You can monitor the installation process through a dedicated website:
+[http://eop-1.local](http://eop-1.local)
 
-After the installation, the software will proceed to sync with the Ethereum network, which takes about 19 hours.
+The monitoring should start working approximately three minutes after the device is first switched on.
 
-Please don't unplug the power until this process is complete.
+Replace `eop-1` with your hostname that you entered during the microSD card burning process in Raspberry Pi Imager, if you used a name other than `eop-1`.
 
-You can monitor the installation from your control PC as detailed below.
+After approximately 3 minutes from powering on the device for the first time, you should see a similar page.
 
-## Monitoring the Installation
 
-A few minutes after the process begins, Web3 Pi will make available a monitoring dashboard at the network address http://eop-1.local assuming you used the hostname eop-1 when you flashed the SD card. Otherwise, use the hostname you provided.
+![Installation Monitoring](../img/single/install.png){ width=700px }
 
-This is an HTTP server running at Port 80 on the Raspberry Pi.
 
-**If the page is not available at any time, keep refreshing: the installation goes through several stages and the page will sometimes not be online.**
+!!!note
 
-The page will look like this:
+    Leave the device for about 8-15 minutes to complete the installation process.
+    Do not disconnect power during this time.
+    The time may vary depending on the bandwidth of the internet connection.
 
-<img src="../img/install2.jpg" title="" alt="" data-align="center">
+## Installation Web Interface
 
-The page contains:
+The Raspberry Pi with the Web3 Pi image on port 80 hosts an HTTP server that continuously displays the following in the web browser:
 
 - The installation stage
-
 - The hostname and IP address of the device
-
-- The full installation log
-
-- Uptime
-
+- The full installation log and uptime
 - A link to the Grafana dashboard and a JSON status file
 
-The installation is divided into stages.
 
-The installation is complete when you see: "STAGE 100: Installation completed.
+The installation is divided into stages. The installation is complete when you see: "STAGE 100: Installation completed." This status is shown in the following screenshot.
 
-At this point, the software is installed, and it then begins syncing the node. You can monitor the sync process using the Grafana dashboard.
+## Grafana Dashboard Access
 
-### Grafana Monitoring
+![Grafana Dashboard](../img/single/grafana0.png){ width=400px }
 
-To access Grafana, click the link labeled 'Grafana Monitoring' in the page shown above.
+Next, click the link to the Grafana dashboard. If everything has gone smoothly, you should see the login panel. The default username is **'admin'**, and the password is **'admin'**. You will be required to change the password upon first login.
 
-If the installation was successful, you should see the login panel as shown below.
+In the Grafana Panel, click on the **dashboard** named **'Ethereum Nodes Monitor'**.
 
-The default username is 'admin', and the password is 'admin'. You will be
-required to change the password upon first login.
+![Grafana Dashboard](../img/single/grafana1.png)
 
-<img src="../img/install3.jpg" title="" alt="" data-align="center">
+!!!note
+    
+    Pay attention to the status of the consensus and execution clients. Initially, both will be 'inactive'
 
-You'll then see the Grafana dashboard as shown below.
+![Grafana Dashboard](../img/single/grafana2.png)
 
-<img src="../img/install4.jpg" title="" alt="" data-align="center">
+In the next step, the execution client will change to 'waiting'.
 
-You can access this dashboard on [http://eop-1.local:3000](http://eop-1.local:3000) (or the hostname you configured) at any time to monitor the status of your node.
+Then both will transition to the 'syncing' state.
 
-You will see the node status and the status of each client near the top on the left.
+Grafana URL: [http://eop-1.local:3000](http://eop-1.local:3000)
 
-While the node is syncing, **pay attention to the status of the consensus and execution clients. Initially, both will be 'inactive'.**
+## Blockchain Synchronization
 
-Next, the execution client will change to 'waiting', then both will transition to the 'syncing' state.
+At this point, the **blockchain synchronization process** will begin and will take approximately 19 hours.
 
-<img src="../img/install5.jpg" title="" alt="" data-align="center">
+The CPU load will increase until it reaches its maximum possible value.
 
-At this point, the blockchain synchronization process has begun, and will take approximately 19 hours.
+Disk usage will grow to around 1.2TB.
 
-The CPU load will increase until it reaches its maximum possible value. Disk usage will grow to around 1.2TB.
+## Synchronization Complete
 
-When syncing has completed, the Grafana status will look like this:
+![Synced Status](../img/single/grafana3.png)
 
-<img src="../img/install6.jpg" title="" alt="" data-align="center">
+Full synchronization will be achieved when the status of both the execution and consensus clients turns green ("synced").
 
-You'll notice that both the execution and the consensus client have turned green.
+## SSH Access
 
-You'll now be able to use SSH to access the Raspberry Pi on `<hostname>.local`, for example `eop-1.local`. You can also use the IP address if you know it.
+![SSH Access](../img/single/ssh.png){ width=500px }
 
-The username will be **ethereum**. Initially, the password will also be **ethereum**, but you'll be required to change it when you fist log in.
+After the installation completes successfully, you should have SSH access to the Web3 Pi node.
 
-The password should be treated as highly confidential, since it will allow access to an ethereum node. Keep it safe, as you won't be able to access the node without it.
+Username: **ethereum**  
+Password: **ethereum**
 
-If you're using PuTTY, you'd configure it as shown in the image below.
+You can use **[your-hostname].local** as the SSH address or the **IP address** if you know it.
 
-<img src="../img/install7.jpg" title="" alt="" data-align="center">
+If the 'ethereum' user does not exist, it means the installation failed unexpectedly (in such case, please contact support).
 
-### Network Configuration Verification
+By default, the `ethereum` user is required to change the password during the first login.
+
+
+## Network Configuration Verification
 
 To check that the network is working correctly, SSH into the Rasberry Pi and run a `ping` command:
 
-```
+```shell
 ping -c 4 google.com
 ```
 
 You should see the following response:
 
-```
+```shell
 PING google.com (142.250.186.206) 56(84) bytes of data.
 64 bytes from waw07s05-in-f14.1e100.net (142.250.186.206): icmp_seq=1 ttl=59 time=2.83 ms
 64 bytes from waw07s05-in-f14.1e100.net (142.250.186.206): icmp_seq=2 ttl=59 time=3.62 ms
@@ -135,4 +139,3 @@ You now have a fully operational Ethereum node running Geth and Nimbus.
 
 For more information on managing, configuring and troubleshooting your node, please refer to the [Managing Your Node](../../management/ssh.md) menu.
 
-You may like to look into also running the Web3 Pi Reverse Proxy: https://docs.proxy.web3pi.io/
