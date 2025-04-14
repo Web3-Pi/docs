@@ -2,77 +2,186 @@
 
 This assembly guide is primarily aimed at assembling the components included in the Welcome Box, but will also be useful for anyone assembling their own hardware.
 
-⚠️ To avoid errors during the first setup, please follow the instructions precisely. ⚠️
+!!! info
 
-Please also see the [video instructions](https://www.youtube.com/watch?v=-3Bj0rSCskk) for more information.
+    To avoid errors during the first setup, please follow the instructions precisely.
 
-If you have a Welcome box, unpack the contents and check them against the components listed [here](../../welcome-box/index.md).
+Please also see the [video instructions](https://www.youtube.com/watch?v=-3Bj0rSCskk){ target="_blank" } for more information.
 
-<img title="" src="../img/hardware0.jpg" alt="" width="400" data-align="center">
+If you have a Welcome Box, unpack the contents and check them against the components listed [here](../../welcome-box/index.md).
 
-Source of case images and assembly diagrams: [Argon Neo Manual](https://argon40.com/blogs/argon-resources/argon-neo-5-m-2-nvme-pcie-case-for-rpi-5-manual)
+## Components Overview
 
-## Argon Neo Parts List
+1. Aluminium Top Cover with Screw Points
+2. Aluminium Case
+3. Cooling Fins and Exhaust Vent
+4. Fan Port Access
+5. POE HAT Connection
+6. GPIO Access
+7. MIPI Ports Access
+8. 30mm PWM Blower-type Fan
+9. UART Connector
+10. RTC Battery Connector Access
+11. PCIe Port Access
+12. PCIE Film Strip
+13. Power Button and LED Light
+14. THRML M.2 Heatsink
+15. M.2 NVMe Drive Socket
 
-<img title="" src="../img/hardware0a.jpg" alt="" width="400" data-align="center">
-
-## Assembly Instructions
-
-Open the Argon Neo case by removing the top cover containing the logo, and make sure you have all the parts shown in the diagram above.
-
-There should be a book of assembly instructions included. You can refer to this if any of the following instructions need clarifying, but please work according to this guide, since a few steps are unique to Web3 Pi.
+![Component diagram of the case parts](../img/assembly/parts.png)
 
 Some parts are in two zipper bags. Open them and carefully pour out the contents. You will find:
 
-- Screws: 5 longer and 2 shorter
+* Screws (two types)
+* Rubber feet
+* Two ribbon cables. You need one, the other one is a spare
 
-- Rubber feet
+## Assembly Instructions
 
-- Two ribbon cables. You need one: the other is a spare. If one is black and one orange, use the orange for preference, as it is the improved version. In fact, either cable will work fine.
+### 1. Prepare the Raspberry Pi 5
 
-- Either two or four thermal pads.
+Place the thermal pads on the CPU, RP1, RAM and PMIC Chip of the RPi 5.
 
-Pass the fan cable through the vertical gap in the case. There is a groove for the cable.
+There are different versions of this case on the market:
+* If you have four thermal pads, place them in the areas marked in blue.
+* If you have two thermal pads in the set, place them on the CPU and PMIC (bottom left corner, near the USB-C connector).
 
-Take care when removing the Raspberry Pi from the box, and avoid thermostatic damage when handling it.
+![Thermal pad placement diagram](../img/assembly/thermal.png)
 
-| Instructions                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |                                                                                    |
-| ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| **1.** Place the thermal <br> pads on the CPU, <br>RP1,  RAM  and  <br>PMIC chip of the <br>Raspberry Pi. <br>Make sure you remove <br>the protective film from <br>both sides.<br><br> There are different <br>versions of this case <br>on the market:<br>- If you have 4 <br>thermal pads, <br>place them in <br>the areas marked <br>in blue.<br>- If you have 2 <br>thermal pads, <br>place them on the <br>CPU and PMIC (bottom <br>left corner, near <br>the USB-C connector). <br><br>It doesn't matter if the pads <br> are larger than the chips. | <img title="" src="../img/hardware1.jpg" alt="" width="400" data-align="center">   |
-| **2.** Connect the NEO 5 <br>fan to the fan <br>connector as shown in <br>the image. Please pay <br>attention to how the <br>cable is routed. <br>NB: There may be a <br>small plug inserted <br>in the fan connector. <br>Remove it.                                                                                                                                                                                                                                                                                                                       | <img title="" src="../img/hardware2.jpg" alt="" width="400" data-align="center">   |
-| **2a.** Diagrammatic View                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   | <img title="" src="../img/hardware2a.jpg" alt="" width="400" data-align="center">  |
-| **3.** Connect the PCI <br>flat ribbon cable to <br>the Raspberry Pi 5 <br>PCIe port. Be careful <br>when handling the brown <br>PCIe flip/cover. Pull <br>up the brown flip to <br>release the lock.<br><br>Copper side of the <br>strip should face the <br>white side of the PCI <br>connector of the RP5. <br>At this stage, don't connect <br> the ribbon cable to the case.                                                                                                                                                                           | <img title="" src="../img/hardware3.jpg" alt="" width="400" data-align="center">   |
-| **3a.** Make sure the fan <br>wire is secured in the <br>guide rail at the side <br>of the case                                                                                                                                                                                                                                                                                                                                                                                                                                                             | <img title="" src="../img/hardware3b.jpg" alt="" width="400" data-align="center">  |
-| **4.**  Thread the PCIe flat ribbon <br> cable through the larger hole <br>in the case as shown in<br>the picture. Drop the RPi 5 <br>inside the **Argon NEO** <br>**5 M.2 NVMe Case**<br><br>After inserting and <br>pressing the RPi 5 <br>into the central part of <br>the case, they will adhere <br>due to the stickiness of <br>the thermal pads. To ensure <br>good thermal conductivity, <br>do this once, and avoid <br>removing the RPi 5 from <br>this part of the case again.<br><br>                                                           | <img title="" src="../img/hardware4.jpg" alt="" width="400" data-align="center">   |
-| **5.** Pass the ribbon cable <br>through the opening on the <br>case closer to the fan. <br>Pull the brown tabs open <br>and carefully connect <br>the PCIe flat ribbon cable <br>to the Argon Neo 5 M 2 <br>NVMe Carrier Board case <br>with copper facing up. <br>Close the tabs.                                                                                                                                                                                                                                                                         | <img title="" src="../img/hardware5.jpg" alt="" width="400" data-align="center">   |
-| **6.** Insert the MicroSD <br>card you previously <br>flashed with the Web3 <br>Pi image. The copper <br> contacts should facce <br>the board.                                                                                                                                                                                                                                                                                                                                                                                                              | <img title="" src="../img/hardware6.jpg" alt="" width="400" data-align="center">   |
-| **7.** Close the case and <br> secure the bottom <br>cover with 4 screws <br>as shown in the image. <br>Do not apply excessive <br>force to avoid stripping <br>or damaging the thread.                                                                                                                                                                                                                                                                                                                                                                     | <img title="" src="../img/hardware7.jpg" alt="" width="400" data-align="center">   |
-| **8.** The following sub-steps <br> describe how to connect your <br>M.2 NVME drive to the Argon <br>Neo 5 M.2 NVMe Carrier <br>Board. This board will accept <br>M.2 Key M and M.2 Key <br>B+M NVMe Storage Drives.                                                                                                                                                                                                                                                                                                                                        | <img title="" src="../img/hardware8.jpg" alt="" width="400" data-align="center">   |
-| **8a.** Remove the "THRMK <br>M2 Heatsink" cover by <br>unscrewing the four <br>screws at its corners.<br>Remove the thermal pad. <br><br>Move the screw point <br>on the board to the <br>appropriate size of <br>your storage drive.                                                                                                                                                                                                                                                                                                                      | <img title="" src="../img/hardware9.jpg" alt="" width="400" data-align="center">   |
-| **8b.** Insert the NVMe <br>drive into the M.2 <br>slot with the label <br>facing up as shown in <br>the picture.<br><br>Ensure the drive lies flat <br>in the case and tighten <br>the screw as shown in <br>the picture.                                                                                                                                                                                                                                                                                                                                  | <img title="" src="../img/hardware10.jpg" alt="" width="400" data-align="center">  |
-| **8c.** Mount the thermal <br>pad on the NVMe drive. <br>There is no need to <br>shorten it. Remember <br>to remove the protective <br>film from both sides.<br><br>Mount the metal <br>cover and screw it <br>in using four screws<br>with conical heads.                                                                                                                                                                                                                                                                                                  | <img title="" src="../img/hardware11.jpg" alt="" width="400" data-align="center">  |
-| **9.** Insert the rubber feet <br>in the round indentations <br>in the bottom of the case.                                                                                                                                                                                                                                                                                                                                                                                                                                                                  | <img title="" src="../img/hardware11a.jpg" alt="" width="400" data-align="center"> |
+### 2. Connect the Fan
 
-**If you don't have the LCD dashboard and cover:**
+Connect the NEO 5 fan to the RPi 5 fan connector as shown in the image. Please pay attention to how the cable is routed.
 
-| Instructions                                                                                                                   |                                                                                   |
-| ------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------- |
-| **1.** If you don't have <br>the optional LCD screen <br>and cover, then secure <br>the aluminium top cover <br>with 2 screws. | <img title="" src="../img/hardware12.jpg" alt="" width="400" data-align="center"> |
-| **2.** The completed assembly <br>should look like this.                                                                       | <img title="" src="../img/hardware13.jpg" alt="" width="400" data-align="center"> |
+![Fan connection diagram](../img/assembly/fan.png)
 
-**If you do have the LCD dashboard and cover:**
+!!!note
+    
+    There may be a small plug inserted in the fan connector. Remove it.
 
-| Instructions                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |                                                                                   |
-| -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
-| **1.** If you have the <br>optional plastic cover <br>with [LCD display](https://github.com/Web3-Pi/web3-pi-dashboard), <br>connect it instead <br>of the original <br>aluminium cover.<br><br>Please follow the <br>diagram for connection <br>instructions.<br><br>It's possible the case <br>manufacturer may  <br>label the case <br>differently.If so, you <br>will have to count <br>the pins to find the <br>correct positions <br>for the cables. <br><br>Pay attention to the <br>position of the cables <br>when mounting the <br>cover to ensure they <br>don't mechanically <br>obstruct the fan blades. | <img title="" src="../img/hardware14.jpg" alt="" width="400" data-align="center"> |
-| **2.** The completed <br>assembly including <br>the LCD screen should <br>look like this.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            | <img title="" src="../img/hardware15.jpg" alt="" width="400" data-align="center"> |
+![Small plug](../img/assembly/plug.png)
 
-You have now completed the hardware assembly.
+### 3. Connect PCIe Ribbon Cable
 
-If you wish, you can connect a monitor to the Raspberry Pi, plugging the HDMI cable into the HDMI port.
+Connect the PCIe flat ribbon cable to the Raspberry Pi 5 PCIe port. Be careful when handling brown PCIe flip/cover. Pull up the brown flip to release the lock.
 
-!!! note
+![PCIe cable connection](../img/assembly/pcie.png)
 
-    Please don't turn on the power until you've connected to the network as described in the installation and monitoring guide. Web3 Pi will attempt to carry out the installation as soon as power is connected.
+### 4. Place Raspberry Pi in the Case
 
-Installation requires the network. Syncing will begin immediately after installation, which takes about 19 hours to complete.
+Drop in the RPi 5 inside the **Argon NEO 5 M.2 NVMe Case**
+
+!!! warning
+
+    After inserting and pressing the RPi 5 into the central part of the Argon Neo 5 case, they will adhere due to the stickiness of the thermal pads. To ensure good thermal conductivity, do this once and avoid removing the RPi 5 from this part of the case again.
+
+![RPi 5 placement in case](../img/assembly/case.png)
+
+### 5. Route the PCIe Cable
+
+The PCIe flat ribbon cable should be threaded through the hole in the case, as shown in the picture.
+
+![PCIe cable routing](../img/assembly/cable1.png)
+![PCIe cable routing](../img/assembly/cable2.png)
+
+### 6. Connect PCIe Cable to M.2 Board
+
+Carefully connect the Raspberry Pi 5 with the PCIe flat ribbon cable **with copper facing up** to the **Argon NEO 5 M.2 NVMe Carrier Board Case.** Flip up the cover on the M.2 NVMe Expansion Board.
+
+![PCIe connection to M.2 board](../img/assembly/m2.png)
+
+### 7. Insert MicroSD Card
+
+Here we want you to insert the PREVIOUSLY flashed microSD card with Web3 Pi image.
+
+![MicroSD card insertion](../img/assembly/microsd.png)
+
+### 8. Prepare M.2 NVMe Drive Installation
+
+Connect your **M.2 NVMe Drive** to the **Argon NEO 5 M.2 NVMe Carrier Board.** Detailed instructions for this process are described in the following steps.
+
+![M.2 NVMe preparation](../img/assembly/board.png)
+
+### 9. Check NVMe Compatibility
+
+Connect your **M.2 NVMe Drive** to the **Argon NEO 5 M.2 NVMe Carrier Board.** Detailed instructions for this process are described in the following steps.
+
+This Board will accept **M.2 Key M** and **M.2 Key B+M** NVMe Storage Drive.
+
+!!!warning
+
+    This Board will accept **M.2 Key M** and **M.2 Key B+M** NVMe Storage Drive.
+
+![NVMe compatibility illustration](../img/assembly/nvme.png)
+
+### 10. Remove Heatsink Cover
+
+Remove the "THRMK M.2 Heatsink" cover by unscrewing the four screws at its corners.
+
+![Removing heatsink cover](../img/assembly/heatsink1.png)
+
+### 11. Adjust Screw Mount Position
+
+Move the screw point on the Board to the appropriate size of your Storage Drive.
+
+![Adjusting screw mount](../img/assembly/heatsink2.png)
+
+
+### 12. Insert NVMe Drive
+
+Insert the NVMe drive into the M.2 slot as shown in the picture.
+
+![NVMe drive insertion](../img/assembly/nvme2.png)
+
+### 13. Secure the NVMe Drive
+
+Screw in the NVMe drive as shown in the picture.
+
+![Securing NVMe drive](../img/assembly/nvme3.png)
+
+### 14. Apply Thermal Pad
+
+Mount the thermal pad on the NVMe drive. There is no need to shorten it. Remember to remove the protective film from both sides.
+
+![Thermal pad application](../img/assembly/thermal2.png)
+
+### 15. Mount Metal Cover
+
+Mount the metal cover and screw it in using four screws with conical heads.
+
+![Mounting metal cover](../img/assembly/cover.png)
+
+### 16. Secure Top Cover
+
+Secure the Aluminium Top Cover with 2 screws.
+
+![Securing top cover](../img/assembly/aluminium.png)
+
+### LCD Display Option
+
+If you have a plastic cover with an LCD display, connect it according to the diagram instead of the original metal one.
+
+![LCD display connection](../img/assembly/lcd.png)
+
+!!!warning
+
+    Pay attention to the positioning of the cables when mounting the cover to ensure they don't mechanically obstruct the fan blades.
+
+![LCD display connection](../img/assembly/lcd2.png)
+
+## Final Assembly
+
+The final result should look like this:
+
+!!!note
+
+    Pay attention to the positioning of the cables when mounting the cover to ensure they don't mechanically obstruct the fan blades.
+
+![Image: Final assembled device](../img/assembly/final0.png)
+
+## Before Powering On
+
+!!!note
+
+    Before you connect power, make sure that the ethernet cable is connected with DHCP. Internet connection is required during the installation process.
+
+![Device ready for connection](../img/assembly/final.png)
