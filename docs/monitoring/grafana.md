@@ -8,7 +8,7 @@ To install the Basic Ethereum Node Monitor plugin, navigate to the "Web3 Pi Upda
 
 ## Usage
 
-Once installed, the Basic Ethereum Node Monitor plugin will start automatically. Open Grafana in your web browser (port 3000 by default) to view the collected data.
+Once installed, the Basic Ethereum Node Monitor plugin will start automatically. Open Grafana in your web browser (port 3000 by default) to view the collected data. The default username is **'admin'**, and the password is **'admin'**. It is **highly recommended** to change the password after the first login.
 
 ![Grafana Dashboard](../img/GrafanaPanelSynced.png)
 
