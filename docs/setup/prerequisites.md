@@ -20,7 +20,7 @@ For optimal performance, having a static public IP address is beneficial, but it
 
 You'll need a gigabit LAN, including a gigabit network switch and Cat5e, Cat6, Cat6A or Cat8 Ethernet cables. The network should have automatic DHCP configuration.
 
-### Wifi Connection
+## Wifi Connection
 
 The default and recommended method for connecting the Raspberry Pi in the Web3 Pi project is via a wired Ethernet connection with automatic DHCP configuration.
 
