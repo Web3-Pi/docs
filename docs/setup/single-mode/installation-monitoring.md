@@ -35,7 +35,7 @@ You can monitor the installation process through a dedicated website:
 
 The monitoring should start working approximately three minutes after the device is first switched on.
 
-Replace `eop-1` with your hostname that you entered during the microSD card burning process in Raspberry Pi Imager, if you used a name other than `eop-1`.
+Replace `eop-1` with your hostname that you entered during the microSD card burning process in Web3 Pi Imager, if you used a name other than `eop-1`.
 
 After approximately 3 minutes from powering on the device for the first time, you should see a similar page.
 
