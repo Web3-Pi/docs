@@ -1,4 +1,4 @@
-## Web3 Pi: LCD Dashboard
+# LCD Dashboard
 
 ![](../img/lcd-dashboard.jpg)
 

@@ -104,6 +104,7 @@ nav:
     - Installation Monitor: 'monitoring/installation-monitor.md'
     - Grafana: 'monitoring/grafana.md'
     - LCD: 'monitoring/lcd.md'
+    - Monitoring via HTTP API: 'monitoring/system-monitor.md'
   - Management:
     - SSH: 'management/ssh.md'
     - Cockpit:
