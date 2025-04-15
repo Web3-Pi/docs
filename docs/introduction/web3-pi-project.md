@@ -33,7 +33,7 @@ Raspberry Pi devices are an excellent platform for running an Ethereum node (Ful
 - **Small Form Factor:** Its compact size makes it easy to place anywhere in your home.
 - **Ideal for 24/7 Operation:** The combination of low cost, low power, and small size makes it perfect for continuous operation.
 
-!!! note "What's Next?"
+!!! note "What now?"
 
-    - [Learn what exactly is an Ethereum node and how it works](ethereum-node.md).
+    - [Learn what exactly is an Ethereum node and how it works](ethereum-node.md) (next step).
     - [Get started with running your own Ethereum node on a Raspberry Pi](next-steps.md).
