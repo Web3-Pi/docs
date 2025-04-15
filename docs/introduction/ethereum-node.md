@@ -14,10 +14,8 @@ For a comprehensive overview, start by reading the documentation provided by the
 
 A modern Ethereum node consists of two main software components running together:
 
-1.  **Execution Client (EL):** Formerly known as the 'Eth1 client'. This client listens for new transactions broadcasted on the network, executes them in the Ethereum Virtual Machine (EVM), and holds the latest state and database of all current Ethereum data. Examples include Geth, Nethermind, Besu, Erigon. Web3 Pi currently uses Geth by default.
-2.  **Consensus Client (CL):** Formerly known as the 'Eth2 client'. This client implements the proof-of-stake consensus algorithm. It enables the node to follow the chain correctly by validating blocks received from peers. If configured for staking, it also handles attesting to or proposing new blocks. Examples include Prysm, Lighthouse, Teku, Nimbus.
-
-These two clients communicate with each other using the Engine API. You need both running to have a fully functional Ethereum node. Web3 Pi helps set up these clients, but specific staking configurations require manual steps.
+1.  **Execution Client (EL):**
+2.  **Consensus Client (CL):**
 
 Learn more about clients and nodes:
 
