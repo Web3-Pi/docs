@@ -19,6 +19,7 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
+    - navigation.indexes
     #    - navigation.path
     #    - toc.integrate
     - navigation.top
@@ -102,14 +103,16 @@ nav:
     - Maintenance Considerations: 'setup/considerations.md'
     - Next Steps: 'setup/next-steps.md'
   - Monitoring:
+    - 'monitoring/index.md'
     - Installation Monitor: 'monitoring/installation-monitor.md'
     - Grafana: 'monitoring/grafana.md'
     - LCD: 'monitoring/lcd.md'
-    - Monitoring via HTTP API: 'monitoring/system-monitor.md'
+    - HTTP API: 'monitoring/system-monitor.md'
   - Management:
+    - 'management/index.md'
     - SSH: 'management/ssh.md'
     - Cockpit:
-      - Dashboard: 'management/cockpit/dashboard.md' 
+      - 'management/cockpit/dashboard.md' 
       - Web3 Pi Updater: 'management/cockpit/web3-pi-updater.md'
       - Web3 Pi Link: 'management/cockpit/web3-pi-link.md'
       - Web3 Pi Script Runner: 'management/cockpit/web3-pi-script-runner.md'

@@ -1,5 +1,7 @@
 # Cockpit Dashboard
 
+![cockpit dashboard main page](../../img/cockpit.png)
+
 ## What is Cockpit?
 
 Web3 Pi comes with [**Cockpit**](https://cockpit-project.org/) pre-installed. Cockpit is a free, open-source, web-based graphical interface for servers and Linux systems. It allows you to monitor and administer your Raspberry Pi's underlying operating system (Ubuntu) directly from your web browser.
