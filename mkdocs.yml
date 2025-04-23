@@ -100,8 +100,11 @@ nav:
       - Software Setup: 'setup/dual-mode/software-setup.md'
       - Hardware Assembly: 'setup/dual-mode/hardware-assembly.md'
       - Installation Monitoring: 'setup/dual-mode/installation-monitoring.md'
-    - Maintenance Considerations: 'setup/considerations.md'
     - Next Steps: 'setup/next-steps.md'
+  - Advanced Setup:
+    - 'advanced-setup/index.md'
+    - Backup Power: 'advanced-setup/ups.md'
+    - Power over Ethernet: 'advanced-setup/poe.md'
   - Monitoring:
     - 'monitoring/index.md'
     - Installation Monitor: 'monitoring/installation-monitor.md'

@@ -15,7 +15,7 @@ The default setup requires the following hardware components:
 - 1 x SD Card reader/writer
 - 2 x Fast microSD Card
 
-Optionally, you can add an [LCD display](../considerations.md) to each Raspberry Pi for monitoring purposes.
+Optionally, you can add an [LCD display](../../monitoring/lcd.md) to each Raspberry Pi for monitoring purposes.
 
 A device with an execution client needs 2TB+ fast storage. A device with a consensus client needs 256GB+ fast storage.
 
@@ -28,6 +28,5 @@ You can use:
 - [Raspberry Pi CM4](https://botland.store/raspberry-pi-cm/18211-raspberry-pi-cm4-compute-module-4-8gb-ram-32gb-emmc-wifibluetooth-cm4108032-5904422368593.html) with [Active cooling](https://botland.store/raspberry-pi-cm/21716-dedicated-all-in-one-3007-cooling-fan-for-raspberry-pi-cm4-waveshare-22096.html) and motherboard
 
 !!!note
-
 
     **8GB** RAM is required.

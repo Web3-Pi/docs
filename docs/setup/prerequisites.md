@@ -40,7 +40,7 @@ Running an Ethereum node on Raspberry Pi, especially in projects like **Web3 Pi*
 
 For optimal reliability, power backup systems should ideally cover not just the Raspberry Pi but the entire network path, including routers and switches. However, even just powering the Raspberry Pi can significantly enhance stability.
 
-See [UPS Recommendations](./considerations.md)
+See [UPS Recommendations](../advanced-setup/ups.md)
 
 ---
 
@@ -50,6 +50,6 @@ See [UPS Recommendations](./considerations.md)
 
 If you would prefer to use your own existing Raspberry Pi, please read the [Hardware Checklist](./single-mode/hardware-checklist.md) to make sure you have everything you need. If you need to purchase anything further, the [Hardware Recommendations](./single-mode/hardware-recommendations.md) document will help you choose suitable additions to your existing setup.
 
-Optionally, you can also purchase an LCD screen for the Pi. This gives you a quick way of checking that your node is functional. The LCD screen is included in the Welcome Box. [More information](./considerations.md)
+Optionally, you can also purchase an LCD screen for the Pi. This gives you a quick way of checking that your node is functional. The LCD screen is included in the Welcome Box.
 
 ---

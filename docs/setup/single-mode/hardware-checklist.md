@@ -16,7 +16,7 @@ You can run a single device node on any of the following.
 
 - Raspberry Pi CM4 - [see ful details](#raspberry-pi-cm4)
 
-Optionally, you can add an [LCD display](../considerations.md) for monitoring purposes.
+Optionally, you can add an [LCD display](../../monitoring/lcd.md) for monitoring purposes.
 
 ### Raspberry Pi 5
 
@@ -54,4 +54,3 @@ Installing Web3 Pi on the CM4 requires more knowledge. CM4 modules come with bui
 More information can be found on the manufacturer's website: [Raspberry Pi Documentation](https://www.raspberrypi.com/documentation/computers/compute-module.html).
 
 In some cases, a bootloader update may be necessary, which is described here: [How to Update the Raspberry Pi Compute Module 4 Bootloader EEPROM](https://www.jeffgeerling.com/blog/2022/how-update-raspberry-pi-compute-module-4-bootloader-eeprom).
-
