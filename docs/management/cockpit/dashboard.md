@@ -21,9 +21,10 @@ While Grafana dashboards focus specifically on monitoring your Ethereum node cli
 ## How to Access Cockpit
 
 1.  Find the **IP address** or **hostname** of your Raspberry Pi.
-1.  Navigate to `http://<your-pi-ip-address>:9090` (replace `<your-pi-ip-address>` with the actual IP address or hostname).
-1.  You may see a security warning because Cockpit uses a self-signed SSL certificate by default. It's safe to proceed (usually under an "Advanced" or "Proceed anyway" option).
-1.  Log in using the username `ethereum` and password you selected. If this is your first time accessing your Web3 Pi, use the default password. You will be required to change the password upon first login.
+    - [How to find your node's IP address or hostname](../../support/cheatsheet.md#how-to-find-your-nodes-ip-address-or-hostname)
+2.  Navigate to `http://<your-pi-ip-address>:9090` (replace `<your-pi-ip-address>` with the actual IP address or hostname).
+3.  You may see a security warning because Cockpit uses a self-signed SSL certificate by default. It's safe to proceed (usually under an "Advanced" or "Proceed anyway" option).
+4.  Log in using the username `ethereum` and password you selected. If this is your first time accessing your Web3 Pi, use the default password. You will be required to change the password upon first login.
 
 !!! note
 

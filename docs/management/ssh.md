@@ -14,9 +14,7 @@ Before connecting, you will need:
 
 1.  **An SSH Client:** This depends on your operating system (see tabs below).
 2.  **Your Web3 Pi's IP Address or Hostname:**
-    - You can use the **hostname** you chose during the image creation process (e.g., `eop-1.local`).
-    - Alternatively, find the **IP address** assigned to your Raspberry Pi by checking your router's admin panel or using network scanning tools.
-    - If you have the [LCD Dashboard](../monitoring/lcd.md) installed, it will show the IP address directly on the display.
+    - [How to find your node's IP address or hostname](../support/cheatsheet.md#how-to-find-your-nodes-ip-address-or-hostname)
 
 Now, follow the steps for your specific operating system:
 

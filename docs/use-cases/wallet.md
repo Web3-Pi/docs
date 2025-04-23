@@ -13,7 +13,7 @@ One of the significant advantages of running your own Ethereum node with Web3 Pi
 
 1.  **Web3 Pi Node Running:** Your Raspberry Pi must be powered on, connected to your network, and the Ethereum Execution Client must be running and fully synced with the network you intend to use (e.g., Mainnet, Sepolia).
 2.  **Wallet Installed:** You need a wallet that supports custom RPC endpoints (MetaMask is a common example).
-3.  **Node's Local IP Address or Hostname:** You need to know the IP address (e.g., `192.168.1.123`) or hostname (e.g., `web3pi.local`) of your Raspberry Pi on your local network. You can find this using methods described in the [SSH Access](../management/ssh.md) or [Cockpit](../management/cockpit/dashboard.md) documentation. If you're using Web3 Pi Link, you can use the URL provided by the service instead.
+3.  **Node's Local IP Address or Hostname:** You need to know the IP address (e.g., `192.168.1.123`) or hostname (e.g., `web3pi.local`) of your Raspberry Pi on your local network. Consult the [Cheatsheet](../support/cheatsheet.md#how-to-find-your-nodes-ip-address-or-hostname) if you're not sure how to find it.
 
 ## Finding Your Node's RPC Address
 

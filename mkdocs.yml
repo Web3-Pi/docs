@@ -123,5 +123,6 @@ nav:
     - Solo Staking (coming soon): 'use-cases/solo-staking.md'
   - Support: 
     - Troubleshooting: 'support/troubleshooting.md'
+    - Cheatsheet: 'support/cheatsheet.md'
     - Contact: 'support/contact.md'
   - Downloads: 'downloads/index.md'
