@@ -78,14 +78,14 @@ Tips and tricks to keep your node running smoothly.
     ---
     Learn how to monitor your node
 
-    [:fontawesome-solid-arrow-right: Managing your node](monitoring/grafana.md)
+    [:fontawesome-solid-arrow-right: Managing your node](monitoring/index.md)
 
 -   :fontawesome-solid-gears: __Management__
 
     ---
     Learn how to manage and maintain your node
 
-    [:fontawesome-solid-arrow-right: Managing your node](management/ssh.md)
+    [:fontawesome-solid-arrow-right: Managing your node](management/index.md)
 
 -   :fontawesome-solid-wrench: __Troubleshooting__
 
