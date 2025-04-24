@@ -35,5 +35,19 @@ The Web3 Pi installation script configures UFW to allow incoming traffic on the 
 You can view the current UFW status and the list of active rules by connecting via [SSH](../management/ssh.md) and running the following commands:
 
 ```bash
-sudo ufw status verbose
+sudo ufw status numbered
+```
+
+## Adding or Removing Ports
+
+To add a new port, use the `ufw allow` command. For example, to allow incoming TPC traffic on port `12345`, run the following command:
+
+```bash
+sudo ufw allow 12345/tcp comment 'This port is used by XYZ service'
+```
+
+To remove a port, use the `ufw delete` command. It's recommended to use the `ufw status numbered` command to identify the rule number before deleting it. For example, to delete the rule with the number `100`, run the following command:
+
+```bash
+sudo ufw delete 100
 ```
