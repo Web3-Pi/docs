@@ -106,6 +106,7 @@ nav:
     - Backup Power: 'advanced-setup/ups.md'
     - Power over Ethernet: 'advanced-setup/poe.md'
     - Firewall Configuration (UFW): 'advanced-setup/ufw.md'
+    - The config.txt File: 'advanced-setup/config.md'
   - Monitoring:
     - 'monitoring/index.md'
     - Installation Monitor: 'monitoring/installation-monitor.md'
