@@ -6,3 +6,4 @@ This section provides advanced setup guides for your Web3 Pi node that aim to op
 
 - [Backup Power](ups.md) - Consider adding a backup power source to your node, in case of power outages.
 - [Power over Ethernet](poe.md) - Use PoE (Power over Ethernet) instead of the included power supply.
+- [Firewall Configuration (UFW)](ufw.md) - Configure UFW to control incoming and outgoing network traffic.
