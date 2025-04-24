@@ -278,6 +278,11 @@ Below is a description of each script and how to execute them:
 - `sudo ./scripts/update_nimbus.sh`
   This script updates the Nimbus application to the latest available version. It stops the service, installs the new version, and then restarts the service.
 
+- `sudo ./scripts/check_install.sh`
+  This script checks the installation and configuration of Web3 Pi. It verifies installed packages, active services, disk and swap usage, network connectivity, and other important aspects. The output is formatted and color-coded for better readability.
+
+You can also view and execute scripts from the [Cockpit Web3 Pi Script Runner plugin](../management/cockpit/web3-pi-script-runner.md).
+
 ## CCZE
 
 Newer version of the Web3 Pi image include CCZE, which enables automatic colorization of logs from applications such as Geth and Nimbus, significantly improving readability.
