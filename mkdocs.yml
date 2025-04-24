@@ -107,6 +107,7 @@ nav:
     - Power over Ethernet: 'advanced-setup/poe.md'
     - Firewall Configuration (UFW): 'advanced-setup/ufw.md'
     - The config.txt File: 'advanced-setup/config.md'
+    - Overclocking: 'advanced-setup/OC.md'
   - Monitoring:
     - 'monitoring/index.md'
     - Installation Monitor: 'monitoring/installation-monitor.md'
