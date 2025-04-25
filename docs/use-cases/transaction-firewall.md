@@ -141,7 +141,7 @@ You can accept or reject the displayed transaction within the time shown on the 
 
 ##### Contract call
 
-If you execute a transaction on a smart contract - for example, an ERC-20 token transfer like Golem Network - by calling the transfer function on a specific smart contract, it will be decoded and displayed in the application window.
+If you execute a transaction on a smart contract - for example, an ERC-20 token transfer like Golem Network Token - by calling the transfer function on a specific smart contract, it will be decoded and displayed in the application window.
 
 ![Contract](../img/tx-firewall/tx-contract.png)
 
