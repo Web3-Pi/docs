@@ -2,8 +2,7 @@
 
 ## SSD Drive
 
-**2 TB** fast drive is required for device running **execution** client (Geth) or for a single device node.
-**256 GB+** fast drive is required for device running **consensus** client (Nimbus/Lighthouse)
+**2 TB** fast drive is required.
 
 **For the Raspberry Pi 5**, you have three options for storage:
 
@@ -27,14 +26,6 @@ You can also use a USB to SATA adapter plus SSD 2.5" drive.
 
 \*_Sample links result from a quick Google search mainly for the reader's convenience & quick price reference; we invite you to do your own research and find local hardware providers._
 
-[USB Drive](#usb-drive)
-
-[NVMe Drive](#nvme-drive)
-
-[NVMe Hat](#nvme-hat)
-
-[USB to NVMe adapters](#usb-to-nvme-adapters)
-
 #### USB Drive
 
 | Brand   | Storage | Model          | Link\*                                                                                   | Comment                                                              |
@@ -44,8 +35,6 @@ You can also use a USB to SATA adapter plus SSD 2.5" drive.
 **Tip:** Some external disks consume more power than Raspberry Pi can deliver via USB. For Raspberry Pi 5, the max power output of the USB ports is 600mA if you're using a 3A supply, and1600mA if you're using a 5A supply. You can edit `/boot/firmware/config.txt` and add `usb_max_current_enable=1` to disable the current limit. Please read the documentation:
 
 https://www.raspberrypi.com/documentation/computers/raspberry-pi.html
-
-[Back to Recommended SSD Hardware](#recommended-ssd-hardware)
 
 #### NVMe Drive
 
@@ -69,8 +58,6 @@ These drives need adapters.
 
 [Full compatibility list for Pimoroni adapter](https://shop.pimoroni.com/products/nvme-base?variant=41219587178579)
 
-[Back to Recommended SSD Hardware](#recommended-ssd-hardware)
-
 #### NVMe Hat
 
 ##### NVMe HAT for Raspberry Pi 5
@@ -90,8 +77,6 @@ We do not recommend the following:
 
 - **Geekworm X1001**
 
-[Back to Recommended SSD Hardware](#recommended-ssd-hardware)
-
 #### USB to NVMe adapters
 
 | Brand   | Link\*                                                                                               |
@@ -103,8 +88,6 @@ We do not recommend the following:
 or other similar.
 
 **Note:** Some M.2 disks are not compatible. Please check the availability list on [Pimoroni NVMe Base description](https://shop.pimoroni.com/products/nvme-base?variant=41219587178579).
-
-[Back to Recommended SSD Hardware](#recommended-ssd-hardware)
 
 ## SD Card Reader and Writer
 
