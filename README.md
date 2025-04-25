@@ -1,8 +1,5 @@
 # Web3 Pi Documentation
 
-> [!WARNING]
-> This documentation is currently under development and will soon replace the old one. For now, please refer to the [old documentation](https://setup-guide.web3pi.io/).
-
 ## How to Run the Project
 
 ## Prerequisites
@@ -70,5 +67,3 @@
 - This project uses the **Material for MkDocs theme**, which is defined in the `mkdocs.yml` configuration file.
 - Ensure the directories and assets (such as `extra_css`, `extra_javascript`, and logo images) defined in `mkdocs.yml`
   are accessible when building the project.
-
-
