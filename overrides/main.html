@@ -1,15 +1,4 @@
-{% extends "base.html" %} {% block announce %}
-
-<div class="admonition warning">
-  <p class="admonition-title">Warning</p>
-  <p>
-    This documentation is currently under development and will soon replace the
-    old one. For now, please refer to the
-    <a href="https://setup-guide.web3pi.io/">old documentation</a>.
-  </p>
-</div>
-
-{% endblock %} {% block scripts %} {{ super() }}
+{% extends "base.html" %} {% block scripts %} {{ super() }}
 <script
   defer
   src="https://umami.web3pi.io/script.js"
