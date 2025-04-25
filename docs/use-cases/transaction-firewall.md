@@ -1,136 +1,237 @@
-# Ethereum Transactions Firewall
+# Web3 Pi Transactions Firewall
 
-This simple tool increases interaction security with Ethereum when accessed via a local RPC endpoint. It should be used with the [Ethereum On Raspberry Pi](https://github.com/Web3-Pi/Ethereum-On-Raspberry-Pi) suite.
+TxFirewall is a tool that enhances the security of interactions with the Ethereum network through local RPC endpoints. It is designed to work with the [Ethereum On Raspberry Pi](https://github.com/Web3-Pi/Ethereum-On-Raspberry-Pi) suite.
 
+At its core, TxFirewall functions as a local transaction-intercepting proxy server. It acts as an intermediary between the user's wallet (e.g., MetaMask) and the RPC endpoint of their own W3P Ethereum node.
 
-
-## Setup
-
-Log in to your Raspberry Pi and follow the instructions below.
+Technically, TxFirewall listens on a specific local port configured in the wallet. When the wallet sends an RPC request, TxFirewall intercepts it. Simple data read calls (like `eth_getBalance`) can be passed directly to the W3P node. However, critical calls like `eth_sendTransaction` are halted and subjected to a verification process. Crucially, this entire process happens locally on the W3P device or the user's machine, before the transaction is broadcast to the Ethereum network.
 
 
-### Node.js
 
-This is a [Node.js](https://nodejs.org/) project, so if you don't have it installed on your device, follow the steps below:
-```bash
-sudo apt update
-sudo apt install nodejs
-sudo apt install npm
-```
+![Firewall diagram](../img/tx-firewall/diag1.png)
 
-### Ethereum Transaction Firewall
+## Installation
 
-Clone the current repository to your working directory and change the current directory to the working directory. Install dependencies by running the command: 
-```bash
-npm install
-```
+The firewall can be installed manually on any computer by following the instructions available at Github repository: [Web3 Pi Transaction Firewall](https://github.com/Web3-Pi/ethereum-transactions-firewall).
 
-Copy template of environment file _.env_:
-```bash
-cp .env-template .env
+However, Web3 Pi Transaction Firewall is part of the Web3 Pi ecosystem, and the recommended installation method is through the __Cockpit__ management system, accessible via the __Web3 Pi Updater__ plugin. This installation approach automatically sets up the firewall along with the cockpit plugin, providing a complete graphical interface for firewall management.
 
-```
+You can easily install Transaction Firewall on your Raspberry Pi by clicking **Install** in the Web3 Pi Updater plugin.
 
-#### Environment
+![Firewall installation](../img/tx-firewall/updater.png)
 
-The `.env` file allows you to configure various settings required for the Ethereum Transactions Firewall. Below is a
-description of the available variables that you can set:
+In this version, the entire package is installed with initial configuration. The firewall is installed as a systemd service with appropriate permissions and configuration paths to ensure it uses the local Ethereum RPC client on your Web3 Pi by default. Additionally, the package includes a Cockpit plugin for complete management and control of the firewall.
 
-- `SERVER_PORT`: Port number where the main server will listen for incoming connections.  
+
+## Configuration
+
+After installation, a new item labeled **Web3 Pi Tx Firewall** will appear in the Cockpit Menu.
+The firewall configuration window looks as follows:
+
+![Firewall Cockpit plugin](../img/tx-firewall/cockpit1.png)
+
+
+!!!note
+
+    You must have administrator privileges enabled to use the Web3 Pi Tx Firewall. Otherwise, you will see a warning message:
+    ![Admin warn](../img/tx-firewall/admin-warn.png)
+
+### Main settings
+
+The top menu of the panel provides options to stop and start the firewall service, as well as configure basic settings:
+
+![Firewall settings](../img/tx-firewall/settings.png){width=400px style="display: block; margin: 0 auto;"}
+
+- **`Server Port`**: Port number where the main application serves the web interface for users to verify transactions.  
   **Default:** `8454`
 
-- `PROXY_PORT`: Port number used for the proxy service.  
+- **`Proxy Port`**: Port number used for the proxy service. Used by RPC clients such as Metamask.  
   **Default:** `18500`
 
-- `WSS_PORT`: Port number dedicated for WebSocket Secure (WSS) connections.  
+- **`WSS Port`**: Port number dedicated for WebSocket connections used between the web application and the firewall.  
   **Default:** `18501`
 
-- `RPC_ENDPOINT`: The RPC endpoint used to communicate with your Ethereum or blockchain node.  
-  **Example:** `http://localhost:8545`
+- **`RPC Endpoint`**: The RPC endpoint used to communicate with your Ethereum or blockchain node.  
+  **Default:** `http://localhost:8545` - local Ethereum node in Web3 Pi
 
-- `AUTHORIZED_ADDR_PATH`: Path to the file containing the list of authorized addresses.  
-  **Default:** `auth_addr.json`
+- **`Interactive Mode Timeout`**: Timeout duration for user decision in interactive mode (in seconds).  
+  **Default:** `60`
 
-- `KNOWN_CONTRACTS_PATH`: Path to the file containing information about known contracts mapped to their labels and abi.  
-  **Default:** `known_contracts.json`
+!!!note
 
-Be sure to restart the application after making changes to the `.env` file for them to take effect.
+    Changing these settings requires a restart of the firewall service.
+
+#### Opening ports in OS firewall
+
+The default firewall application ports are blocked by the operating system firewall (USW). This is indicated by an icon next to the listed ports.
+
+![Firewall ports](../img/tx-firewall/ports.png){width=400px style="display: block; margin: 0 auto;"}
+
+To use the Tx firewall, you need to unblock these ports. You can do this manually via the [USW CLI](/#todo) or by clicking the lock icon next to each port.
+
+!!!warning
+
+    If the ports are not open, attempting to access the firewall's frontend application will result in the following message:
+    ![Admin warn](../img/tx-firewall/ports-warn.png)
+
+### Authorized address
+
+In this table, you can add, edit or delete addresses that you recognize and set an appropriate name for them. This name will be displayed in the transaction verification window. It can be either an Ethereum account address or a contract address.
+
+![Firewall Authorized addresses](../img/tx-firewall/auth_addr.png)
+
+### Known contracts
+
+In this table, you can define contracts that you recognize, including both their names and ABIs. This configuration will be used to decode transaction parameters. In the verification window, the name of the smart contract function being called and its argument names will be displayed. Additionally, if the argument type is `address`, it will be displayed with the appropriate name if it is found as an authorized address.
+
+![Firewall Known contracts](../img/tx-firewall/known_contracts.png)
+
+### Client configuration (Metamask)
+
+You can configure any Ethereum RPC client - any wallet (including hardware wallets), or it can be an application using blockchain. This example demonstrates configuration instructions for the popular Metamask wallet.
+
+For this purpose, you need to:
+
+To navigate to the network configuration window in Metamask, follow [the official Metamask instructions](https://support.metamask.io/configure/networks/how-to-add-a-custom-network-rpc/#adding-or-editing-rpc-urls) and then fill in the required fields.
+
+![Firewall settings](../img/tx-firewall/metamask.png){width=300px style="display: block; margin: 0 auto;"}
+
+!!!note
+
+    You should use as `Default RPC URL` a URL consisting of your Pi's hostname or IP address and the port defined in the configuration as `Proxy Port`
+
+## Usage
+
+To use the Tx Firewall, open the frontend application by clicking the **Open Firewall App** button in the top menu.
+
+!!!warning
+
+    The Firewall in its current version works exclusively in interactive mode, which means that transactions will only be verified and rejected when the frontend application window is active. If the window is not running, <br>**all** (!) transactions will be forwarded to the specified RPC node.
 
 
-#### Authorized addresses
+### Frontend App
 
-You can optionally assign a corresponding label to each authorized address. To do this, edit a file `auth_addr.json` and store the mapping in the file, e.g.:
-```json
+After opening the application, you can monitor transactions in the window:
+
+![Frontend App](../img/tx-firewall/frontend.png)
+
+If for any reason you lose the connection, you should see a notification message. 
+
+![Frontend App](../img/tx-firewall/connection-error.png){width=300px style="display: block; margin: 0 auto;"}
+  
+!!!warning
+    Remember! In such a situation, the Firewall operates in mode: Accepts everything!
+
+
+#### Validating transaction
+
+##### Simple transfer
+
+During a simple funds transfer from one account to another, the transfer transaction will be displayed in the application window with properly tagged addresses if they have been defined as _Authorized Addresses_.
+
+![Transfer](../img/tx-firewall/tx-transfer.png)
+
+You can accept or reject the displayed transaction within the time shown on the screen.
+
+!!!note
+
+    If you don't make a decision within the specified time, the transaction will be automatically rejected!
+    The decision time is set in the `Interactive Mode Timeout` parameter.
+
+
+##### Contract call
+
+If you execute a transaction on a smart contract - for example, an ERC-20 token transfer like Golem Network - by calling the transfer function on a specific smart contract, it will be decoded and displayed in the application window.
+
+![Contract](../img/tx-firewall/tx-contract.png)
+
+
+!!!note
+
+    Pay attention that the address fields have been tagged with names defined in the `Authorized Addresses` and `Known Contract` tables. If these definitions weren't present, the labels would display as `Unknown`.
+
+
+If you make a transaction on a contract that hasn't been defined in the `Known Contracts` table, a data field with undecoded transaction data in hexadecimal format will appear in the verification window.
+
+![Contract](../img/tx-firewall/tx-no-data.png)
+
+!!!note
+
+    That's why it's important to define contract ABIs for proper transaction verification!
+
+
+###### Predefined Standard Interfaces
+
+If a contract address is not matched with any entries in the `Known Contracts` table, the firewall attempts to recognize and match the contract data against a set of predefined standard interfaces:
+
+- **Main standards**:
+    - ERC20 - Standard interface for fungible tokens
+    - ERC721 - Standard interface for non-fungible tokens (NFTs)
+    - ERC1155 - Multi-token standard
+    - ERC4626 - Tokenized vault standard
+
+- **Popular extensions**:
+    - ERC20Burnable - ERC20 extension allowing token burning
+
+- **Popular utility contracts**:
+    - Ownable - Contracts with ownership functionality
+      - AccessControl - Contracts with role-based access control
+
+All these interfaces are imported from the [OpenZeppelin](https://github.com/OpenZeppelin/openzeppelin-contracts) library, which provides secure and community-vetted implementations of common smart contract standards. This automatic detection allows the firewall to correctly parse and display transaction data. Contract will be tagged as `Possible Interface: ...`
+
+![Contract](../img/tx-firewall/tx-predefined.png)
+
+### Logs
+
+While operating and using the firewall, you can view service logs in the Cockpit panel, where firewall activities are recorded:
+
+![logs](../img/tx-firewall/logs.png)
+
+By clicking on a specific log entry, you can see its details. Logs are stored in JSON format:
+
+```JSON
 {
-  "0x00000000219ab540356cBB839Cbe05303d7705Fa": "Beacon Deposit Contract",
-  "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2": "Wrapped Ether",
-  "0x7DD9c5Cba05E151C895FDe1CF355C9A1D5DA6429": "GLM Token Contract"
+  "level": 30,
+  "time": "2025-04-25T16:54:57.819Z",
+  "pid": 33525,
+  "hostname": "eop-1",
+  "transaction": {
+    "id": "0xd1490ab481cb7c2d7713a98fa52878300d04ae750b73ed42e28724387aa840a1",
+    "from": "0x19ee20338a4c4bf8f6aebc79d9d3af2a01434119",
+    "to": "0x7dd9c5cba05e151c895fde1cf355c9a1d5da6429",
+    "value": "0",
+    "data": "0xa9059cbb000000000000000000000000de07073781cadad26053b6d36d8768f0bd283751000000000000000000000000000000000000000000000000001c6bf526340000",
+    "labelFrom": "Bob",
+    "labelTo": "GLM Token Contract",
+    "txType": "contract-call",
+    "contractInfo": {
+      "address": "0x7dd9c5cba05e151c895fde1cf355c9a1d5da6429",
+      "labelAddress": "Golem Contract",
+      "functionName": "transfer",
+      "args": [
+        {
+          "name": "recipient",
+          "type": "address",
+          "value": "0xdE07073781CADaD26053b6d36D8768f0bD283751",
+          "label": "Alice"
+        },
+        {
+          "name": "amount",
+          "type": "uint256",
+          "value": "8000000000000000"
+        }
+      ]
+    }
+  },
+  "msg": "Transaction accepted"
 }
 ```
 
-If any of these addresses are used, the firewall will label them accordingly.
+## Security
 
+### Limitations
 
-#### Known contracts
-
-You can optionally include the address of a known contract, its name, and its ABI. This allows the parser to decode its
-functions and display the appropriate label during transactions.
-
-To set this up, edit the `known_contracts.json` file and add the appropriate mappings. For example:
-
-```json
-{
-  "0x7DD9c5Cba05E151C895FDe1CF355C9A1D5DA6429": {
-    "name": "GLM Token Contract",
-    "abi": [
-      {
-        "constant": true,
-        "inputs": [],
-        "name": "exampleFunction",
-        "outputs": [
-          {
-            "name": "",
-            "type": "string"
-          }
-        ],
-        "payable": false,
-        "stateMutability": "view",
-        "type": "function"
-      }
-    ]
-  }
-}
-```
-
-## Running
-
-### Overview
-
-The service is configured and ready to run. To start the service, execute the following command from the main project directory:
-```bash
-npm run build
-npm start
-```
-
-On successful startup, the application will print the following (or similar) output:
-```
-INFO: WebSocket server listening on port 18501
-INFO: Transaction Firewall HTTP Server (to accept/reject transactions): http://eop-1.local:8454
-INFO: Validating Proxy is running
-    Proxy address (endpoint to be used in a wallet): "http://eop-1.local:18500"
-    Ethereum RPC endpoint used by the firewall: "http://eop-1.local:8545"
-```
-
-To start accepting transactions, open the web browser on a machine in a local subnet. The service is hosted on a local subnet, so the device name must be used in the web browser. In the default single-device setup, the device name should be _eop-1_, and the corresponding webpage is:
-```
-http://eop-1.local:8454
-```
-You should see a window:
-
-![Firewall app](../img/tx-firewall/firewall.png){width=700px}
-
-
-### Details
+Currently, only the Interactive Mode of the Firewall is available. This means that transaction verification can only be performed when the frontend application is open.
 
 - If the web page is not open, the service automatically forwards all requests to the configured RPC endpoint
 - Only one web page instance may be opened at a time
@@ -138,40 +239,7 @@ You should see a window:
 - This is an asynchronous service, but it serves only one request at a time
   - Requests are not queued
   - New requests sent during the processing of a previous one are automatically forwarded to the configured RPC endpoint
-- If _known_contracts.json_  were provided, then the known contract calls will be rendered with additional details (e.g., custom GLM _transfer_ view will display the target address and the GLM amount)
 
-#### Accepting simple transfer 
-![Firewall app](../img/tx-firewall/tx-transfer.png){width=700px}
+### More about threats...
 
-#### Accepting contract transaction
-![Firewall app](../img/tx-firewall/tx-contract.png){width=700px}
-
-## Regular use
-
-This project is a firewall between the wallet and the RPC endpoint (Ethereum mainnet only). Change the configured RPC endpoint to the proxy address to enable it in your wallet of choice.
-
-### Metamask
-
-#### Prerequisites
-
-Before configuring the Metamask, make sure that your [Ethereum On Raspberry Pi](https://github.com/Web3-Pi/Ethereum-On-Raspberry-Pi) device (RPC endpoint) is synchronized and online. Let's assume that the default device name `http://eop-1.local` is used.
-
-Make sure that the firewall is running. To launch it, follow [this instruction](#running).
-
-#### Custom RPC endpoint configuration
-
-To navigate to the network configuration window in Metamask, follow [the official Metamask instructions](https://support.metamask.io/networks-and-sidechains/managing-networks/how-to-add-a-custom-network-rpc/) and then fill in the required fields. For example (assuming that the firewall was launched with the default configuration options, i.e., the default port numbers):
-
-| Metamask field                | Value                      |
-| ----------------------------- | -------------------------- |
-| Network name                  | _Ethereum txn firewall_    |
-| New RPC URL                   | `http://eop-1.local:18500` |
-| Chain ID                      | _1_                        |
-| Currency symbol               | _ETH_                      |
-| Block explorer URL (Optional) | `http://etherscan.io`      |
-
-![Metamask](../img/tx-firewall/metamask.png){width=300px}
-
-After setting up the custom RPC, you should see that the firewall processes requests from your Metamask (e.g., Ethereum state reads).
-
-If you open the webpage associated with the firewall in a browser (i.e., `http://eop-1.local:8454`), you'll be able to inspect and then accept or reject all transactions submitted via Metamask.
+You can read more about the need to use the Firewall together with Web3 Pi on our blog [Fortify Your Ethereum Journey Web3 Pi Transaction Firewall](https://www.web3pi.io/blog/ethereum-txfirewall)
