@@ -10,23 +10,24 @@ Before you begin the setup process, you need to decide on a few things:
 
 An Ethereum node requires both an Execution Client (EL) and a Consensus Client (CL).
 
-- **Single Device:** Run both EL and CL clients on one Raspberry Pi. This is cheaper but shares resources. A Raspberry Pi 5 with 16GB of RAM is recommended for this configuration.
+- **Single Device:** Run both EL and CL clients on one Raspberry Pi. This is cheaper but shares resources. A **Raspberry Pi 5** with **8GB RAM** is recommended for this configuration.
 - **Dual Device:** Run the EL client on one Raspberry Pi and the CL client on a separate Raspberry Pi. This allows you to use two, weaker devices in place of one, more powerful one, at the cost of increased complexity.
 
 If you're unsure, we recommend starting with a single device setup.
 
-### Use Your Own Hardware or Request the Welcome Box?
+## 2. Prepare Your Hardware
 
-- [**Welcome Box:**](../welcome-box/index.md) Web3 Pi offers a Welcome Box containing pre-selected, compatible hardware to get you started quickly.
-- **Own Hardware:** You can use your existing Raspberry Pi (Model 4, 5, or CM4) and compatible peripherals. Ensure you have everything required by checking the [Prerequisites Guide](../setup/prerequisites.md).
+Ensure you have all the necessary hardware components (Raspberry Pi, power supply, storage, network cable, etc.).
+
+### Use Your Own Hardware or the Welcome Box?
+
+- [**Welcome Box:**](../welcome-box/index.md) Web3 Pi offers a Welcome Box — an all-in-one solution with pre-selected, compatible hardware to help you get started quickly.
+- **Own Hardware:** You can use your existing Raspberry Pi (Model 4, 5, or CM4) and compatible peripherals. Ensure you have everything required by checking the [Prerequisites Guide](../setup/prerequisites.md) and the [Hardware Recommendations](./single-mode/hardware-recommendations.md) document.
 
 ### Optional LCD Display?
 
-- You can add an optional LCD display to your setup for at-a-glance monitoring. Details are in the [LCD Monitoring Guide](../monitoring/lcd.md).
-
-## 2. Prepare Your Hardware
-
-- Read the **[Prerequisites Guide](../setup/prerequisites.md)** to ensure you have all the necessary hardware components (Raspberry Pi, power supply, storage, network cable, etc.).
+- You can add an optional LCD display to your setup for at-a-glance monitoring. It's included in the Welcome Box and natively supported by the Web3 Pi system — just plug it in, no installation or configuration needed.  
+Details are in the [LCD Monitoring Guide](../monitoring/lcd.md).
 
 ## 3. Set Up Your Node
 
