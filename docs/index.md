@@ -11,8 +11,7 @@ hide:
         </h1>
         <span class="subtitle">documentation</span>
         <p class="description">
-        Guide for users that offers tips to help navigate Web3 Pi ecosystem. Whether you're managing clients,
-        configuring settings, or troubleshooting, this document will streamline your workflow.
+        This documentation provides everything you need to get started with Web3 Pi.<br>Find step-by-step guides for setup, detailed explanations of features, monitoring tools, troubleshooting tips for running your Ethereum node smoothly on Raspberry Pi.
         </p>
         <a href="/setup/prerequisites" class="md-button md-button--primary">
             Get Started
@@ -53,7 +52,7 @@ Get started with running your very own Ethereum node on a Raspberry Pi.
 -   :fontawesome-solid-microchip: __Prerequisites__
 
     ---
-    Hardware and software requirements to run an Ethereum node
+    Hardware and software requirements to run an Ethereum node on a Raspberry Pi
 
     [:fontawesome-solid-arrow-right: Prerequisites](setup/prerequisites.md)
 
@@ -61,7 +60,7 @@ Get started with running your very own Ethereum node on a Raspberry Pi.
 
     ---
 
-    Select the hardware and software configuration that best suits your needs and follow the setup guide
+    A complete step-by-step guide to setting up your own Ethereum node on a Raspberry Pi using Web3 Pi
 
     [:fontawesome-solid-arrow-right: Setup guide](setup/supported-configurations.md)
 
