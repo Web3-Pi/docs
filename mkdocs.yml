@@ -122,7 +122,7 @@ nav:
       - Web3 Pi Updater: 'management/cockpit/web3-pi-updater.md'
       - Web3 Pi Link: 'management/cockpit/web3-pi-link.md'
       - Web3 Pi Script Runner: 'management/cockpit/web3-pi-script-runner.md'
-  - Welcome Box: 'welcome-box/index.md'
+  - WelcomeBox: 'welcome-box/index.md'
   - Use Cases:
     - Install in your wallet: 'use-cases/wallet.md'
     - Transaction Firewall: 'use-cases/transaction-firewall.md'

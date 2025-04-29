@@ -156,3 +156,57 @@
   height: 100%;
   border: 0;
 }
+
+
+
+/* In docs/stylesheets/extra.css */
+
+.custom-width-table {
+  width: 100%; /* Table width */
+  border-collapse: collapse; /* Merge cell borders */
+  margin-bottom: 1em; /* Optional margin below the table */
+  table-layout: fixed;
+  word-wrap: break-word; /* Wrap long words */
+}
+
+/* Styles for header (th) and data (td) cells */
+.custom-width-table th,
+.custom-width-table td {
+  border: 1px solid #8a8a8a;  /* Add a 1px gray border */
+  /* ===> REDUCED PADDING for tighter rows (4px top/bottom, 8px left/right) <=== */
+  padding: 4px 10px;
+  text-align: left;        /* Horizontal text alignment */
+  vertical-align: middle;  /* Vertical text alignment */
+}
+
+/* Width definitions for the first two columns */
+.custom-width-table th:nth-child(1),
+.custom-width-table td:nth-child(1) {
+  width: 20%; /* Width of the first column */
+}
+
+.custom-width-table th:nth-child(2),
+.custom-width-table td:nth-child(2) {
+  width: 45%; /* Width of the second column */
+}
+
+
+/* The third column will take the remaining space automatically */
+.custom-width-table th:nth-child(3),
+.custom-width-table td:nth-child(3) {
+  width: 30%;
+}
+
+
+/* Optional: Additional styles for the header */
+.custom-width-table th {
+  /* background-color: #f2f2f2;  Light background for header */
+  font-weight: bold;       /* Bold text in header */
+}
+
+/* Make text bold in the second data column */
+/*
+.custom-width-table td:nth-child(2) {
+  font-weight: bold;
+}
+*/
