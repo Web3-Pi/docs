@@ -2,7 +2,7 @@
 
 ## The Web3 Pi Project
 
-Web3 Pi is an open-source project simplifying the operation of a personal Ethereum node using Raspberry Pi devices. We provide a ready-to-use, optimized operating system image and automated tools, making node ownership accessible even without deep technical knowledge. Leveraging the Raspberry Pi's efficient ARM architecture, Web3 Pi ensures reliable blockchain access with very low energy consumption (around 6W), allowing for cost-effective, 24/7 operation. Our goal is to lower the barrier to entry for direct participation in the Ethereum network.
+Web3 Pi is an open-source project simplifying the operation of a personal Ethereum node using Raspberry Pi devices. We provide a ready-to-use, optimized operating system image and automated tools, making node ownership accessible even without deep technical knowledge. Leveraging the Raspberry Pi's efficient ARM architecture, Web3 Pi ensures reliable blockchain access with very low energy consumption (around 8W), allowing for cost-effective, 24/7 operation. Our goal is to lower the barrier to entry for direct participation in the Ethereum network.
 
 Currently supported devices (at least 8GB RAM required):
 
