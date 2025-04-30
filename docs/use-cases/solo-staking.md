@@ -47,7 +47,7 @@ Before starting the configuration, ensure you meet the following requirements:
 
 ## 3. Network Selection
 
-Before you begin synchronization, choose which network you want to sync with. Edit the `config.txt` file:
+Before you begin synchronization, choose which network you want to sync with (`mainnet` for real staking, `holesky` or `hoodi` for testnets). Edit the `config.txt` file:
 
 ```bash
 sudo nano /boot/firmware/config.txt
@@ -81,9 +81,10 @@ Open the script in a text editor:
 nano /home/ethereum/clients/nimbus/nimbus.sh
 ```
 
-Find the place where the command is executed (towards the end of the file). Look for the line that starts with `nimbus_beacon_node --non-interactive --tcp-port...`
+Find the place where the `nimbus_beacon_node` command is executed (towards the end of the file). Look for the line that starts with `nimbus_beacon_node --non-interactive --tcp-port...`
 
-Add your address as a new argument at the end of the command: ` --suggested-fee-recipient='0xYOUR_ETHEREUM_ADDRESS'`
+Add your fee recipient address as a new argument at the end of that line:
+` --suggested-fee-recipient='0xYOUR_ETHEREUM_ADDRESS'`
 
 Replace `0xYOUR_ETHEREUM_ADDRESS` with your actual Ethereum address.
 
@@ -103,10 +104,20 @@ More details about Nimbus configuration options can be found in the official Nim
 
 Validator keys **must** be generated using the official Staking Launchpad website.
 
-### Launchpad Link
+=== "Mainnet"
 
-Go to the official Staking Launchpad site for the Mainnet:
-<https://launchpad.ethereum.org/>
+    Go to the official Staking Launchpad site for Mainnet:
+    <https://launchpad.ethereum.org/>
+
+=== "Holesky"
+
+    Go to the official Staking Launchpad site for the Holesky testnet:
+    <https://holesky.launchpad.ethereum.org/>
+
+=== "Hoodi"
+
+    Go to the official Staking Launchpad site for the Hoodi testnet:
+    <https://hoodi.launchpad.ethereum.org/>
 
 ### Process Overview
 
@@ -135,15 +146,19 @@ During key generation, the following will be created:
     - `deposit_data-*.json`: The public file needed to make the deposit via the Launchpad.
     - `keystore-*.json`: The file(s) containing your encrypted validator private key(s). Essential for importing onto the Web3 Pi.
 
-## 7. Step 4: Import Validator Keys into Nimbus
+## 7. Import Validator Keys into Nimbus
 
 ### Secure Transfer of Keystore Files
 
 Create a new directory `validator_keys` on your Pi and transfer the keystore files from the machine where they were generated to your Pi:
 
 ```bash
-ssh ethereum@<pi_address> mkdir validator_keys
-scp path/to/keystore*.json ethereum@<pi_address>:validator_keys/
+# On your local machine (where keys were generated):
+# Create the directory on the Pi via SSH
+ssh ethereum@<pi_address> mkdir -p ~/validator_keys
+
+# Securely copy the keystore files to the Pi
+scp path/to/keystore*.json ethereum@<pi_address>:~/validator_keys/
 ```
 
 Replace `<pi_address>` with your Web3 Pi's IP address and `path/to/keystore*.json` with the actual path to your generated keystore file(s). You will be prompted for the `ethereum` user's password.
@@ -152,30 +167,61 @@ Replace `<pi_address>` with your Web3 Pi's IP address and `path/to/keystore*.jso
 
 Connect to your Web3 Pi via SSH again.
 
-Import the uploaded keys using Nimbus:
+Import the uploaded keys using the `nimbus_beacon_node deposits import` command. The `--data-dir` path depends on your chosen network:
 
-```bash
-sudo nimbus_beacon_node deposits import --data-dir=/mnt/storage/.nimbus/data/shared_<CHAIN>_0/
-```
+=== "Mainnet"
 
-Replace `<CHAIN>` with the network you are running the validator on (e.g., for `hoodi`, the full path is `/mnt/storage/.nimbus/data/shared_hoodi_0/`).
+    ```bash
+    sudo nimbus_beacon_node deposits import \
+      --data-dir=/mnt/storage/.nimbus/data/shared_mainnet_0/ \
+      ~/validator_keys
+    ```
 
-You will be prompted to enter the **keystore password** you created during key generation.
+=== "Holesky"
+
+    ```bash
+    sudo nimbus_beacon_node deposits import \
+      --data-dir=/mnt/storage/.nimbus/data/shared_holesky_0/ \
+      ~/validator_keys
+    ```
+
+=== "Hoodi"
+
+    ```bash
+    sudo nimbus_beacon_node deposits import \
+      --data-dir=/mnt/storage/.nimbus/data/shared_hoodi_0/ \
+      ~/validator_keys
+    ```
+
+You will be prompted to enter the **keystore password** you created during key generation for each key being imported.
 
 ### Verification
 
-After a successful import, the encrypted keys will be located in:
-`/mnt/storage/.nimbus/data/shared_<CHAIN>_0/validators`. You can verify that the keys were imported correctly with the command:
+After a successful import, the encrypted keys will be stored within the Nimbus data directory. You can verify that the validator directories were created:
 
-```bash
-sudo ls /mnt/storage/.nimbus/data/shared_<CHAIN>_0/validators
-```
+=== "Mainnet"
 
-Again, replace `<CHAIN>` with your chosen network. You should see a new directory (or directories) in the `validators` folder named after the public key(s) of your validator(s).
+    ```bash
+    sudo ls /mnt/storage/.nimbus/data/shared_mainnet_0/validators
+    ```
+
+=== "Holesky"
+
+    ```bash
+    sudo ls /mnt/storage/.nimbus/data/shared_holesky_0/validators
+    ```
+
+=== "Hoodi"
+
+    ```bash
+    sudo ls /mnt/storage/.nimbus/data/shared_hoodi_0/validators
+    ```
+
+You should see a new directory (or directories) within the `validators` folder named after the public key(s) of your validator(s).
 
 ### Remove Keystore Files from Home Directory
 
-After a successful import, remove the original keystore files from the home directory:
+After confirming a successful import and ensuring you have secure **offline** backups, remove the keystore files from the `ethereum` user's home directory on the Pi:
 
 ```bash
 rm -rf ~/validator_keys
@@ -183,13 +229,13 @@ rm -rf ~/validator_keys
 
 !!! warning
 
-    Remember to keep your secure **offline** backup of these files and the password safe!
+    This step permanently deletes the copied keystore files from the Pi's home directory. **Only do this after confirming successful import AND verifying your offline backups.** Your offline backup is crucial for recovery.
 
 ## 8. Start Services and Verify Operation
 
 ### Restart Services
 
-Restart Nimbus to load the new configuration (including the imported keys and fee recipient):
+Restart Nimbus to load the new configuration and recognize the imported keys:
 
 ```bash
 sudo systemctl restart w3p_nimbus-beacon
@@ -244,15 +290,42 @@ Use the Grafana dashboard available at `http://<pi_address>:3000` to monitor the
 
 Once your node is fully synced and ready:
 
-1.  Return to the Staking Launchpad: <https://launchpad.ethereum.org/>
-2.  Follow the instructions carefully.
-3.  Upload your `deposit_data-*.json` file when prompted.
-4.  Connect the wallet containing the 32 ETH (+ transaction fee) for the validator.
-5.  Confirm the transaction after careful review.
+1.  Return to the Staking Launchpad for your chosen network:
+
+    === "Mainnet"
+
+        <https://launchpad.ethereum.org/>
+
+    === "Holesky"
+
+        <https://holesky.launchpad.ethereum.org/>
+
+    === "Hoodi"
+
+        <https://hoodi.launchpad.ethereum.org/>
+
+2.  Follow the instructions carefully, reconnecting your wallet if necessary.
+3.  Upload your `deposit_data-*.json` file when prompted (this is the file generated alongside your keystores).
+4.  Connect the wallet containing the 32 ETH (+ required transaction fee) for the validator deposit.
+5.  **Carefully review all transaction details** on the Launchpad and in your wallet before confirming the deposit transaction.
 
 ### Validator Activation
 
-After the deposit is confirmed on the network, your validator enters an activation queue (the waiting time varies). Monitor its status on a Beacon Chain explorer (e.g., <https://beaconcha.in/>). Once activated, your validator will begin performing duties and earning rewards.
+After your deposit transaction is confirmed on the Ethereum network, your validator enters an activation queue. The waiting time varies depending on network congestion and the number of validators waiting. Monitor your validator's status on a Beacon Chain explorer for your network:
+
+=== "Mainnet"
+
+    <https://beaconcha.in/>
+
+=== "Holesky"
+
+    <https://holesky.beaconcha.in/>
+
+=== "Hoodi"
+
+    <https://hoodi.beaconcha.in/>
+
+Once activated, your validator will begin performing duties (attesting, proposing blocks) and earning rewards.
 
 ## 10. Ongoing Operational Best Practices
 
@@ -260,9 +333,9 @@ Maintaining a validator requires ongoing attention.
 
 ### Monitoring
 
-- **Validator Status:** Regularly check your validator's performance on <https://beaconcha.in/> (effectiveness, attestations, block proposals). Consider setting up alerts.
-- **Node Status:** Periodically check the status of the services (`sudo systemctl status w3p_geth w3p_nimbus-beacon`) and logs (`sudo journalctl -fu w3p_geth`, `sudo journalctl -fu w3p_nimbus-beacon`) on the Web3 Pi.
-- **System Resources:** Monitor CPU, RAM, disk usage, and network traffic (`htop`, `df -h`, `armbianmonitor -m`).
+- **Validator Status:** Regularly check your validator's performance (effectiveness score, attestations, block proposals) on the appropriate Beacon Chain explorer. Consider setting up monitoring alerts.
+- **Node Status:** Periodically check the status of the services (`sudo systemctl status w3p_geth w3p_nimbus-beacon`) and monitor logs (`sudo journalctl -fu w3p_geth`, `sudo journalctl -fu w3p_nimbus-beacon`) on the Web3 Pi for errors or warnings.
+- **System Resources:** Monitor CPU usage, RAM usage, disk space (`df -h /mnt/storage`), disk I/O, and network traffic. Tools like `htop`, `df`, `iostat`, and the built-in `armbianmonitor -m` or Grafana dashboards are useful. Ensure the SSD has sufficient free space as the blockchain data grows.
 
 ### Updates
 
