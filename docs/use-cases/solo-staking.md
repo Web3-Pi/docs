@@ -251,6 +251,10 @@ deposit transaction.
 Please double-check the withdrawal address and then proceed with the checklist and afterwards, with the 
 confirmation of the deposit transaction.
 
+!!! warning
+    
+    Please ensure that the address is correct, you have proper access rights to it, and that you are connected to the correct network (mainnet/holesky/hoodi).
+
 ![](../img/solo-staking/confirm_deposit.png "Confirm the deposit transaction.")
 
 After the transaction is sent and processed by the blockchain, you'll get the final confirmation
