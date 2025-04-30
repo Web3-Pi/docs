@@ -106,25 +106,26 @@ Validator keys **must** be generated using the official Staking Launchpad websit
 
 === "Mainnet"
 
-    Go to the official Staking Launchpad site for Mainnet:
+    Go to the official Staking Launchpad site for Mainnet:<br>
     <https://launchpad.ethereum.org/>
+
+    ![](../img/solo-staking/launchpad_mainnet.png "The Ethereum Staking Launchpad website")
 
 === "Holesky"
 
     Go to the official Staking Launchpad site for the Holesky testnet:
     <https://holesky.launchpad.ethereum.org/>
 
+    ![](../img/solo-staking/launchpad_holesky.png "The Ethereum Staking Launchpad website")
+
 === "Hoodi"
 
     Go to the official Staking Launchpad site for the Hoodi testnet:
     <https://hoodi.launchpad.ethereum.org/>
 
-### 1. Go to the official Staking Launchpad site for the Mainnet:
-<https://launchpad.ethereum.org/>
+    ![](../img/solo-staking/launchpad_hoodi.png "The Ethereum Staking Launchpad website")
 
-![](../img/solo-staking/launchpad-mainnet.png "The Ethereum Staking Launchpad website")
-
-#### 2. Proceed through the advisories checklist
+### Proceed through the advisories checklist
 
 Make sure to read all the contents carefully before proceeding through each step.
 Don't skip anything unless you're absolutely sure what each step entails.
@@ -132,7 +133,7 @@ Don't skip anything unless you're absolutely sure what each step entails.
 ![](../img/solo-staking/advisories.png "Checklist of advisories screen")
 
 
-#### 3. Choose your clients
+### Choose your clients
 
 The launchpad is aimed at a general user and there are various considerations for choosing
 specific execution and consensus layer clients. Due to mechanics of the global staking ecosystem,
@@ -155,12 +156,12 @@ the device, this is the pair that you should also choose.
 
 ![](../img/solo-staking/consensus_choice_mainnet.png "Choice of the consensus client screen")
 
-#### 4. Generate key pairs
+### Generate key pairs
 
 Now you're ready to generate the key pairs, which control your Ether stake and which 
 bind the stake to a given validator. 
 
-##### Security considerations
+#### Security considerations
 
 We cannot stress enough how important it is to execute this step in a secure manner.
 Given that once you submit your deposit, your validator keys are directly bound to 
@@ -174,7 +175,7 @@ it is recommended to run it on a machine that's disconnected from the network.
 Please also ensure you keep your mnemonic phrase safe and out of reach of anybody but you.
 This is the only way to regenerate your validator key if it gets lost.
 
-##### Provide the withdrawal address 
+#### Provide the withdrawal address 
 
 We strongly recommend setting the withdrawal key right away when generating the validator keys.
 Although it is optional and can be performed later on, it can also be performed only once.
@@ -183,7 +184,7 @@ keys, they will never be able to override the address to which your stake and th
 
 ![](../img/solo-staking/generate_key_pairs_address_mainnet.png "Provide your withdrawal address")
 
-##### Generate the keys
+#### Generate the keys
 
 Once you fill in the number of validators and the withdrawal address, you proceed with the key
 generation itself. You're free to choose whichever tool suits you best, 
@@ -191,6 +192,20 @@ depending on your platform and preferences.
 For the sake of this guide, we'll use the CLI app as the example.
 
 ![](../img/solo-staking/generate_key_pairs_cli_mainnet.png "Run the key generator")
+
+=== "Mainnet"
+    ```bash
+    ./deposit new-mnemonic --chain mainnet
+    ```
+
+=== "Holesky"
+    ```bash
+    ./deposit new-mnemonic --chain holesky
+    ```
+=== "Hoodi"
+    ```bash
+    ./deposit new-mnemonic --chain hoodi
+    ```
 
 In case of the CLI app, the Launchpad gives you the exact command that you should run in your 
 terminal. While you proceed, you'll be asked to provide the password to encrypt the keystore file
@@ -216,7 +231,7 @@ As mentioned previously, it is critical that you keep these mnemonics safe and p
 ![](../img/solo-staking/generate_deposit_keys_cli_success.png "CLI key generator success.")
 
 
-#### 5. Upload your deposit data
+### Upload your deposit data
 
 After the key generator succeeds, you need to upload the just-generated `deposit_data-xxxxxx.json`
 file to the Launchpad, so that it can prepare the deposit transaction for you.
@@ -226,7 +241,7 @@ file to the Launchpad, so that it can prepare the deposit transaction for you.
 Once you upload that file and click continue, the last remaining step is to submit your ETH stake to
 the deposit contract.
 
-#### 6. Confirm the deposit
+### Confirm the deposit
 
 In order to do that, the Launchpad will use your MetaMask wallet to generate and send the
 deposit transaction.
