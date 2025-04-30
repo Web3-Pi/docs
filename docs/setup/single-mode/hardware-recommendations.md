@@ -30,7 +30,7 @@ You can also use a USB to SATA adapter plus SSD 2.5" drive.
 
 | Brand   | Storage | Model          | Link\*                                                                                   | Comment                                                              |
 | ------- | ------- | -------------- | ---------------------------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| Samsung | 2 TB    | T7 2TB USB 3.2 | https://tweakers.net/pricewatch/1560668/samsung-portable-ssd-t7-2tb-grijs/specificaties/ | **Recommended for most users. Compatible with Raspberry Pi 4 and 4** |
+| Samsung | 2 TB    | T7 2TB USB 3.2 | https://tweakers.net/pricewatch/1560668/samsung-portable-ssd-t7-2tb-grijs/specificaties/ | **Recommended for most users. Compatible with Raspberry Pi 4 and 5** |
 
 **Tip:** Some external disks consume more power than Raspberry Pi can deliver via USB. For Raspberry Pi 5, the max power output of the USB ports is 600mA if you're using a 3A supply, and1600mA if you're using a 5A supply. You can edit `/boot/firmware/config.txt` and add `usb_max_current_enable=1` to disable the current limit. Please read the documentation:
 
@@ -82,7 +82,7 @@ We do not recommend the following:
 | Brand   | Link\*                                                                                               |
 | ------- | ---------------------------------------------------------------------------------------------------- |
 | ZenWire | https://zenwire.eu/pl/p/Adapter-SSD-M2-NVMESATA-kieszen-na-dysk-obudowa-M.2-USB-C-10-GBs-Zenwire/289 |
-| RIITOP  | https://www.amazon.nl/dp/B0B1HVGBZ3?ref_=pe_28126711_487767311_302_E_DDE_dt_1                        |
+| RIITOP  | https://www.amazon.nl/dp/B0B1HVGBZ3                                                                  |
 | QOLTEC  | https://www.tme.eu/en/details/qoltec-50311/hdd-ssd-accessories/qoltec/50311/                         |
 
 or other similar.

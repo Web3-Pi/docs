@@ -11,7 +11,7 @@ hide:
         </h1>
         <span class="subtitle">documentation</span>
         <p class="description">
-        This documentation provides everything you need to get started with Web3 Pi.<br>Find step-by-step guides for setup, detailed explanations of features, monitoring tools, troubleshooting tips for running your Ethereum node smoothly on Raspberry Pi.
+        This documentation provides everything you need to get started with Web3 Pi.<br>Find step-by-step guides for setup, detailed explanations of features, monitoring tools, troubleshooting and tips for running your Ethereum node smoothly on Raspberry Pi.
         </p>
         <a href="/setup/prerequisites" class="md-button md-button--primary">
             Get Started

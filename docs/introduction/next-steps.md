@@ -19,14 +19,14 @@ If you're unsure, we recommend starting with a single device setup.
 
 Ensure you have all the necessary hardware components (Raspberry Pi, power supply, storage, network cable, etc.).
 
-### Use Your Own Hardware or the Welcome Box?
+### Use Your Own Hardware or the WelcomeBox?
 
-- [**Welcome Box:**](../welcome-box/index.md) Web3 Pi offers a Welcome Box — an all-in-one solution with pre-selected, compatible hardware to help you get started quickly.
+- [**WelcomeBox:**](../welcome-box/index.md) Web3 Pi offers a WelcomeBox — an all-in-one solution with pre-selected, compatible hardware to help you get started quickly.
 - **Own Hardware:** You can use your existing Raspberry Pi (Model 4, 5, or CM4) and compatible peripherals. Ensure you have everything required by checking the [Prerequisites Guide](../setup/prerequisites.md) and the [Hardware Recommendations](./single-mode/hardware-recommendations.md) document.
 
 ### Optional LCD Display?
 
-- You can add an optional LCD display to your setup for at-a-glance monitoring. It's included in the Welcome Box and natively supported by the Web3 Pi system — just plug it in, no installation or configuration needed.  
+- You can add an optional LCD display to your setup for at-a-glance monitoring. It's included in the WelcomeBox and natively supported by the Web3 Pi system — just plug it in, no installation or configuration needed.  
 Details are in the [LCD Monitoring Guide](../monitoring/lcd.md).
 
 ## 3. Set Up Your Node

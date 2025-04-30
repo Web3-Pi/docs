@@ -44,7 +44,7 @@ Place the thermal pads on the CPU, RP1, RAM and PMIC Chip of the RPi 5.
 
 There are different versions of this case on the market:
 * If you have four thermal pads, place them in the areas marked in blue.
-* If you have two thermal pads in the set, place them on the CPU and PMIC (bottom left corner, near the USB-C connector).
+* If you have two thermal pads in the set, place them on the CPU and PMIC (left corner, near the USB-C connector).
 
 ![Thermal pad placement diagram](../img/assembly/thermal.png)
 

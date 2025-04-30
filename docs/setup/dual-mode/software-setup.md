@@ -33,7 +33,7 @@ For Dual Mode device, the following settings can be configured. In this mode, we
 
 ## Advanced Options
 
-If you click the Advanced button, you can configure these additional options. These advanced settings will be applied to both the execution layer device and the consensus layer device:
+If you click the **ADVANCED** button, you can configure these additional options. These advanced settings will be applied to both the execution layer device and the consensus layer device:
 
 * **Execution endpoint address:** Optional custom endpoint for execution client
 * **Locale settings:** Including:
@@ -52,7 +52,7 @@ If you click the Advanced button, you can configure these additional options. Th
 
 ## Drive Selection
 
-After setting up the configuration and clicking "Next", a dialog box will appear allowing you to select the drive where the image with settings will be saved.
+After setting up the configuration and clicking **NEXT**, a dialog box will appear allowing you to select the drive where the image with settings will be saved.
 
 * **Drive selection:** The list shows available storage devices
 * **Display options:**
@@ -114,7 +114,7 @@ Now the process of writing the card for the consensus layer device will begin.
 ## Final Steps
 
 Now that you have both cards prepared, you will see a message about the possibility of installing the prepared cards in the appropriate devices.
-At this stage, you can click "Next" and complete the process. In the following steps, you will be able to assemble both devices and install the prepared cards in the corresponding slots.
+At this stage, you can click **NEXT** and complete the process. In the following steps, you will be able to assemble both devices and install the prepared cards in the corresponding slots.
 
 ![Final screen](../img/dual/w3p-inserting.png){ width=700px }
 ![Final screen](../img/dual/w3p-finish.png){ width=700px }

@@ -9,7 +9,7 @@ Supported combinations include:
 - Two Raspberry Pi 5
 - Two Raspberry Pi 4
 - One Raspberry Pi 5 and one Raspberry Pi 4
-- Any combination including Compute Module 4 (CM4)
+- Any combination including Compute Module 4/5
 
 ## Raspberry Pi Models
 

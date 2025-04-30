@@ -121,7 +121,7 @@ To check that the network is working correctly, SSH into the Rasberry Pi and run
 ping -c 4 google.com
 ```
 
-You should see the following response:
+You should see similar response:
 
 ```shell
 PING google.com (142.250.186.206) 56(84) bytes of data.

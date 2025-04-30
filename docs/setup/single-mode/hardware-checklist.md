@@ -14,7 +14,7 @@ You can run a single device node on any of the following.
 
 - Raspberry Pi 4 - [see full details](#raspberry-pi-4)
 
-- Raspberry Pi CM4 - [see ful details](#raspberry-pi-cm4)
+- Raspberry Pi CM4/5 - [see ful details](#raspberry-pi-compute-module)
 
 Optionally, you can add an [LCD display](../../monitoring/lcd.md) for monitoring purposes.
 
@@ -25,7 +25,7 @@ Optionally, you can add an [LCD display](../../monitoring/lcd.md) for monitoring
 - 1 X [SD Card reader/writer](./hardware-recommendations.md#sd-card-reader-and-writer)
 - 1 x [microSD Card](./hardware-recommendations.md#microsd-card)
 - 1 x [Power supply](https://botland.store/raspberry-pi-5-power-supply/23907-raspberry-pi-27w-usb-c-power-supply-official-51v-5a-psu-for-raspberry-pi-5-black-5056561803418.html)
-- 1 X [Raspberry Pi 5 Active Cooler]([Raspberry Pi Active Cooler - heatsink + fan for Raspberry Pi 5 Botland - Robotic Shop](https://botland.store/raspberry-pi-5-mounting-elements/23925-raspberry-pi-active-cooler-heatsink-fan-for-raspberry-pi-5-5056561803357.html)
+- 1 x [Raspberry Pi 5 Active Cooler](https://botland.store/raspberry-pi-5-mounting-elements/23925-raspberry-pi-active-cooler-heatsink-fan-for-raspberry-pi-5-5056561803357.html)
 
 ### Raspberry Pi 4
 
@@ -36,20 +36,20 @@ Optionally, you can add an [LCD display](../../monitoring/lcd.md) for monitoring
 - 1 X [Raspberry Pi 4 Active Cooler](https://botland.store/raspberry-pi-4b-cases/15106-case-justpi-for-raspberry-pi-4b-aluminum-with-dual-fan-black-lt-4b02-5903351242660.html)
 - 1 x [Power supply](https://botland.store/raspberry-pi-4b-power-supply/14348-power-supply-for-raspberry-pi-4-usb-c-51v-3a-original-black-644824914886.html)
 
-### Raspberry Pi CM4
+### Raspberry Pi Compute Module
 
-The CM4 module needs a carrier board. There are many on the market.
+The CM4/5 module needs a carrier board. There are many on the market.
 
 Minimum requiments are:
 
-- 1 x [Raspberry Pi CM4 (8GB)](https://botland.store/raspberry-pi-cm/18211-raspberry-pi-cm4-compute-module-4-8gb-ram-32gb-emmc-wifibluetooth-cm4108032-5904422368593.html)
+- 1 x Raspberry Pi CM4/CM5 8GB
 - 1 x [2TB fast storage](./hardware-recommendations.md#ssd-drive)
 - 1 x Power supply
-- 1 X [Raspberry Pi CM4 Active Cooler]((https://botland.store/raspberry-pi-cm/21716-dedicated-all-in-one-3007-cooling-fan-for-raspberry-pi-cm4-waveshare-22096.htm)
-- 32GB+ storage for operating system (microSD or eMMC)
-- 1 X Motherboard
+- 1 x Raspberry Pi CM4 Active Cooler
+- 1 x 32GB+ storage for operating system (microSD or eMMC)
+- 1 x Motherboard
 
-Installing Web3 Pi on the CM4 requires more knowledge. CM4 modules come with built-in eMMC memory, and in this case, you need to use the **rpiboot** application before using the Raspberry Pi Imager. If your module does not have built-in memory and uses an SD card, the installation process is similar to a standard Raspberry Pi.
+Installing Web3 Pi on the CM4/5 requires more knowledge. CM4/5 modules come with built-in eMMC memory, and in this case, you need to use the **rpiboot** application before using the Raspberry Pi Imager. If your module does not have built-in memory and uses an SD card, the installation process is similar to a standard Raspberry Pi.
 
 More information can be found on the manufacturer's website: [Raspberry Pi Documentation](https://www.raspberrypi.com/documentation/computers/compute-module.html).
 

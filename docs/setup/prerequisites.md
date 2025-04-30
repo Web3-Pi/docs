@@ -40,6 +40,6 @@ For those who prefer a guaranteed-compatible, all-in-one solution, the [Web3 Pi 
 
 If you would prefer to use your own existing Raspberry Pi, please read the [Hardware Checklist](./single-mode/hardware-checklist.md) to make sure you have everything you need. If you need to purchase anything further, the [Hardware Recommendations](./single-mode/hardware-recommendations.md) document will help you choose suitable additions to your existing setup.
 
-Optionally, you can also purchase an [LCD screen](https://www.waveshare.com/1.69inch-lcd-module.htm) for the Pi. This gives you a quick way of checking that your node is functional. The LCD screen is included in the Welcome Box.
+Optionally, you can also purchase an [LCD screen](https://www.waveshare.com/1.69inch-lcd-module.htm) for the Pi. This gives you a quick way of checking that your node is functional. The LCD screen is included in the WelcomeBox.
 
 ---

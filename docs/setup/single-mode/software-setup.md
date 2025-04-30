@@ -31,7 +31,7 @@ For Single Mode device, the following settings can be configured:
 
 ## Advanced Options
 
-If you click the Advanced button, you can configure these additional options:
+If you click the **ADVANCED** button, you can configure these additional options:
 
 * **Execution endpoint address:** Optional custom endpoint for execution client
 * **Locale settings:** Including:
@@ -50,7 +50,7 @@ If you click the Advanced button, you can configure these additional options:
 
 ## Drive Selection
 
-After setting up the configuration and clicking "Next", a dialog box will appear allowing you to select the drive where the image with settings will be saved.
+After setting up the configuration and clicking **NEXT**, a dialog box will appear allowing you to select the drive where the image with settings will be saved.
 
 * **Drive selection:** The list shows available storage devices
 * **Display options:**
@@ -95,4 +95,4 @@ Now after the card has finished writing you will see a screen informing you abou
 
 ![Final screen](../img/single/w3p-inserting.png){ width=700px }
 
-Stop Web3 Pi Imager at this step and now we will start assembling the device. We will come back to this step after we finish assembling.
+Keep Web3 Pi Imager open at this step and now we will start assembling the device. We will come back to this step after we finish assembling.

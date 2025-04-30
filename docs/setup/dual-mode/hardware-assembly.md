@@ -53,5 +53,3 @@ Double-check your labels and component placement one last time.
 ## Next Steps
 
 With both devices assembled correctly, you are ready to connect them to your network and begin the software installation and synchronization process.
-
-➡️ Proceed to the [**Dual-Device Installation Monitoring Guide**](./installation-monitoring.md)
