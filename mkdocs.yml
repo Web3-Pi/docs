@@ -126,7 +126,7 @@ nav:
   - Use Cases:
     - Install in your wallet: 'use-cases/wallet.md'
     - Transaction Firewall: 'use-cases/transaction-firewall.md'
-    - Solo Staking (coming soon): 'use-cases/solo-staking.md'
+    - Solo Staking: 'use-cases/solo-staking.md'
   - Support: 
     - Troubleshooting: 'support/troubleshooting.md'
     - Cheatsheet: 'support/cheatsheet.md'
