@@ -103,37 +103,138 @@ More details about Nimbus configuration options can be found in the official Nim
 
 Validator keys **must** be generated using the official Staking Launchpad website.
 
-### Launchpad Link
-
-Go to the official Staking Launchpad site for the Mainnet:
+#### 1. Go to the official Staking Launchpad site for the Mainnet:
 <https://launchpad.ethereum.org/>
 
-### Process Overview
+![](../img/solo-staking/launchpad-mainnet.png "The Ethereum Staking Launchpad website")
 
-1.  **Secure Computer:** Perform the key generation process on a secure, trusted computer (preferably offline).
-2.  **Launchpad Instructions:** Follow the steps presented on the Launchpad website carefully.
-3.  **Number of Validators:** Choose the number of validators you want to run (each requires 32 ETH).
-4.  **Client Selection:** Select Geth and Nimbus.
-5.  **Generation Method:** Use the command-line tool `staking-deposit-cli` (recommended) or generate keys in the browser. Download `staking-deposit-cli` from: <https://github.com/ethereum/staking-deposit-cli/releases/>
+#### 2. Proceed through the advisories checklist
 
-### Critical Security Steps
+Make sure to read all the contents carefully before proceeding through each step.
+Don't skip anything unless you're absolutely sure what each step entails.
 
-During key generation, the following will be created:
+![](../img/solo-staking/advisories.png "Checklist of advisories screen")
 
-- **Mnemonic Phrase (Seed Phrase):** This is the master key to your ETH.
-  <!-- prettier-ignore -->
-    - Write it down VERY carefully on paper or metal.
-    - Verify the backup.
-    - Store it in multiple, extremely secure, offline locations.
-    - **Never store it digitally or on an online device.**
-    - **Losing the phrase = permanent loss of funds.**
 
-- **Keystore Password:** Set a very strong, unique password to encrypt the `keystore-*.json` file(s). Store this password securely (e.g., in a password manager).
+#### 3. Choose your clients
 
-- **Generated Files:**
-  <!-- prettier-ignore -->
-    - `deposit_data-*.json`: The public file needed to make the deposit via the Launchpad.
-    - `keystore-*.json`: The file(s) containing your encrypted validator private key(s). Essential for importing onto the Web3 Pi.
+The launchpad is aimed at a general user and there are various considerations for choosing
+specific execution and consensus layer clients. Due to mechanics of the global staking ecosystem,
+to strengthen the network and limit the impact of potential attacks, it's generally recommended 
+to choose a minority client.
+
+However, while the above is true, and while the launchpad enables you to choose any
+of the available clients, the default, battle-tested configuration for the Web3 Pi 
+includes `geth` and `nimbus` specifically. 
+
+We have devoted a considerable effort to finding the setup that's optimally suited to
+the characteristics of a such a small-footprint device as Raspberry Pi 5 and 
+this is the pair of clients which we both recommend and, by extension, include 
+in our default Web3 Pi image.
+
+So, unless you're sure you wish to choose differently, and are willing to reconfigure
+the device, this is the pair that you should also choose.
+
+![](../img/solo-staking/execution_choice_mainnet.png "Choice of the execution client screen")
+
+![](../img/solo-staking/consensus_choice_mainnet.png "Choice of the consensus client screen")
+
+#### 4. Generate key pairs
+
+Now you're ready to generate the key pairs, which control your Ether stake and which 
+bind the stake to a given validator. 
+
+##### Security considerations
+
+We cannot stress enough how important it is to execute this step in a secure manner.
+Given that once you submit your deposit, your validator keys are directly bound to 
+your stake, an attacker with malicious intent and in possession of these keys, can,
+in the least cause you to lose your staking rewards, and at most, even trigger
+a complete loss of your stake through slashing.
+
+That's why, once you download and install the chosen key generator tool, 
+it is recommended to run it on a machine that's disconnected from the network.
+
+Please also ensure you keep your mnemonic phrase safe and out of reach of anybody but you.
+This is the only way to regenerate your validator key if it gets lost.
+
+##### Provide the withdrawal address 
+
+We strongly recommend setting the withdrawal key right away when generating the validator keys.
+Although it is optional and can be performed later on, it can also be performed only once.
+Setting it at this stage ensures that even if an attacker were to take control of your validator
+keys, they will never be able to override the address to which your stake and the rewards are withdrawn.
+
+![](../img/solo-staking/generate_key_pairs_address_mainnet.png "Provide your withdrawal address")
+
+##### Generate the keys
+
+Once you fill in the number of validators and the withdrawal address, you proceed with the key
+generation itself. You're free to choose whichever tool suits you best, 
+depending on your platform and preferences. 
+For the sake of this guide, we'll use the CLI app as the example.
+
+![](../img/solo-staking/generate_key_pairs_cli_mainnet.png "Run the key generator")
+
+In case of the CLI app, the Launchpad gives you the exact command that you should run in your 
+terminal. While you proceed, you'll be asked to provide the password to encrypt the keystore file
+and will receive the mnemonic phrase which can be used to recover the key.
+
+As mentioned previously, it is critical that you keep these mnemonics safe and private.
+
+!!! danger "Critical Security Steps"
+
+    During key generation, the following will be created:
+
+    - **Mnemonic Phrase (Seed Phrase):** This is the master key to your ETH.
+      - Write it down VERY carefully on paper or metal.
+        - Verify the backup.
+        - Store it in multiple, extremely secure, offline locations.
+        - **Never store it digitally or on an online device.**
+        - **Losing the phrase = permanent loss of funds.**
+    
+      - **Keystore Password:** Set a very strong, unique password to encrypt the `keystore-*.json` file(s). Store this password securely (e.g., in a password manager).
+
+
+
+![](../img/solo-staking/generate_deposit_keys_cli_success.png "CLI key generator success.")
+
+
+#### 5. Upload your deposit data
+
+After the key generator succeeds, you need to upload the just-generated `deposit_data-xxxxxx.json`
+file to the Launchpad, so that it can prepare the deposit transaction for you.
+
+![](../img/solo-staking/upload_deposit_data.png "CLI key generator success.")
+
+Once you upload that file and click continue, the last remaining step is to submit your ETH stake to
+the deposit contract.
+
+#### 6. Confirm the deposit
+
+In order to do that, the Launchpad will use your MetaMask wallet to generate and send the
+deposit transaction.
+
+![](../img/solo-staking/connect_wallet.png "Connect your MetaMask wallet.")
+
+Please double-check the withdrawal address and then proceed with the checklist and afterwards, with the 
+confirmation of the deposit transaction.
+
+![](../img/solo-staking/confirm_deposit.png "Confirm the deposit transaction.")
+
+After the transaction is sent and processed by the blockchain, you'll get the final confirmation
+that the deposit has been made.
+
+![](../img/solo-staking/confirm_deposit_success.png "Deposit success.")
+
+You also get the link to the status website which lists all the active validators, and which
+allows you to get the status of your validator. Please note though, that the status for your validator 
+may not be immediately visible, and you may need to wait a few minutes until your stake is detected 
+by the website.
+
+On successful submission and detection of the deposit, your validator status will appear as "Deposited".
+
+![](../img/solo-staking/validator_status.png "Deposit success.")
 
 ## 7. Step 4: Import Validator Keys into Nimbus
 
