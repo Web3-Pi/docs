@@ -2,24 +2,6 @@
 
 Once you have flashed the boot cards and assembled the hardware, you're ready to install and activate Web3 Pi in dual device mode.
 
-!!!note
-
-    To avoid errors during the first setup, please follow the instructions precisely.
-
-Your assembled devices should look like this.
-
-![Dual devices](../img/install1.jpg)
-
-!!!warning
-
-    Before you connect power to your devices, make sure the ethernet cable is connected with DHCP. Internet connection is required during the installation process.**
-
-## Connecting to the Network
-
-Please make sure your network is set up as shown in the diagram below. Your network must include the two Raspberry Pis and a control PC, which you will use to monitor the installation process.
-
-<img src="../img/dual_network.jpg" title="" alt="" data-align="center">
-
 ## Pre-installation Checklist
 
 - Ensure your Raspberry Pis have active cooling.
@@ -31,8 +13,6 @@ Please make sure your network is set up as shown in the diagram below. Your netw
 - Make sure the devices are protected against power surges with a UPS
 
 - Connect the Raspberry Pis using Ethernet cables to your network, and ensure the network is connected to the Internet.
-
-<img title="" src="../img/dual_network2.jpg" alt="" data-align="center" width="508">
 
 ## Installation
 

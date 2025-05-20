@@ -178,10 +178,24 @@ The final result should look like this:
 
 ![Image: Final assembled device](../img/assembly/final0.png)
 
-## Before Powering On
+## Hardware Connections
+
+Once you have assembled your device, connect the Raspberry Pi as shown below:
+
+![Hardware connection diagram](../img/img-rpi5-connection-diagram-1.png)
+
+Refer to the following images to verify your setup. These show two typical configurations:
+
+- **With a USB drive:**
+
+  ![Assembled device with USB drive](../img/img-example-setup-USB.jpg)
+
+- **With an NVMe drive:**
+
+  ![Assembled device with NVMe drive](../img/img-example-setup-NVMe.jpg)
+
+Ensure all cables and storage devices are securely connected before proceeding.
 
 !!!note
 
     Before you connect power, make sure that the ethernet cable is connected with DHCP. Internet connection is required during the installation process.
-
-![Device ready for connection](../img/assembly/final.png)

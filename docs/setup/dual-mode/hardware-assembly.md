@@ -50,6 +50,22 @@ You should now have two fully assembled Raspberry Pi devices:
 
 Double-check your labels and component placement one last time.
 
+#### Hardware connections
+
+Once you have both devices assembled, connect them as follows:
+
+![Hardware connections](../img/img-rpi4-connection-diagram-1.png)
+
+!!! warning 
+
+    For the mDNS mechanism to work, both devices must be connected to the same local network. It's recommended to use one network switch for both devices. 
+
+Refer to the following image to verify your setup:
+
+![Assembled devices](../img/img-example-setup-1.jpg)
+
+Ensure all cables and storage devices are securely connected before proceeding.
+
 ## Next Steps
 
 With both devices assembled correctly, you are ready to connect them to your network and begin the software installation and synchronization process.
