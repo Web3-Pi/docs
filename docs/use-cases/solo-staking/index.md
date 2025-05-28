@@ -109,28 +109,28 @@ Validator keys **must** be generated using the official Staking Launchpad websit
     Go to the official Staking Launchpad site for Mainnet:<br>
     <https://launchpad.ethereum.org/>
 
-    ![](../img/solo-staking/launchpad_mainnet.png "The Ethereum Staking Launchpad website")
+    ![](../../img/solo-staking/launchpad_mainnet.png "The Ethereum Staking Launchpad website")
 
 === "Holesky"
 
     Go to the official Staking Launchpad site for the Holesky testnet:
     <https://holesky.launchpad.ethereum.org/>
 
-    ![](../img/solo-staking/launchpad_holesky.png "The Ethereum Staking Launchpad website")
+    ![](../../img/solo-staking/launchpad_holesky.png "The Ethereum Staking Launchpad website")
 
 === "Hoodi"
 
     Go to the official Staking Launchpad site for the Hoodi testnet:
     <https://hoodi.launchpad.ethereum.org/>
 
-    ![](../img/solo-staking/launchpad_hoodi.png "The Ethereum Staking Launchpad website")
+    ![](../../img/solo-staking/launchpad_hoodi.png "The Ethereum Staking Launchpad website")
 
 ### Proceed through the advisories checklist
 
 Make sure to read all the contents carefully before proceeding through each step.
 Don't skip anything unless you're absolutely sure what each step entails.
 
-![](../img/solo-staking/advisories.png "Checklist of advisories screen")
+![](../../img/solo-staking/advisories.png "Checklist of advisories screen")
 
 ### Choose your clients
 
@@ -151,9 +151,9 @@ in our default Web3 Pi image.
 So, unless you're sure you wish to choose differently, and are willing to reconfigure
 the device, this is the pair that you should also choose.
 
-![](../img/solo-staking/execution_choice_mainnet.png "Choice of the execution client screen")
+![](../../img/solo-staking/execution_choice_mainnet.png "Choice of the execution client screen")
 
-![](../img/solo-staking/consensus_choice_mainnet.png "Choice of the consensus client screen")
+![](../../img/solo-staking/consensus_choice_mainnet.png "Choice of the consensus client screen")
 
 ### Generate key pairs
 
@@ -181,7 +181,7 @@ Although it is optional and can be performed later on, it can also be performed 
 Setting it at this stage ensures that even if an attacker were to take control of your validator
 keys, they will never be able to override the address to which your stake and the rewards are withdrawn.
 
-![](../img/solo-staking/generate_key_pairs_address_mainnet.png "Provide your withdrawal address")
+![](../../img/solo-staking/generate_key_pairs_address_mainnet.png "Provide your withdrawal address")
 
 #### Generate the keys
 
@@ -190,7 +190,7 @@ generation itself. You're free to choose whichever tool suits you best,
 depending on your platform and preferences.
 For the sake of this guide, we'll use the CLI app as the example.
 
-![](../img/solo-staking/generate_key_pairs_cli_mainnet.png "Run the key generator")
+![](../../img/solo-staking/generate_key_pairs_cli_mainnet.png "Run the key generator")
 
 === "Mainnet"
 `bash
@@ -225,14 +225,14 @@ As mentioned previously, it is critical that you keep these mnemonics safe and p
 
       - **Keystore Password:** Set a very strong, unique password to encrypt the `keystore-*.json` file(s). Store this password securely (e.g., in a password manager).
 
-![](../img/solo-staking/generate_deposit_keys_cli_success.png "CLI key generator success.")
+![](../../img/solo-staking/generate_deposit_keys_cli_success.png "CLI key generator success.")
 
 ### Upload your deposit data
 
 After the key generator succeeds, you need to upload the just-generated `deposit_data-xxxxxx.json`
 file to the Launchpad, so that it can prepare the deposit transaction for you.
 
-![](../img/solo-staking/upload_deposit_data.png "CLI key generator success.")
+![](../../img/solo-staking/upload_deposit_data.png "CLI key generator success.")
 
 Once you upload that file and click continue, the last remaining step is to submit your ETH stake to
 the deposit contract.
@@ -242,7 +242,7 @@ the deposit contract.
 In order to do that, the Launchpad will use your MetaMask wallet to generate and send the
 deposit transaction.
 
-![](../img/solo-staking/connect_wallet.png "Connect your MetaMask wallet.")
+![](../../img/solo-staking/connect_wallet.png "Connect your MetaMask wallet.")
 
 Please double-check the withdrawal address and then proceed with the checklist and afterwards, with the
 confirmation of the deposit transaction.
@@ -251,12 +251,12 @@ confirmation of the deposit transaction.
 
     Please ensure that the address is correct, you have proper access rights to it, and that you are connected to the correct network (mainnet/holesky/hoodi).
 
-![](../img/solo-staking/confirm_deposit.png "Confirm the deposit transaction.")
+![](../../img/solo-staking/confirm_deposit.png "Confirm the deposit transaction.")
 
 After the transaction is sent and processed by the blockchain, you'll get the final confirmation
 that the deposit has been made.
 
-![](../img/solo-staking/confirm_deposit_success.png "Deposit success.")
+![](../../img/solo-staking/confirm_deposit_success.png "Deposit success.")
 
 You also get the link to the status website which lists all the active validators, and which
 allows you to get the status of your validator. Please note though, that the status for your validator
@@ -265,7 +265,7 @@ by the website.
 
 On successful submission and detection of the deposit, your validator status will appear as "Deposited".
 
-![](../img/solo-staking/validator_status.png "Deposit success.")
+![](../../img/solo-staking/validator_status.png "Deposit success.")
 
 ## 7. Import Validator Keys into Nimbus
 
@@ -470,33 +470,3 @@ Maintaining a validator requires ongoing attention.
 - **(Optional):** Backup configuration files (e.g., `/etc/systemd/system/w3p_*.service.d/override.conf`, UFW firewall configuration if customized).
 
 Adhering to these practices will help ensure the stable and secure operation of your validator.
-
-## 11. Exiting the Validator (Voluntary Exit)
-
-If you decide to stop validating, you can initiate a voluntary exit. This process will remove your validator from the active set and stop it from earning rewards.
-You can read more about the process in the official nimbus documentation: <https://nimbus.guide/voluntary-exit.html>
-
-### Initiate Voluntary Exit
-
-To initiate a voluntary exit, use the following command:
-
-```bash
-nimbus_beacon_node deposits exit --validator=/path/to/keystore.json
-```
-
-Replace `/path/to/keystore.json` with the path to your validator keystore file.
-You will be asked to enter the password for the keystore file.
-
-### Confirm Exit
-
-Nimbus will ask you to confirm the exit. Make sure you understand the implications of what you're doing before proceeding.
-
-![confirmation screen](../img/solo-staking/validator-exit.png)
-
-### Monitor Exit Status
-
-After initiating the exit, you can monitor the status of your validator using a Beacon Chain explorer. The exit process may take some time, depending on network conditions and the number of validators exiting.
-
-### Withdrawal of Funds
-
-Once your validator has exited, you will be able to withdraw your staked ETH and any earned rewards. The withdrawal process is not instantaneous and may take a few days to complete, depending on network conditions and the number of validators exiting. You can monitor the status of your withdrawal using a Beacon Chain explorer.
