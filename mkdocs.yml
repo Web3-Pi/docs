@@ -103,6 +103,7 @@ nav:
     - Next Steps: 'setup/next-steps.md'
   - Advanced Setup:
     - 'advanced-setup/index.md'
+    - Two-Factor Authentication (2FA): 'advanced-setup/2fa.md'
     - Backup Power: 'advanced-setup/ups.md'
     - Power over Ethernet: 'advanced-setup/poe.md'
     - Firewall Configuration (UFW): 'advanced-setup/ufw.md'
