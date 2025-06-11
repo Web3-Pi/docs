@@ -1,0 +1,212 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@200;800&family=DM+Sans:wght@200;500&display=swap");
+
+@font-face {
+  font-family: "Redwing";
+  font-style: normal;
+  font-weight: 500;
+  src: url("/assets/Redwing-Medium.otf") format("opentype");
+}
+
+.md-header__title {
+  font-family: "Redwing", sans-serif !important;
+  font-weight: 500 !important;
+  margin-left: -5px !important; /* Przesuwa nazwę bliżej logo */
+  letter-spacing: 0.1em;
+  min-width: 100px;
+}
+
+.md-header__button.md-logo {
+  margin-right: 5px !important; /* Dostosuj odstęp logo od nazwy */
+}
+
+/* Styl nagłówków */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  font-family: "Outfit", sans-serif;
+  font-weight: 800; /* Extra Bold */
+  letter-spacing: 0.025em;
+}
+
+/* Styl podtytułów (opcjonalnie np. H3 lub klasa podtytułu) */
+.md-typeset h3 {
+  font-weight: 200; /* Light */
+}
+
+:root > * {
+  --md-primary-fg-color: #040713; /* Header backgroud*/
+  --md-default-bg-color: #040713; /* Page background */
+  --md-text-font-family: "DM Sans", sans-serif;
+  --md-typeset-font-family: "DM Sans", sans-serif;
+  --md-code-font-family: "Fira Code", monospace;
+  --alt-bg-color: #0f172b; /* Background color for cards */
+  --brand-color: #aa396f;
+  --brand-alt-color: #0f96da;
+}
+/* override header background color */
+[data-md-color-primary] .md-header,
+[data-md-color-primary] .md-tabs {
+  background-color: var(--md-primary-fg-color);
+}
+
+/* Hide forks info */
+.md-header__source .md-source__facts > :nth-child(3) {
+  display: none;
+}
+
+.md-typeset .grid > ul > li {
+  background-color: var(--alt-bg-color);
+}
+
+.home-page-hero {
+  gap: 2rem;
+  background-color: var(--alt-bg-color);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  .content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    padding: 2rem;
+    background: linear-gradient(
+      to right,
+      var(--alt-bg-color) 85%,
+      rgba(0, 0, 0, 0)
+    );
+    text-align: center;
+    align-items: center;
+  }
+  .title {
+    font-family: "Redwing", sans-serif;
+    font-size: 60px;
+    line-height: 1;
+    letter-spacing: 0.09em;
+    font-weight: 500;
+    color: white;
+    margin-bottom: 0;
+  }
+  .subtitle {
+    font-family: "Redwing", sans-serif;
+    font-size: 36px;
+    letter-spacing: 0.045em;
+    font-weight: 500;
+    line-height: 1;
+    margin-bottom: 2rem;
+    color: var(--brand-color);
+  }
+  .description {
+    font-family: "DM Sans", sans-serif;
+    font-size: 0.7rem;
+    color: white;
+    text-wrap: balance;
+    line-height: 1.2;
+    font-weight: 200;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    max-width: 300px;
+  }
+  .md-button {
+    --md-typeset-a-color: var(--brand-color);
+    --md-accent-fg-color: var(--brand-alt-color);
+    color: white;
+    border-radius: 99999px;
+  }
+}
+
+@media screen and (min-width: 760px) {
+  .home-page-hero {
+    background-image: url("/img/hero.png");
+    background-size: cover;
+    background-position: left;
+    .content {
+      width: 50%;
+      padding-left: 4rem;
+      padding-bottom: 3rem;
+      align-items: start;
+      text-align: left;
+    }
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .home-page-hero {
+    background-size: contain;
+    background-position: right;
+    .content {
+      width: 40%;
+    }
+  }
+}
+
+.youtube-video {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+}
+.youtube-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+
+
+/* In docs/stylesheets/extra.css */
+
+.custom-width-table {
+  width: 100%; /* Table width */
+  border-collapse: collapse; /* Merge cell borders */
+  margin-bottom: 1em; /* Optional margin below the table */
+  table-layout: fixed;
+  word-wrap: break-word; /* Wrap long words */
+}
+
+/* Styles for header (th) and data (td) cells */
+.custom-width-table th,
+.custom-width-table td {
+  border: 1px solid #8a8a8a;  /* Add a 1px gray border */
+  /* ===> REDUCED PADDING for tighter rows (4px top/bottom, 8px left/right) <=== */
+  padding: 4px 10px;
+  text-align: left;        /* Horizontal text alignment */
+  vertical-align: middle;  /* Vertical text alignment */
+}
+
+/* Width definitions for the first two columns */
+.custom-width-table th:nth-child(1),
+.custom-width-table td:nth-child(1) {
+  width: 20%; /* Width of the first column */
+}
+
+.custom-width-table th:nth-child(2),
+.custom-width-table td:nth-child(2) {
+  width: 45%; /* Width of the second column */
+}
+
+
+/* The third column will take the remaining space automatically */
+.custom-width-table th:nth-child(3),
+.custom-width-table td:nth-child(3) {
+  width: 30%;
+}
+
+
+/* Optional: Additional styles for the header */
+.custom-width-table th {
+  /* background-color: #f2f2f2;  Light background for header */
+  font-weight: bold;       /* Bold text in header */
+}
+
+/* Make text bold in the second data column */
+/*
+.custom-width-table td:nth-child(2) {
+  font-weight: bold;
+}
+*/
