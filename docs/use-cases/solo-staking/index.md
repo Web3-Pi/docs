@@ -251,6 +251,19 @@ confirmation of the deposit transaction.
 
     Please ensure that the address is correct, you have proper access rights to it, and that you are connected to the correct network (mainnet/holesky/hoodi).
 
+!!! danger "CRITICAL DEPOSIT TIMING"
+
+    **DO NOT MAKE THE 32 ETH DEPOSIT UNTIL ALL OF THE FOLLOWING CONDITIONS ARE MET:**
+
+    1.  Geth is fully synchronized.
+    2.  Nimbus is fully synchronized.
+    3.  Both services (`w3p_geth`, `w3p_nimbus-beacon`) have been running stably for several hours.
+    4.  Nimbus logs show that your validator keys are recognized (e.g., `Local validator attached`).
+
+    **Making the deposit before the node is fully synced and ready will result in inactivity penalties.**
+
+    However, you will still need to wait in the activation queue after making the deposit. The length of this queue depends on the number of new validators joining - sometimes it takes days, giving enough time to finish syncing the node, but other times it may be only hours, leaving little room for synchronization.
+
 ![](../../img/solo-staking/confirm_deposit.png "Confirm the deposit transaction.")
 
 After the transaction is sent and processed by the blockchain, you'll get the final confirmation
@@ -266,6 +279,20 @@ by the website.
 On successful submission and detection of the deposit, your validator status will appear as "Deposited".
 
 ![](../../img/solo-staking/validator_status.png "Deposit success.")
+
+You can find your validator public key in the file `~/validator_keys/deposit_data...`. Inside, locate the `pubkey` field, copy its value, and paste it into the search field on the page below: 
+
+=== "Mainnet"
+
+    <https://beaconcha.in/>
+
+=== "Holesky"
+
+    <https://holesky.beaconcha.in/>
+
+=== "Hoodi"
+
+    <https://hoodi.beaconcha.in/>
 
 ## 7. Import Validator Keys into Nimbus
 
@@ -386,49 +413,13 @@ Press `Ctrl+C` to stop monitoring.
 
 Look for log lines containing `Loading validators` and `Local validator attached`. This indicates that the validator key(s) have been loaded correctly and Nimbus is ready to perform validation duties once synced and activated.
 
-## 9. Monitor Synchronization and Make the Deposit
+## 9. Monitor Synchronization
 
 ### Client Synchronization
 
-Geth and Nimbus must be fully synchronized with the network. **This can take anywhere from several hours to several days.**
+Geth and Nimbus must be fully synchronized with the network. This process usually takes less than **24 hours on Ethereum Mainnet**, though in some cases it may take longer."
 
 Use the Grafana dashboard available at `http://<pi_address>:3000` to monitor the synchronization progress.
-
-### CRITICAL: Timing the Deposit
-
-!!! danger "CRITICAL DEPOSIT TIMING"
-
-    **DO NOT MAKE THE 32 ETH DEPOSIT UNTIL ALL OF THE FOLLOWING CONDITIONS ARE MET:**
-
-    1.  Geth is fully synchronized.
-    2.  Nimbus is fully synchronized.
-    3.  Both services (`w3p_geth`, `w3p_nimbus-beacon`) have been running stably for several hours.
-    4.  Nimbus logs show that your validator keys are recognized (e.g., `Local validator attached`).
-
-    **Making the deposit before the node is fully synced and ready will result in inactivity penalties.**
-
-### Making the Deposit
-
-Once your node is fully synced and ready:
-
-1.  Return to the Staking Launchpad for your chosen network:
-
-    === "Mainnet"
-
-        <https://launchpad.ethereum.org/>
-
-    === "Holesky"
-
-        <https://holesky.launchpad.ethereum.org/>
-
-    === "Hoodi"
-
-        <https://hoodi.launchpad.ethereum.org/>
-
-2.  Follow the instructions carefully, reconnecting your wallet if necessary.
-3.  Upload your `deposit_data-*.json` file when prompted (this is the file generated alongside your keystores).
-4.  Connect the wallet containing the 32 ETH (+ required transaction fee) for the validator deposit.
-5.  **Carefully review all transaction details** on the Launchpad and in your wallet before confirming the deposit transaction.
 
 ### Validator Activation
 
