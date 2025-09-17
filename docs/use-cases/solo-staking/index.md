@@ -201,20 +201,21 @@ depending on your platform and preferences.
 For the sake of this guide, we'll use the CLI app as the example.
 
 ![](../../img/solo-staking/generate_key_pairs_cli_mainnet.png "Run the key generator")
-
+   
 === "Mainnet"
-`bash
+    ```bash
     ./deposit new-mnemonic --chain mainnet
-    `
+    ```
 
 === "Holesky"
-`bash
+    ```bash
     ./deposit new-mnemonic --chain holesky
-    `
+    ```
 === "Hoodi"
-`bash
+    ```bash
     ./deposit new-mnemonic --chain hoodi
-    `
+    ```
+
 
 In case of the CLI app, the Launchpad gives you the exact command that you should run in your
 terminal. While you proceed, you'll be asked to provide the password to encrypt the keystore file
