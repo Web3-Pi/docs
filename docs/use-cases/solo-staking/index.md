@@ -183,6 +183,16 @@ keys, they will never be able to override the address to which your stake and th
 
 ![](../../img/solo-staking/generate_key_pairs_address_mainnet.png "Provide your withdrawal address")
 
+#### Type of staking account
+
+You need to choose between two account types: *Compounding* or *Regular withdrawals*.
+
+* A *Compounding* account (recommended for most users) allows your rewards to automatically compound, supports balances up to 2048 ETH, and offers partial withdrawals through a smart contract request.
+* A *Regular withdrawals* account has a maximum effective balance of 32 ETH, allows regular gasless withdrawals of any balance above 32 ETH, and can later be migrated to a compounding account."
+
+![](../../img/solo-staking/typeOfStakingAccount2.png "What type of staking account?")
+
+
 #### Generate the keys
 
 Once you fill in the number of validators and the withdrawal address, you proceed with the key
