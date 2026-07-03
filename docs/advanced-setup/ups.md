@@ -1,5 +1,8 @@
 # Power Backup Solutions for Raspberry Pi 5 and Raspberry Pi 4
 
+!!! tip "Web3 Pi UPS"
+    Web3 Pi now has its own smart DC UPS, designed specifically for Raspberry Pi 5 and the Web3 Pi ecosystem — instant failover, safe shutdown, and remote monitoring. See the [Web3 Pi UPS documentation](../ups/index.md).
+
 ## Why Use Power Backup for an Ethereum Full Node?
 
 Running a full Ethereum node on Raspberry Pi, especially in projects like **Web3 Pi**, requires consistent and stable power. A power outage or fluctuation can result in corrupted data since the node continuously writes to storage. In addition, even if you live in a region with seemingly stable electricity, brief voltage dips or surges can occur unnoticed, potentially causing instability, freezing, or unexpected reboots of your Raspberry Pi.

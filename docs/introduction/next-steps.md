@@ -22,7 +22,7 @@ Ensure you have all the necessary hardware components (Raspberry Pi, power suppl
 ### Use Your Own Hardware or the WelcomeBox?
 
 - [**WelcomeBox:**](../welcome-box/index.md) Web3 Pi offers a WelcomeBox — an all-in-one solution with pre-selected, compatible hardware to help you get started quickly.
-- **Own Hardware:** You can use your existing Raspberry Pi (Model 4, 5, or CM4) and compatible peripherals. Ensure you have everything required by checking the [Prerequisites Guide](../setup/prerequisites.md) and the [Hardware Recommendations](./single-mode/hardware-recommendations.md) document.
+- **Own Hardware:** You can use your existing Raspberry Pi (Model 4, 5, or CM4) and compatible peripherals. Ensure you have everything required by checking the [Prerequisites Guide](../setup/prerequisites.md) and the [Hardware Recommendations](../setup/single-mode/hardware-recommendations.md) document.
 
 ### Optional LCD Display?
 

@@ -119,6 +119,12 @@
 }
 
 @media screen and (min-width: 760px) {
+  .home-page-hero.ups-page-hero {
+    background-image: url("/img/ups-hero.png") !important;
+    background-size: 58% auto !important;
+    background-position: right center !important;
+    background-repeat: no-repeat !important;
+  }
   .home-page-hero {
     background-image: url("/img/hero.png");
     background-size: cover;
@@ -141,6 +147,16 @@
       width: 40%;
     }
   }
+}
+
+/* Centered content images (used across the UPS section) */
+.md-typeset img.img-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+.md-typeset .img-caption {
+  text-align: center;
 }
 
 .youtube-video {

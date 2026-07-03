@@ -38,6 +38,25 @@ theme:
 
 plugins:
   - search
+  - llmstxt:
+      markdown_description: >-
+        Web3 Pi documentation — running Ethereum nodes on Raspberry Pi,
+        and the Web3 Pi UPS smart DC uninterruptible power supply.
+      full_output: llms-full.txt
+      sections:
+        Web3 Pi:
+          - index.md
+          - introduction/*.md
+          - setup/**/*.md
+          - advanced-setup/*.md
+          - monitoring/*.md
+          - management/**/*.md
+          - welcome-box/*.md
+          - use-cases/*.md
+          - support/*.md
+          - downloads/*.md
+        Web3 Pi UPS:
+          - ups/**/*.md
 
 extra:
   social:
@@ -124,6 +143,24 @@ nav:
       - Web3 Pi Link: 'management/cockpit/web3-pi-link.md'
       - Web3 Pi Script Runner: 'management/cockpit/web3-pi-script-runner.md'
   - WelcomeBox: 'welcome-box/index.md'
+  - UPS:
+    - 'ups/index.md'
+    - Getting Started: 'ups/getting-started.md'
+    - Hardware:
+      - 'ups/hardware/index.md'
+      - Display & Menu: 'ups/hardware/display-menu.md'
+      - Battery: 'ups/hardware/battery.md'
+    - Power & Failover: 'ups/power.md'
+    - Connectivity:
+      - 'ups/connectivity/index.md'
+      - Web Panel: 'ups/connectivity/web-panel.md'
+      - HTTP Mode: 'ups/connectivity/http-mode.md'
+      - Arkiv Mode: 'ups/connectivity/arkiv-mode.md'
+    - Host Integration: 'ups/host-integration.md'
+    - Reference:
+      - Specifications: 'ups/reference/specifications.md'
+      - WUPS Protocol: 'ups/reference/protocol.md'
+    - Troubleshooting: 'ups/troubleshooting.md'
   - Use Cases:
     - Install in your wallet: 'use-cases/wallet.md'
     - Transaction Firewall: 'use-cases/transaction-firewall.md'
