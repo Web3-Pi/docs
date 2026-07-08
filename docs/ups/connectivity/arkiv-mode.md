@@ -34,6 +34,8 @@ The binding survives reboots; a factory reset (menu → **Network** → **Reset*
 - Send testnet GLM to that address. If the wallet runs dry, telemetry writes fail until you top it up — the panel warns you when the balance is low.
 - **Wallet** → **Regen** generates a new device wallet, invalidating the existing identity and claim — only use it if you intend to re-claim the device.
 
+![Claimed Arkiv device in the web panel — telemetry decrypted in the browser, device wallet balance, owner wallet in MetaMask](../img/panel-arkiv-devices.png){: .img-center }
+
 ## What Works and Current Limitations
 
 | Works today | Limitations |

@@ -23,6 +23,8 @@ A device only shows up in your panel after you claim it.
     2. Enter the **ICCID** (19–20 digits, printed on the SIM tray) and the **claim token** (format `XXXXX-XXXXX`) included with your UPS.
     3. Confirm — the device appears in your list and its telemetry lands within about 30 seconds.
 
+    ![Claim MQTT device dialog — ICCID and claim token](../img/panel-claim-mqtt.png){: .img-center style="max-width: 420px;"}
+
 === "Arkiv"
 
     Arkiv devices are claimed under **Web3 Pi UPS → Arkiv Devices** with a crypto wallet and the **4-word claim code** from the device OLED, and the binding is confirmed on the UPS itself. Follow the walkthrough in [Arkiv mode](arkiv-mode.md#claiming-your-device).
@@ -40,6 +42,8 @@ The **Status** tab updates live:
 - **System** — host stats from the [companion service](../host-integration.md): CPU temperature, RAM, disk, load, uptime.
 - **ETH Clients** — execution / consensus / validator shown as running, stopped, or failed. This is the service state on the Pi, not chain sync status.
 
+![Status tab — live UPS, system, and Ethereum client tiles](../img/panel-status.png){: .img-center style="max-width: 400px;"}
+
 Devices report roughly every 30 seconds over LTE, but power-loss and fault events are pushed immediately — an outage shows up in the panel within seconds.
 
 ## Remote Commands
@@ -53,11 +57,15 @@ The **Commands** tab targets the selected device:
 | Diagnostics | Request status · Beep / self-test | |
 | Ethereum clients | Start · Restart · Stop per client | Acts on the whitelisted services on the Pi |
 
+![Commands tab — UPS output, Raspberry Pi, diagnostics, and Ethereum client controls](../img/panel-commands.png){: .img-center style="max-width: 400px;"}
+
 Destructive commands ask for confirmation. On MQTT devices every command is tracked from *accepted* to *confirmed by device* (or *failed* / *timed out*). On Arkiv devices each command requires one wallet signature and may show as *submitted on-chain* rather than confirmed — see [Arkiv mode](arkiv-mode.md).
 
 ## Events and Command History
 
 **Events** collects power and host alerts from your whole fleet — mains lost/restored, battery low/full, faults, imminent host shutdown, low disk, backend-mode changes — filterable by device, severity, and date. **Command History** logs every issued command with its status, latency, and the account that sent it.
+
+![Command History — a global log of every command sent across the fleet](../img/panel-command-history.png){: .img-center }
 
 ## Settings
 
