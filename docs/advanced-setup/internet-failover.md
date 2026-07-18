@@ -60,10 +60,9 @@ that needs ModemManager, QMI, MBIM or PPP dialing on the host **does not qualify
 | # | | Model | Price (PL, 2026) | Notes |
 |---|---|---|---|---|
 | 1 | ![ZTE MF833N](../img/modem-zte-mf833n.jpg){:style="height: 110px; border-radius: 6px;"} | **ZTE MF833N** | ~109–126 PLN | Bench-tested end-to-end on the shipped image. In production, widely stocked. No external antenna ports. |
-| 2 | ![ZTE MF79U](../img/modem-zte-mf79u.jpeg){:style="height: 110px; border-radius: 6px;"} | **ZTE MF79U** | ~140–190 PLN | Fully bench-proven. **2× TS-9 external antenna ports** under the side covers (most retail listings omit them) — the pick for weaker-signal sites. |
-| 3 | ![ZTE MF79N](../img/modem-zte-mf79n.jpg){:style="height: 110px; border-radius: 6px;"} | **ZTE MF79N** | ~149 PLN | Same platform as MF79U, still in production. Occasional mode-switch retries on some units (the system retries automatically). |
-| 4 | ![ZTE MF833U1](../img/modem-zte-mf833u1.jpg){:style="height: 110px; border-radius: 6px;"} | **ZTE MF833U1** | ~109–139 PLN | Sibling variant of the MF833N — same class, no antenna ports. |
-| 5 | ![Huawei E8372h-320](../img/modem-huawei-e8372h-320.jpeg){:style="height: 110px; border-radius: 6px;"} | **Huawei E8372h-320** | ~140–160 PLN | Works well (`192.168.8.x` subnet avoids common LAN collisions), but EOL — buy only genuine stock and check `lsusb` on arrival (see the avoid list). |
+| 2 | ![ZTE MF79N](../img/modem-zte-mf79n.jpg){:style="height: 110px; border-radius: 6px;"} | **ZTE MF79N** | ~149 PLN | Still in production. **2× TS-9 external antenna ports** under the flip-open side caps (most retail listings omit them) — the pick for weaker-signal sites. Occasional mode-switch retries on some units (the system retries automatically). |
+| 3 | ![ZTE MF833U1](../img/modem-zte-mf833u1.jpg){:style="height: 110px; border-radius: 6px;"} | **ZTE MF833U1** | ~109–139 PLN | Sibling variant of the MF833N — same class, no antenna ports. |
+| 4 | ![Huawei E8372h-320](../img/modem-huawei-e8372h-320.jpeg){:style="height: 110px; border-radius: 6px;"} | **Huawei E8372h-320** | ~140–160 PLN | Works well (`192.168.8.x` subnet avoids common LAN collisions), but EOL — buy only genuine stock and check `lsusb` on arrival (see the avoid list). |
 
 All ZTE models above use the `192.168.0.0/24` subnet on their LAN side by default — read
 the *distinct subnets* requirement below.
@@ -82,7 +81,7 @@ the *distinct subnets* requirement below.
 
 | ID seen | Meaning | Verdict |
 |---|---|---|
-| `19d2:1225` → `19d2:1405` | ZTE MF79U/N, MF833N (storage → network mode) | ✅ |
+| `19d2:1225` → `19d2:1405` | ZTE MF79N, MF833N (storage → network mode) | ✅ |
 | `12d1:1f01` → `12d1:14dc` / `14db` | Huawei HiLink (E3372h / E8372h) | ✅ |
 | `12d1:*` → `12d1:1506` / `1442` | Huawei **Stick/NCM firmware** | ❌ |
 | `3566:2001` | **Brovi** fake-Huawei | ❌ return it |
@@ -144,7 +143,7 @@ if its web UI allows it.
 ## Setup, step by step
 
 1. **Prepare the modem**: SIM inserted, PIN disabled. If the modem has a WiFi hotspot
-   (MF79U, E8372h are "wingles"), **disable the hotspot** in its web UI — it is a
+   (MF79N, E8372h are "wingles"), **disable the hotspot** in its web UI — it is a
    security exposure, extra heat, and parasitic data on your metered SIM. The failover
    does not use it.
 2. **Plug the modem into a USB 3.0 port** (short extension cable recommended).
@@ -181,7 +180,7 @@ if its web UI allows it.
 
 Some modems have connectors for external antennas — on this class of device they are
 almost always **TS-9** sockets, usually a pair of them hidden under small side covers
-(on the MF79U/MF79N they are under the flip-open caps; retail listings often don't even
+(on the MF79N they are under the flip-open caps; retail listings often don't even
 mention them). TS-9 antennas are cheap (from ~45 PLN a pair) and easy to find in online
 shops — from small stubby sticks, through mid-size whips on a cable, up to desktop
 antennas you can place on a windowsill:
@@ -244,7 +243,7 @@ Every decision the watchdog makes is logged with its reason:
 | Modem detected, DHCP address assigned, **no data flows** | **SIM PIN is enabled** (the status screen shows PIN state) — disable it. Or: MVNO SIM needs the APN set once in the modem web UI. |
 | Bought an "E3372" and it doesn't work | Check `lsusb`: `3566:2001` = **Brovi** fake-Huawei from the avoid list — return it. |
 | **Subnet collision** banner in the panel | Your home LAN uses the same subnet as the modem (typically `192.168.0.0/24`). Change the router's LAN subnet, or the modem's if its UI allows. Failover refuses to arm the ambiguous link until resolved. |
-| Speed test says BELOW MINIMUM | Escalate: reposition (watch RSRP/SNR) → TS-9 antennas (MF79U/N) → different carrier. Re-test at different times of day. |
+| Speed test says BELOW MINIMUM | Escalate: reposition (watch RSRP/SNR) → TS-9 antennas (MF79N) → different carrier. Re-test at different times of day. A single unit can also have a degraded radio — if a second modem is available, compare RSRP at the same spot. |
 | Terrible latency on LTE (multi-second pings) | Signal collapse causes bufferbloat. Move the modem first — one bad spot measured 5.9/0.1 Mbit/s with 7.4 s pings. |
 | `attest_risk` alarm while on LTE | The validator is active and the beacon has very few peers on this dwell. Usually transient during peer rebuild; if persistent, the link is too slow — check the speed test. |
 | Panel shows a beacon service restart during an outage | The escalation safety valve (at most once per outage). The validator itself is never restarted. |
