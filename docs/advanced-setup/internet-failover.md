@@ -111,12 +111,19 @@ a stick in the Pi's side ports.
   DHCP address, and moves **zero** data.
 - **Pick a different carrier than your home ISP** — otherwise one regional outage can
   take down both links at once.
-- **Plan size**: a synced node parked on LTE consumed ≈ **0.7 GB/hour (≈ 17 GB/day)** in
-  our bench measurements on a test network; a mainnet node is heavier (industry
-  rule-of-thumb: tens of GB per day unshaped). Practical advice (Polish market, 2026):
-  an **unlimited prepaid** plan (~35 PLN/month) is the stress-free default. A small
-  "50 GB" plan covers roughly one day of a real outage — treat it as a short-blip-only
-  budget.
+- **Plan size — bench-measured (Hoodi testnet, node parked on LTE)**:
+    - node **without a validator**: ≈ **0.7 GB/hour ≈ 17 GB/day** (short-window
+      measurement on a constrained uplink — treat it as the floor);
+    - node **with one active validator**: ≈ **2.9 GB/hour ≈ 69 GB/day**, steady across a
+      full 24 h dwell — and roughly **half of that is upload**: once the uplink is not
+      the bottleneck, the beacon *serves* data to its ~20 peers. Budget ≈ **80 GB/day**
+      after carrier billing overhead.
+    - each failover switch additionally costs **0.25–0.5 GB** of catch-up traffic.
+
+    A mainnet node is at least as heavy. Practical advice (Polish market, 2026): for a
+    **validator** setup a **truly unlimited** plan (~35 PLN/month) is the only
+    stress-free option — a "150 GB" plan lasts ~2 days of a real outage and a "50 GB"
+    plan under a day (node-only: ~2–3 days). Treat capped plans as short-blip budgets.
 - **Prepaid expiry**: prepaid SIMs need a periodic top-up to stay active — put it in
   your calendar. The failover's periodic health probes conveniently keep the SIM
   "in use" from the carrier's perspective.
@@ -218,7 +225,8 @@ Every decision the watchdog makes is logged with its reason:
 ## What to expect while on LTE
 
 - **Fewer peers — by design of carrier networks.** Under CGNAT no inbound connections
-  are possible, so the peer count settles around a dozen instead of 150+. That is
+  are possible, so the peer count settles around a dozen–two dozen instead of 150+
+  (bench: average ~20 over a 24 h LTE dwell). That is
   normal and sufficient; a validator needs only ~5–6 beacon peers to perform its duties.
 - **Port-forwarding rule of thumb**: opening the beacon's P2P ports on your **wired
   router** is worth it (bench: ~10–16 peers with ports closed → ~160 open). On **LTE it
@@ -227,6 +235,10 @@ Every decision the watchdog makes is logged with its reason:
   a stable dwell on a link meeting the 20/10 minimum. If the watchdog ever escalates
   (beacon-service restart, at most once per outage), the panel shows it as a brief
   service-state blip — that is the failover's safety valve doing its job, not a fault.
+  The **validator service itself is never touched** by the failover. If you keep your
+  validator keys on an encrypted (LUKS) volume with manual start, remember that it never
+  auto-starts after a node reboot — a deliberate security property, unrelated to the
+  failover (which never reboots the node).
 - **Data-saving mode** is automatic: upload shaped (anti-bufferbloat; download is never
   policed), automatic system updates paused until the wired link returns, all usage
   metered (`F` → data usage; daily/monthly history via vnstat).
