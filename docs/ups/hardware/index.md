@@ -21,7 +21,7 @@ The Web3 Pi UPS is a compact, silent DC UPS that sits between your charger and t
 *Rear inputs: USB-C **IN** with the DC barrel jack next to it.*
 {: .img-caption }
 
-- **USB-C IN** — USB-C Power Delivery input, 12–20 V auto-negotiated. The primary way to power the UPS, e.g. from a 45 W USB-C charger.
+- **USB-C IN** — USB-C Power Delivery input, 9–20 V auto-negotiated. The primary way to power the UPS, e.g. from a 45 W USB-C charger.
 - **DC jack** — alternative DC input, 12–20 V (5.5/2.5 mm barrel), for desktop supplies or other DC sources.
 
 Both inputs can be connected at the same time: the UPS draws from whichever presents the higher voltage, and if that source fails it switches to the other seamlessly. As long as at least one cable input is powered, you can also [hot-swap the battery](battery.md) without interrupting the Pi. The output stays up while **any one** of the three power sources — USB-C **IN**, DC jack, or battery — is available; see [Power & Failover](../power.md).
@@ -30,8 +30,8 @@ Both inputs can be connected at the same time: the UPS draws from whichever pres
 
 | Port | Location | Purpose |
 |---|---|---|
-| USB-C **OUT** | Front | Output to the Pi 5: 5.1 V / 5 A power plus USB data (telemetry, safe shutdown) on one cable |
-| USB-C **IN** | Rear | USB-C PD input, 12–20 V (auto-negotiated); 26 W minimum, 45–65 W recommended |
+| USB-C **OUT** | Front | Output to the Pi 5: 5 V / 5 A power plus USB data (telemetry, safe shutdown) on one cable |
+| USB-C **IN** | Rear | USB-C PD input, 9–20 V (auto-negotiated); 26 W minimum, 45–65 W recommended |
 | DC jack | Rear | Alternative DC input, 12–20 V (5.5/2.5 mm barrel) |
 | Battery rail | Top | Sony NP-F battery — user-replaceable, see [Battery](battery.md) |
 
@@ -40,7 +40,7 @@ Both inputs can be connected at the same time: the UPS draws from whichever pres
 
 ## Buzzer
 
-An internal buzzer gives audible feedback: button clicks, a power-loss alarm when the unit switches to battery, and low/critical battery warnings. All sounds — alarms included — can be muted from the [settings menu](display-menu.md).
+An internal buzzer gives audible feedback: button clicks, a short startup melody, a power-loss alarm when the unit switches to battery, low/critical battery warnings, and a bad-power-supply alert (rapid beeping — see [Troubleshooting](../troubleshooting.md)). All sounds — alarms included — can be muted from the [settings menu](display-menu.md).
 
 ## Status LEDs
 

@@ -158,6 +158,7 @@ nav:
       - HTTP Mode: 'ups/connectivity/http-mode.md'
       - Arkiv Mode: 'ups/connectivity/arkiv-mode.md'
     - Host Integration: 'ups/host-integration.md'
+    - Firmware Updates: 'ups/firmware-update.md'
     - Reference:
       - Specifications: 'ups/reference/specifications.md'
       - WUPS Protocol: 'ups/reference/protocol.md'

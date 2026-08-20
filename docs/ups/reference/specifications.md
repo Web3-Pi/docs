@@ -7,9 +7,13 @@ Reference data for the Web3 Pi UPS — a true DC UPS (no AC inverter) for the Ra
 | Parameter | Value |
 |---|---|
 | Output port | USB-C **OUT** — power + data over a single cable |
-| Native Raspberry Pi 5 profile | 5.1 V / 5 A continuous — full Pi 5 power budget |
-| USB-C PD output profiles | 5.1 V / 5 A · 9 V / 3 A · 12 V / 2.25 A · 15 V / 1.8 A, auto-negotiated |
-| Cable requirement | E-marked USB-C cable for 5 A operation |
+| Native Raspberry Pi 5 profile | 5 V / 5 A (27 W peak) — the UPS identifies itself as a 27 W supply, unlocking the Pi 5's full power envelope |
+| USB-C PD output profiles | 5 V / 5 A · 9 V / 3 A · 12 V / 2.25 A · 15 V / 1.8 A, auto-negotiated |
+| Designed workload | A Raspberry Pi 5 running a Web3 Pi node/validator — typically well under 15 W, sustained indefinitely |
+| Cable requirement | E-marked USB-C cable recommended for 5 A operation — the UPS cannot detect an under-rated cable |
+
+!!! note "Peak vs. sustained load"
+    The 27 W profile covers the Pi 5's power peaks. The UPS is a compact, fanless device built around a node/validator workload, which it powers around the clock; it is not meant as a general-purpose charger, and sustained loads above ~20 W (e.g. charging a laptop) can build up heat, especially in warm surroundings.
 
 !!! warning "OUT is output only"
     Never feed power into the **OUT** port.
@@ -18,9 +22,9 @@ Reference data for the Web3 Pi UPS — a true DC UPS (no AC inverter) for the Ra
 
 | Parameter | Value |
 |---|---|
-| USB-C PD input (**IN**) | 12–20 V, auto-negotiated, 26 W minimum |
+| USB-C PD input (**IN**) | 9–20 V, auto-negotiated (15 V preferred), 26 W minimum |
 | DC barrel jack | 12–20 V DC, 5.5/2.5 mm connector |
-| Recommended source | **45 W or more** — a supply rated at least 45 W is required to deliver the full 27 W (5.1 V / 5 A) output; extra headroom also charges the battery under full load |
+| Recommended source | **45 W or more** — a supply rated at least 45 W is required to deliver the full 27 W (5 V / 5 A) output; extra headroom also charges the battery under full load |
 | Source selection | Automatic — with both external inputs connected, the higher voltage supplies the load |
 | Power sources | 3 (USB-C PD, DC jack, battery) with seamless switching; output is maintained while any single source is available |
 | Power path | Active — battery is bypassed when full and external power is present (less battery wear); instant failover to battery |
@@ -54,7 +58,7 @@ See [Battery](../hardware/battery.md) for charging behavior and swap procedure.
 | Display | 64 × 32 px monochrome OLED status display |
 | Buttons | 2 push-buttons — screen navigation and local settings menu |
 | Buzzer | Audible alarms (power loss, low battery) and UI feedback; can be muted |
-| LTE-M module (optional) | Internal M.2 slot for the cellular module — remote monitoring without host networking, see [Connectivity](../connectivity/index.md) |
+| LTE-M module | Internal M.2 card with an ESP32-S3 controller and a SIMCom SIM7080G modem (LTE-M / Cat-M1); pre-installed on production units together with a 1NCE nano-SIM and data plan. The UPS is fully functional without it — remote monitoring details in [Connectivity](../connectivity/index.md) |
 
 ## Physical
 

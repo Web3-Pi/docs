@@ -40,7 +40,7 @@ Charging is fully automatic — there is nothing to configure:
 
 ## Reading Charge State on the OLED
 
-The **Home** screen shows a battery icon (fill level = charge, scrolling bars while charging, blinking below 10 % on battery), the charge percentage, and a mode label. The **BATTERY** [debug screen](display-menu.md#debug-screens) (current firmware only) adds battery voltage and charge current.
+The **Home** screen shows a battery icon (fill level = charge, scrolling bars while charging, blinking below 10 % on battery), the charge percentage, and a mode label. The **BATTERY** [detail screen](display-menu.md#detail-screens) adds battery voltage and charge current.
 
 | Label | Meaning |
 |---|---|
@@ -50,7 +50,7 @@ The **Home** screen shows a battery icon (fill level = charge, scrolling bars wh
 | `FUL` | Full |
 | `IDL` | On external power, not charging |
 
-On battery, the buzzer beeps once every 30 s below 20 % charge and twice every 5 s below 10 %; the companion service can shut the Pi down safely before the battery runs out — see [Host Integration](../host-integration.md).
+On battery, the buzzer beeps once every 30 s below 20 % charge and twice every 5 s below 10 % (unless the buzzer is muted via menu → **Sound** — see [Display & Menu](display-menu.md)); the companion service can shut the Pi down safely before the battery runs out — see [Host Integration](../host-integration.md).
 
 !!! note
     The charge percentage is estimated from battery voltage and can read optimistically while charging.

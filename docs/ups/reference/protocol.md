@@ -29,15 +29,15 @@ Frames are UBX-style binary (same Fletcher-8 checksum algorithm as u-blox UBX). 
 
 | Class | Group | What It Carries |
 |-------|-------|-----------------|
-| `0x01` | System | Ping, boot hello (protocol version + capabilities), log messages, backend-mode change notifications |
+| `0x01` | System | Ping, boot hello (protocol version + capabilities), log messages, backend-mode change notifications, remote node reset |
 | `0x02` | Power | Telemetry pushed at 1 Hz (input/output PD contracts, voltages, currents, battery charge, temperatures, faults) plus output-rail control and power events: mains lost/restored, charge low/full, fault |
-| `0x03` | Network | LTE-M modem status (signal, IP, data counters), opaque cloud uplink/downlink, time sync, runtime configuration of [HTTP mode](../connectivity/http-mode.md) — no reflash needed |
-| `0x04` | Host | Host metrics for the OLED (CPU temperature, load, disk, Ethereum client states), graceful **shutdown**/**reboot** requests with reason and delay, whitelist-enforced service restart |
+| `0x03` | Network | LTE-M modem status (signal, IP, data counters), opaque cloud uplink/downlink, time sync, runtime configuration of [HTTP mode](../connectivity/http-mode.md) — no reflash needed — and [firmware updates](../firmware-update.md): OTA download over LTE plus a chunked image transfer used for remote RP2040 updates and browser-based flashing |
+| `0x04` | Host | Host metrics for the OLED (CPU temperature, load, disk, Ethereum client states), graceful **shutdown**/**reboot** requests with reason and delay, whitelist-enforced service start/stop/restart |
 | `0x05` | UI | Button events, display and buzzer control, on-device trust confirmations |
 
 ## Versioning
 
-The global protocol version (currently **1**) is announced in the hello message. Independently, every payload carries its own version as its **first byte** — for example, the power telemetry payload is currently at payload version 2. Parsers should dispatch on that byte, so payloads can evolve without breaking the framing or other messages.
+The global protocol version (currently **1**) is announced in the hello message. Independently, payloads conventionally carry their own version as their **first byte** — for example, the power telemetry payload is currently at payload version 2 (a few control payloads, such as transfer chunks and 1-byte result responses, do not). Parsers should dispatch on that byte, so payloads can evolve without breaking the framing or other messages.
 
 ## Authoritative Spec
 

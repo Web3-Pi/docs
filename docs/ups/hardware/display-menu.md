@@ -10,14 +10,9 @@ The **Home** screen is the main display: a battery icon (fill = charge level, an
 
 Mode labels: `DSC` discharging (on battery) · `PRE` pre-charge · `CHG` charging · `FUL` full · `IDL` on external power, not charging.
 
-<!-- TODO(release): the four debug screens below are removed from production firmware — delete this subsection and the debug-screen mentions in battery.md, troubleshooting.md, and reference/specifications.md before release. -->
+### Detail Screens
 
-### Debug Screens
-
-!!! note "Not in the production release"
-    Current firmware additionally has four debug screens. They will be removed from the production firmware.
-
-Cycled with short button presses; a small position strip in the bottom-right corner shows where you are, and the display returns to **Home** automatically after 20 s without a button press.
+Four detail screens sit next to **Home**, cycled with short button presses; a small position strip in the bottom-right corner shows where you are, and the display returns to **Home** automatically after 20 s without a button press.
 
 | Screen | Shows |
 |---|---|
@@ -26,15 +21,20 @@ Cycled with short button presses; a small position strip in the bottom-right cor
 | **BATTERY** | Battery voltage and charge %, mode label, charge current |
 | **SYSTEM** | Uptime, board and charger temperatures, fault code |
 
-!!! note "BAD PSU screen"
-    If the input supply is present but out of range, the display switches to a flashing **BAD PSU** warning (with alarm beeps) until you connect an adequate charger. This overrides all other screens.
+!!! note "Warning screens"
+    Three warnings can override the status screens:
+
+    - **BAD PSU** — the input supply is present but out of range: a flashing warning with alarm beeps until you connect an adequate charger.
+    - **MODEM** — the LTE-M module cannot get online (shows a short reason such as `SIM ERROR` or `NO NETWORK`, with a reminder beep every 10 s). Any button press dismisses it; it clears itself once the module reconnects. See [Troubleshooting](../troubleshooting.md).
+    - **NO UPS / pwr data lost** — the display controller lost internal telemetry for more than ~5 s (reminder beep every 30 s). The UPS usually still powers the Pi, and the screen normally self-recovers within a minute.
 
 ## Buttons
 
 | Context | **LEFT** | **RIGHT** |
 |---|---|---|
-| **Home** / debug screens | Short press: previous [debug screen](#debug-screens). Hold 2 s on **Home**: open the menu | Short press: next [debug screen](#debug-screens) |
+| **Home** / detail screens | Short press: previous [detail screen](#detail-screens). Hold 2 s on **Home**: open the menu | Short press: next [detail screen](#detail-screens) |
 | Menu | Move cursor down (wraps) / toggle the highlighted option | Select / activate |
+| **MODEM** warning | Any button: dismiss the warning | |
 | Confirmation prompts (device claiming) | Hold **both** buttons for the on-screen countdown to confirm; release to abort | |
 
 Every press gives a short click from the buzzer (unless sound is off).
@@ -49,7 +49,7 @@ Hold **LEFT** for 2 s on the **Home** screen. Navigate with **LEFT** (down) and 
 | **Sound** | Toggles the buzzer **ON**/**OFF** with **RIGHT**, saved immediately |
 | **Info** | Read-only: uptime and board/charger temperatures; any button returns |
 | **Output** | Shows the output state; **Turn OFF** asks for confirmation (`CUT PWR TO PI?`) before cutting power to the Pi, **Turn ON** is immediate |
-| **Network** | Opens the connectivity menu of the optional LTE-M module — backend mode selection, HTTP key, device wallet, and factory reset (**Reset**). See [Connectivity](../connectivity/index.md). Without the module fitted it shows a brief **NO MODEM** notice |
+| **Network** | Opens the connectivity menu of the optional LTE-M module — a shortcut to the detail screens (**Debug**), backend mode selection (**Mode**), **HTTP Key**, factory reset (**Reset**), device **Wallet**, and **Back**. See [Connectivity](../connectivity/index.md). Without the module fitted it shows a brief **NO MODEM** notice |
 | **Exit** | Closes the menu |
 
 **Bright** and **Sound** persist across power cycles and battery swaps. A factory reset (in the **Network** menu) restores both to defaults.

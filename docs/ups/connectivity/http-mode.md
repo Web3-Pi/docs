@@ -92,6 +92,8 @@ type 'help' for the command menu; Ctrl-C / Ctrl-D to quit
 !!! tip "Keep it running"
     The server runs in the foreground — it prints telemetry and takes commands from your keyboard — so it stops when your SSH session drops. Run it inside `tmux` (`sudo apt install -y tmux`, then `tmux`; detach with **Ctrl-B** then **D**, `tmux attach` brings it back) or `screen` (detach with **Ctrl-A** then **D**, `screen -r` brings it back).
 
+    If the server stays unreachable for more than ~5 minutes, the UPS assumes its cellular uplink is dead and starts resetting the modem; after ~20 minutes it shows a **MODEM** alert on the OLED and beeps. This is harmless — power to the Pi is unaffected — and it clears itself once the server is back.
+
 ### Step 3 — Point the UPS at Your Server
 
 The endpoint URL is sent to the UPS over the USB serial link from the Raspberry Pi it powers — it is stored on the device, no re-flash needed. On the **Raspberry Pi**:
@@ -137,11 +139,11 @@ If nothing arrives after a couple of minutes, check in order:
     simulates a correctly-signed device POST, so you can smoke-test the server before touching the UPS.
 
 !!! tip "Adding TLS"
-    Put any reverse proxy (Caddy, nginx) with a certificate in front of the server and re-run `send_config.py` with the `https://` URL.
+    Put any reverse proxy (Caddy, nginx) with a certificate in front of the server and re-run `send_config.py` with the `https://` URL. Use a publicly-trusted certificate (Caddy obtains a Let's Encrypt one automatically — this needs a domain name); self-signed certificates are rejected by the device.
 
 ## Available Commands
 
-Same semantics as the [web panel](web-panel.md) commands:
+These five commands are the complete set the HTTP backend executes (same semantics as the [web panel](web-panel.md) commands; anything else is ignored):
 
 | Command | Effect |
 |---|---|
@@ -150,6 +152,9 @@ Same semantics as the [web panel](web-panel.md) commands:
 | `host.shutdown` | Graceful Raspberry Pi shutdown (default 5 s delay) |
 | `host.reset` | Reboot the Raspberry Pi |
 | `power.cycle` | Power-cycle the **OUT** port (default 1.5 s off) |
+
+!!! note "No firmware updates in HTTP mode"
+    Remote [firmware updates](../firmware-update.md) are delivered over MQTT (or Arkiv) only. To update a device parked in HTTP mode, switch it back to MQTT from the OLED menu for the update, then switch back — or flash it locally over USB with the [Workbench](../firmware-update.md#local-updates-over-usb-workbench).
 
 ## Security Notes
 

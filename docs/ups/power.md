@@ -6,11 +6,11 @@ This page explains how the UPS behaves through a power outage — failover, the 
 
 | Source | Range | Role |
 |--------|-------|------|
-| **IN** — USB-C PD | 12–20 V, 26 W minimum (45–65 W recommended) | Primary input, profile auto-negotiated |
+| **IN** — USB-C PD | 9–20 V, 26 W minimum (45–65 W recommended) | Primary input, profile auto-negotiated |
 | **DC jack** — barrel | 12–20 V DC | Alternative external input |
 | Battery — Sony NP-F | 7.2 V Li-Ion, hot-swappable | Backup during outages |
 
-The two external inputs are combined passively — whichever presents the higher voltage powers the UPS, with nothing to configure, and if the active input fails the other takes over seamlessly. The battery carries the load only when neither external input is available, and is bypassed entirely once full while external power is present (no pointless charge cycles, less wear). Output is maintained as long as **any one** of the three sources is available, so you can even [hot-swap the battery](hardware/battery.md) while on external power.
+The two external inputs are combined automatically — whichever presents the higher voltage powers the UPS, with nothing to configure, and if the active input fails the other takes over seamlessly. The battery carries the load only when neither external input is available, and is bypassed entirely once full while external power is present (no pointless charge cycles, less wear). Output is maintained as long as **any one** of the three sources is available, so you can even [hot-swap the battery](hardware/battery.md) while on external power.
 
 ![Rear of the Web3 Pi UPS: USB-C input above the DC barrel jack](img/ups-back.png){: .img-center style="height: 300px;"}
 
@@ -18,10 +18,10 @@ The two external inputs are combined passively — whichever presents the higher
 
 | Port | PD profiles |
 |------|-------------|
-| **IN** (sink) | 12–20 V fixed profiles, best available selected automatically |
-| **OUT** (source) | 5.1 V / 5 A · 9 V / 3 A · 12 V / 2.25 A · 15 V / 1.8 A |
+| **IN** (sink) | 9–20 V fixed profiles, best available selected automatically |
+| **OUT** (source) | 5 V / 5 A · 9 V / 3 A · 12 V / 2.25 A · 15 V / 1.8 A |
 
-A Raspberry Pi 5 negotiates the native **5.1 V / 5 A** profile automatically — the UPS identifies itself as a 27 W-class Raspberry Pi supply, which unlocks the Pi 5's full 5 A mode. A 5 A contract requires an e-marked USB-C cable. Full electrical details are in [Specifications](reference/specifications.md).
+A Raspberry Pi 5 negotiates the full **5 V / 5 A** profile automatically — the UPS identifies itself as a 27 W supply, which unlocks the Pi 5's full 5 A mode. Use an e-marked USB-C cable for the 5 A contract — the UPS cannot detect an under-rated cable. Full electrical details are in [Specifications](reference/specifications.md).
 
 !!! note "Weak or out-of-range supply"
     If input power is present but unusable, the OLED shows a flashing **BAD PSU** screen and the buzzer beeps until it is fixed. Chargers below 45 W still run the Pi, but cannot sustain the full 27 W output with charging headroom.
@@ -30,9 +30,9 @@ A Raspberry Pi 5 negotiates the native **5.1 V / 5 A** profile automatically —
 
 Switchover to battery happens in hardware — the output is never interrupted, so the Pi keeps running with no reboot or brownout. What you notice:
 
-- a one-time descending three-tone buzzer alarm,
+- a one-time descending three-tone buzzer alarm (played three times),
 - the charge state on the OLED changes to **DSC** (discharging),
-- a **MAINS_LOST** event appears in the [web panel](connectivity/web-panel.md) event log, with telemetry pushed immediately.
+- a **power.mains_lost** event appears in the [web panel](connectivity/web-panel.md) event log, with telemetry pushed immediately. As the pack keeps draining, a one-shot **power.charge_low** event follows when charge drops below the low-water mark.
 
 ## As the Battery Drains
 
@@ -50,7 +50,7 @@ The UPS itself never cuts its output on low battery — it keeps powering the (h
 
 ## When Power Returns
 
-- Charging resumes automatically, a **MAINS_RESTORED** event is logged, and all alarms re-arm for the next outage.
+- Charging resumes automatically, a **power.mains_restored** event is logged (followed by **power.charge_full** once the pack tops off), and all alarms re-arm for the next outage.
 - If the node stayed up (it usually does), there is nothing to restore — the output never dropped.
 - If the host shut itself down while the battery still had charge (the usual case — shutdown triggers around 10 %), the halted Pi remains powered and **stays halted**. Restart it manually: the Pi's power button, **Output** off/on in the [local menu](hardware/display-menu.md), or a remote power cycle from the [web panel](connectivity/web-panel.md).
 - Only if the pack ran completely empty and its internal protection cut the rail does the Pi boot automatically when external power returns.

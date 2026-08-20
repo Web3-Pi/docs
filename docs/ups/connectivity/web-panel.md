@@ -20,7 +20,7 @@ A device only shows up in your panel after you claim it.
 === "MQTT (default)"
 
     1. Go to **Web3 Pi UPS → MQTT Devices** and click **Claim MQTT device**.
-    2. Enter the **ICCID** (19–20 digits, printed on the SIM tray) and the **claim token** (format `XXXXX-XXXXX`) included with your UPS.
+    2. Enter the **ICCID** (19–20 digits) and the **claim token** (format `XXXXX-XXXXX`) — both are on the setup card included with your UPS.
     3. Confirm — the device appears in your list and its telemetry lands within about 30 seconds.
 
     ![Claim MQTT device dialog — ICCID and claim token](../img/panel-claim-mqtt.png){: .img-center style="max-width: 420px;"}
@@ -34,13 +34,14 @@ A device only shows up in your panel after you claim it.
 
 ## What You See
 
-The sidebar lists your units by backend mode (**MQTT Devices**, **Arkiv Devices**), plus fleet-wide **Events** and **Command History**. The device list shows each unit's name, online state (online = reported within the last 3 minutes), battery and input voltage, last-seen time, and remaining SIM data. Click a device to open its detail pane with **Status**, **Commands**, **Events**, and **Settings** tabs.
+The sidebar lists your units by backend mode (**MQTT Devices**, **Arkiv Devices**), plus fleet-wide **Events** and **Command History**. The device list shows each unit's name, online state (online = reported within the last 3 minutes), battery and input voltage, last-seen time, LTE signal strength, and remaining SIM data. Click a device to open its detail pane with **Status**, **Commands**, **Events**, and **Settings** tabs.
 
 The **Status** tab updates live:
 
 - **UPS** — battery charge, input/output voltage, temperature, mains present, fault state.
 - **System** — host stats from the [companion service](../host-integration.md): CPU temperature, RAM, disk, load, uptime.
 - **ETH Clients** — execution / consensus / validator shown as running, stopped, or failed. This is the service state on the Pi, not chain sync status.
+- **LTE Modem** — signal quality and RSSI, link state, RSRP/RSRQ, and data counters. A red **UPS link down** banner appears if the LTE module hasn't received valid UPS data for over 90 s — the power tiles go blank and the suggested remedy is **Commands → Restart ESP32**.
 
 ![Status tab — live UPS, system, and Ethereum client tiles](../img/panel-status.png){: .img-center style="max-width: 400px;"}
 
@@ -54,8 +55,9 @@ The **Commands** tab targets the selected device:
 |---|---|---|
 | UPS output | Power on · Power off · Cycle output | Cycle cuts output for 1.5 s — hard-reboots the Pi |
 | Raspberry Pi | Reboot OS · Shutdown OS | Graceful shutdown; the UPS keeps supplying power |
-| Diagnostics | Request status · Beep / self-test | |
+| Diagnostics | Request status · Beep / self-test · Restart ESP32 | Restart ESP32 restarts the LTE module only — telemetry pauses a minute or two; UPS output and the Pi keep running |
 | Ethereum clients | Start · Restart · Stop per client | Acts on the whitelisted services on the Pi |
+| Firmware update | Send an over-the-air update to the modem module (ESP32) or the UPS controller (RP2040) | Full walkthrough: [Firmware Updates](../firmware-update.md) |
 
 ![Commands tab — UPS output, Raspberry Pi, diagnostics, and Ethereum client controls](../img/panel-commands.png){: .img-center style="max-width: 400px;"}
 
@@ -63,13 +65,13 @@ Destructive commands ask for confirmation. On MQTT devices every command is trac
 
 ## Events and Command History
 
-**Events** collects power and host alerts from your whole fleet — mains lost/restored, battery low/full, faults, imminent host shutdown, low disk, backend-mode changes — filterable by device, severity, and date. **Command History** logs every issued command with its status, latency, and the account that sent it.
+**Events** collects power and host alerts from your whole fleet — mains lost/restored, battery low/full, faults, imminent host shutdown, low disk, backend-mode changes, and firmware-update progress — filterable by device, severity, source, backend, and date. **Command History** logs every issued command with its status, latency, and the account that sent it.
 
 ![Command History — a global log of every command sent across the fleet](../img/panel-command-history.png){: .img-center }
 
 ## Settings
 
-Per-device settings live in the device's **Settings** tab: rename the unit, review backend details (full ICCID, remaining data, hardware revision, firmware version, claim date), and release it in the **Danger zone**. Account-level settings (password, two-factor, active sessions) are managed in your Web3 Pi account via the avatar menu → **Account settings**.
+Per-device settings live in the device's **Settings** tab: rename the unit, review backend details (full ICCID, IMEI, remaining data, hardware revision, ESP32 firmware version, claim date), and release it in the **Danger zone** — release asks you to type the device's exact name to confirm. Account-level settings (password, two-factor, active sessions) are managed in your Web3 Pi account via the avatar menu → **Account settings**.
 
 !!! tip "Running your own backend?"
-    Devices switched to [HTTP mode](http-mode.md) report to your own server instead — the panel can still list them, but live telemetry and commands go through your server.
+    Devices switched to [HTTP mode](http-mode.md) report to your own server instead and drop out of the MQTT Devices list — the sidebar has no HTTP entry; their list lives only at `panel.web3pi.io/ups/http`, and live telemetry and commands go through your server.
