@@ -18,6 +18,8 @@ UPS ◀────────────────────────�
        {"ts":…, …, "acks":["c-0043"]}
 ```
 
+An id in `acks` confirms that the UPS took the command onto its internal bus, **not** that it was executed — see [Available Commands](#available-commands) for how to tell.
+
 This page is a quick-start — see the full
 [HTTP mode specification](https://github.com/Web3-Pi/Web3-Pi-UPS/blob/main/docs/http-control-mode.md){:target="_blank"}
 for signature headers, body schema, and replay protection.
@@ -92,7 +94,7 @@ type 'help' for the command menu; Ctrl-C / Ctrl-D to quit
 !!! tip "Keep it running"
     The server runs in the foreground — it prints telemetry and takes commands from your keyboard — so it stops when your SSH session drops. Run it inside `tmux` (`sudo apt install -y tmux`, then `tmux`; detach with **Ctrl-B** then **D**, `tmux attach` brings it back) or `screen` (detach with **Ctrl-A** then **D**, `screen -r` brings it back).
 
-    If the server stays unreachable for more than ~5 minutes, the UPS assumes its cellular uplink is dead and starts resetting the modem; after ~20 minutes it shows a **MODEM** alert on the OLED and beeps. This is harmless — power to the Pi is unaffected — and it clears itself once the server is back.
+    If your server stops answering while the internet is reachable (server down, wrong URL, wrong key), the UPS keeps its cellular link up and simply retries every 30 s; after about 30 minutes without a successful POST it shows **! MODEM / NO UPLINK / no uplink** on the OLED and beeps. This is harmless — power to the Pi is unaffected — and it clears itself as soon as the server answers again. Only when the internet itself is unreachable (no answer from the server *and* from public DNS for about 6–7 minutes after the last successful POST) does the UPS re-establish the cellular link.
 
 ### Step 3 — Point the UPS at Your Server
 
@@ -111,10 +113,10 @@ The serial port is auto-detected, and success looks like:
 ```text
 auto-detected port: /dev/ttyACM0 (Web3_Pi_UPS …)
 sent net.config HTTP_URL = "http://<your-server-ip>:8080" (… bytes) to /dev/ttyACM0
-device acked: OK
+device confirmed net.config: OK
 ```
 
-`no RESP seen` instead of the ack usually still means the URL was applied (the reply can get lost amid telemetry) — carry on and confirm in [Verify](#verify) below. A permission error opening the port means your user isn't in the `dialout` group — re-run with `sudo`. And if the [host service](../host-integration.md) isn't installed, the `systemctl` lines report `Unit w3p-ups.service not loaded` — that's fine, the port is already free; skip them.
+`no confirmation seen …` instead of that last line usually still means the URL was applied (the reply can get lost amid telemetry) — carry on and confirm in [Verify](#verify) below. A permission error opening the port means your user isn't in the `dialout` group — re-run with `sudo`. And if the [host service](../host-integration.md) isn't installed, the `systemctl` lines report `Unit w3p-ups.service not loaded` — that's fine, the port is already free; skip them.
 
 The URL is stored until factory reset. Optional, as a separate run (the two flags can't be combined): `send_config.py --device-id <id>` overrides the ICCID default; an empty string (`--url ""` / `--device-id ""`) clears the respective setting.
 
@@ -130,7 +132,7 @@ If nothing arrives after a couple of minutes, check in order:
 
 1. **Cellular link** — was the device reporting before the switch (e.g. online in the [web panel](web-panel.md) in MQTT mode)? If it has never been online in any mode, the problem is cellular coverage, not your server.
 2. **Server** — still running, and the port open (firewall — [Step 1](#step-1-get-a-server)).
-3. **URL** sent in step 3 — right IP, right port, `http://` prefix, **no trailing slash**.
+3. **URL** sent in step 3 — right IP, right port, `http://` prefix, **no trailing slash**, and the **final URL only** — the UPS does not follow redirects (firmware esp32:0.8.10 or newer: a `3xx` is logged and nothing is applied; older firmware followed redirects instead).
 4. **Key and device ID** — a wrong `--secret` is logged by the server as `! rejected: bad signature`; a wrong `--device-id` is **silent** (the server answers 404 without printing anything), so re-check the ICCID digit-for-digit.
 
 !!! tip "No hardware yet?"
@@ -141,17 +143,26 @@ If nothing arrives after a couple of minutes, check in order:
 !!! tip "Adding TLS"
     Put any reverse proxy (Caddy, nginx) with a certificate in front of the server and re-run `send_config.py` with the `https://` URL. Use a publicly-trusted certificate (Caddy obtains a Let's Encrypt one automatically — this needs a domain name); self-signed certificates are rejected by the device.
 
+!!! warning "Data usage on the bundled SIM"
+    The SIM shipped with the UPS is a prepaid 1NCE pool of **500 MB or 10 years, whichever comes first** — a lifetime allowance, not a monthly plan. Measured on the bench: plain `http://` at the default 30 s poll uses ≈ 1.6 KB per poll ≈ **4.7 MB/day**, so the pool lasts ≈ **107 days**. `https://` costs several times more — every poll opens a fresh TLS connection with a full handshake — estimated at ≈ 16–26 MB/day, i.e. **3–4 weeks** per pool. Both directions are HMAC-signed, so plain `http://` is already safe against forgery: prefer it on the bundled SIM, and use `https://` with your own SIM or data plan (top-ups of the bundled SIM are not self-service yet). The poll period is fixed in the current firmware. Measurement method and how to read your own usage from `net.bytes_tx` / `net.bytes_rx`: [spec §9 Data budget](https://github.com/Web3-Pi/Web3-Pi-UPS/blob/main/docs/http-control-mode.md#9-data-budget){:target="_blank"}.
+
 ## Available Commands
 
-These five commands are the complete set the HTTP backend executes (same semantics as the [web panel](web-panel.md) commands; anything else is ignored):
+These five commands are the complete set the HTTP backend executes (same semantics as the [web panel](web-panel.md) commands; anything else is refused and reported back in the next POST's `rejected` list — firmware esp32:0.8.10 or newer; older firmware ignores unknown commands silently):
 
 | Command | Effect |
 |---|---|
 | `ui.beep` | Sound the buzzer — a quick end-to-end test |
-| `ui.display_msg` | Show a short text message on the OLED |
-| `host.shutdown` | Graceful Raspberry Pi shutdown (default 5 s delay) |
-| `host.reset` | Reboot the Raspberry Pi |
-| `power.cycle` | Power-cycle the **OUT** port (default 1.5 s off) |
+| `ui.display_msg` | Show a short text message on the OLED (40 characters visible; shown as a plain notice on rp2040 1.2.2 or newer — older RP2040 firmware displayed it as a MODEM alarm) |
+| `host.shutdown` | Graceful Raspberry Pi shutdown (the delay argument is currently ignored — immediate) |
+| `host.reset` | Reboot the Raspberry Pi (the delay argument is currently ignored — immediate) |
+| `power.cycle` | Power-cycle the **OUT** port (fixed 1.5 s off time in the current CH32X firmware) |
+
+!!! note "What an ack means"
+    An id in `acks` means the UPS **accepted the command and handed it to its internal bus** (to the display controller, the Raspberry Pi host service or the power controller) — it does not confirm that the command was executed. Execution is visible out-of-band: `ui.beep` is audible; `ui.display_msg` appears on the OLED; after `host.shutdown` the `host` object drops out of telemetry within about two minutes; after `host.reset` `host.uptime_s` restarts from a small value in a later report (the `host` object may or may not drop out in between — a Pi that is back within 90 s never disappears); `power.cycle` shows as the `VBUS_OUT_EN` bit of `power.flags` clearing / `vbus_out_mv` dipping, but a 1.5 s dip is usually missed by the 30 s poll — the Pi rebooting (`host.uptime_s` restarting) is the reliable sign. Details: [Verifying that a command took effect](https://github.com/Web3-Pi/Web3-Pi-UPS/blob/main/docs/http-control-mode.md#verifying-that-a-command-took-effect){:target="_blank"} in the specification.
+
+!!! warning "Keep responses small"
+    The UPS applies **at most 8 commands per poll** and drops a response body larger than **2047 bytes** as a whole — nothing in it is applied, and the next POST tells the server so in a `resp_dropped` field. Commands past the eighth are neither applied nor acked, so a longer queue simply drains 8 per poll. This is firmware esp32:0.8.10 or newer (check `fw_ver` in the POST); older firmware has no such guard — an over-size response is silently dropped and never acked, so keep responses small on every version. The reference server enforces both limits by default (`--max-commands 8`, response cap 2047 B); if you write your own server, see [Receiver limits (device side)](https://github.com/Web3-Pi/Web3-Pi-UPS/blob/main/docs/http-control-mode.md#receiver-limits-device-side){:target="_blank"} in the specification.
 
 !!! note "No firmware updates in HTTP mode"
     Remote [firmware updates](../firmware-update.md) are delivered over MQTT (or Arkiv) only. To update a device parked in HTTP mode, switch it back to MQTT from the OLED menu for the update, then switch back — or flash it locally over USB with the [Workbench](../firmware-update.md#local-updates-over-usb-workbench).
