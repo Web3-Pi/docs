@@ -30,8 +30,8 @@ The binding survives reboots; a factory reset (menu → **Network** → **Reset*
 
 ## The Device Wallet
 
-- **Wallet** → **Address** shows the device's address (alternating with a QR code); **Wallet** → **Balance** shows its current gas balance (the OLED labels it "GLM" — a historical label; gas on the Web3 Pi UPS Chain is an anti-spam token with no monetary value).
-- The panel keeps both your wallet and the device wallet topped up automatically — no manual funding is ever needed, and the panel additionally warns if a balance runs low.
+- **Wallet** → **Address** shows the device's address (alternating with a QR code); **Wallet** → **Balance** shows its current gas balance in **W3P**, the Web3 Pi UPS Chain's anti-spam gas token with no monetary value (firmware before esp32:0.8.11 labelled it "GLM"). The reading no longer depends on telemetry getting through: an unfunded wallet shows `0.000000` with a `no gas` hint, and the screen refreshes within a few seconds of opening it.
+- During normal operation the panel keeps both your wallet and the device wallet topped up automatically and warns if a balance runs low. One exception: after a **factory reset** the regenerated device wallet cannot announce itself until it holds gas, so its first top-up is manual — send a little W3P to the address shown under **Wallet** → **Address** (or ask Web3 Pi), then telemetry resumes on its own.
 - **Wallet** → **Regen** generates a new device wallet, invalidating the existing identity and claim — only use it if you intend to re-claim the device. Right after a Regen or factory reset, telemetry may pause until the panel learns the new wallet address and funds it.
 
 ![Claimed Arkiv device in the web panel — telemetry decrypted in the browser, device wallet balance, owner wallet in MetaMask](../img/panel-arkiv-devices.png){: .img-center }
