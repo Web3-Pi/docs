@@ -1,0 +1,53 @@
+# Advanced Setup: Firewall Configuration (UFW)
+
+## Understanding the Firewall
+
+Web3 Pi includes and enables **UFW (Uncomplicated Firewall)** by default to provide a baseline level of network security for your node. UFW is a user-friendly frontend for managing the underlying `iptables` firewall rules on Linux systems like Ubuntu.
+
+Its primary purpose is to control incoming and outgoing network traffic, ensuring that only necessary connections are allowed, thus reducing the potential attack surface of your device.
+
+## Default Status and Policy
+
+- **Enabled by Default:** UFW is installed and enabled at the end of the Web3 Pi setup process.
+- **Default Incoming Policy:** `DENY` - All incoming connections are blocked unless explicitly allowed by a specific rule.
+- **Default Outgoing Policy:** `ALLOW` - All outgoing connections initiated by the Raspberry Pi are permitted.
+
+## Default Allowed Incoming Ports
+
+The Web3 Pi installation script configures UFW to allow incoming traffic on the specific ports required for node operation, management, and monitoring based on your configuration choices during setup. The standard ports opened are:
+
+| Port              | Protocol  | Service                                  | Purpose                                                                                                    |
+| ----------------- | --------- | ---------------------------------------- | ---------------------------------------------------------------------------------------------------------- |
+| `22`              | TCP       | SSH                                      | Secure remote command-line access                                                                          |
+| `80`              | TCP       | Installation Monitor / Status Page       | [Viewing setup progress and basic status](https://docs.web3pi.io/monitoring/installation-monitor/index.md) |
+| `3000`            | TCP       | Grafana Dashboard                        | [Viewing node performance and health](https://docs.web3pi.io/monitoring/grafana/index.md)                  |
+| `5353`            | UDP       | mDNS (Avahi Daemon)                      | Hostname discovery (e.g., `web3pi.local`)                                                                  |
+| `7197`            | TCP       | Basic System Monitor JSON API            | [Programmatic access to monitoring data](https://docs.web3pi.io/monitoring/system-monitor/index.md)        |
+| `8545`            | TCP       | Execution Client JSON-RPC (Geth)         | Wallet connections                                                                                         |
+| `8546`            | TCP       | Execution Client WebSocket RPC (Geth)    | WebSocket connections for dApps/tools                                                                      |
+| `8551`            | TCP       | Execution Client Engine API (Geth)       | Communication between EL & CL clients                                                                      |
+| `9090`            | TCP       | Cockpit System Dashboard                 | [Web-based system management](https://docs.web3pi.io/management/cockpit/dashboard/index.md)                |
+| `9000` (default)  | TCP & UDP | Consensus Client P2P (Lighthouse/Nimbus) | Peer discovery and communication                                                                           |
+| `30303` (default) | TCP & UDP | Execution Client P2P (Geth)              | Peer discovery and communication                                                                           |
+
+## Checking Firewall Status and Rules
+
+You can view the current UFW status and the list of active rules by connecting via [SSH](https://docs.web3pi.io/management/ssh/index.md) and running the following commands:
+
+```
+sudo ufw status numbered
+```
+
+## Adding or Removing Ports
+
+To add a new port, use the `ufw allow` command. For example, to allow incoming TPC traffic on port `12345`, run the following command:
+
+```
+sudo ufw allow 12345/tcp comment 'This port is used by XYZ service'
+```
+
+To remove a port, use the `ufw delete` command. It's recommended to use the `ufw status numbered` command to identify the rule number before deleting it. For example, to delete the rule with the number `100`, run the following command:
+
+```
+sudo ufw delete 100
+```
