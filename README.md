@@ -1,69 +1,59 @@
 # Web3 Pi Documentation
 
-## How to Run the Project
+Source for [docs.web3pi.io](https://docs.web3pi.io/), built with MkDocs and Material for MkDocs. It contains guides for running Ethereum nodes on Raspberry Pi and using the Web3 Pi UPS: setup, power management, host integration, remote access, firmware updates and troubleshooting.
 
-## Prerequisites
+## Local preview
 
-1. Ensure you have **Python 3.11** or newer installed on your system.
-2. Make sure you have `pip` installed to manage Python packages.
+Use Python 3.11 or newer with `pip` and virtual-environment support. Run the following from your development machine:
 
-## Steps to Run the Project
+```bash
+git clone https://github.com/Web3-Pi/docs.git
+cd docs
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python -m mkdocs serve
+```
 
-1. **Clone the Repository**
+Open <http://127.0.0.1:8000/>. On Windows PowerShell, activate the environment with `.venv\Scripts\Activate.ps1` instead of `source .venv/bin/activate`.
 
-   Clone the repository to your local system using the command below:
+## Content map
 
-   ```bash
-   git clone git@github.com:Web3-Pi/docs.git
-   ```
+| Path | Purpose |
+| --- | --- |
+| [docs/index.md](docs/index.md) | Documentation home page |
+| [docs/setup/](docs/setup/) | Raspberry Pi node setup |
+| [docs/management/](docs/management/) | Node operation and maintenance |
+| [docs/ups/](docs/ups/) | UPS user guides and reference |
+| [docs/ups/firmware-update.md](docs/ups/firmware-update.md) | Firmware update methods |
+| [docs/ups/host-integration.md](docs/ups/host-integration.md) | Host service and serial integration |
+| [docs/ups/reference/protocol.md](docs/ups/reference/protocol.md) | UPS protocol reference |
+| [mkdocs.yml](mkdocs.yml) | Navigation, theme, Markdown extensions and plugins |
+| [overrides/](overrides/) | Material theme customizations |
+| [requirements.txt](requirements.txt) | Python dependencies |
 
-2. **Navigate to the Project Directory**
+Edit Markdown under `docs/`, put related images alongside the content, and update the `nav` section of `mkdocs.yml` when adding a page. The configuration enables Mermaid diagrams, code highlighting, tabs and admonitions.
 
-   Switch to the project's root directory:
+The `llmstxt` plugin also generates `llms.txt` and `llms-full.txt` from the configured node and UPS sections during the build.
 
-   ```bash
-   cd docs
-   ```
+## Validate changes
 
-3. **Create and Activate a Virtual Environment**
+```bash
+python -m mkdocs build
+```
 
-   It is recommended to use a virtual environment to isolate the project dependencies. Use the following commands to
-   create and activate the virtual environment:
+The static output goes to `site/`. Review build warnings and preview the affected pages, including navigation, screenshots, tables and code blocks. For a warning-free build, use `python -m mkdocs build --strict`.
 
-   ```bash
-   python -m venv .venv
-   source .venv/bin/activate  # On Linux/macOS
-   .venv\Scripts\activate     # On Windows
-   ```
+Check device commands, firmware versions and screenshots against the relevant implementation before describing them as supported:
 
-4. **Install Dependencies**
+- [Web3-Pi-UPS](https://github.com/Web3-Pi/Web3-Pi-UPS): hardware, firmware and wire protocol.
+- [Web3-Pi-UPS-Service](https://github.com/Web3-Pi/Web3-Pi-UPS-Service): host daemon and CLI.
+- [Web3-Pi-UPS-Workbench](https://github.com/Web3-Pi/Web3-Pi-UPS-Workbench): local browser connection and flashing.
+- [Web3-Pi-UPS-Panel](https://github.com/Web3-Pi/Web3-Pi-UPS-Panel): remote monitoring and control.
+- [Web3-Pi-vOS](https://github.com/Web3-Pi/Web3-Pi-vOS): staking OS and Control Panel.
 
-   Install the required Python dependencies:
+## Publishing
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+[The deployment workflow](.github/workflows/ci.yml) runs on pushes to `main` or `master`, installs `requirements.txt`, and publishes with `mkdocs gh-deploy --force`. A local `mkdocs build` or `mkdocs serve` does not publish anything.
 
-5. **Build the Documentation**
-
-   To build and serve the documentation locally, run the following command:
-
-   ```bash
-   mkdocs serve
-   ```
-
-   This will start a local development server and you will be able to access the documentation at:
-
-   ```
-   http://127.0.0.1:8000/
-   ```
-
-6. **Check the Deployed Documentation**
-
-   You can also view the deployed documentation online at [https://docs.web3pi.io/](https://docs.web3pi.io/).
-
-## Additional Notes
-
-- This project uses the **Material for MkDocs theme**, which is defined in the `mkdocs.yml` configuration file.
-- Ensure the directories and assets (such as `extra_css`, `extra_javascript`, and logo images) defined in `mkdocs.yml`
-  are accessible when building the project.
+The separate [website repository](https://github.com/Web3-Pi/website) owns the Web3 Pi marketing and product pages; this repository owns the user documentation.
